@@ -159,8 +159,8 @@
         font-size: 1rem;
     }
     
-    .step {
-        margin-bottom: 2rem;
+    .steps {
+        gap: 1.5rem;
     }
     
     .step-number {
