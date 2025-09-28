@@ -322,13 +322,40 @@ body {
     border: 10px solid #333;
 }
 
-.monitor-svg {
+.desktop-mockup {
     width: 100%;
     max-width: 400px;
-    height: auto;
+    height: 280px;
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     margin: 0 auto;
-    display: block;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+    position: relative;
+    border: 15px solid #333;
+}
+
+.desktop-mockup::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 70px;
+    background: #666;
+    border-radius: 0 0 5px 5px;
+}
+
+.desktop-mockup::after {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 16px;
+    background: #555;
+    border-radius: 10px;
 }
 
 .steps {

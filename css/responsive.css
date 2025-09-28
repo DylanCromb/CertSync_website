@@ -75,8 +75,9 @@
         height: 300px;
     }
     
-    .monitor-svg {
+    .desktop-mockup {
         max-width: 280px;
+        height: 200px;
     }
     
     .feature-grid {
