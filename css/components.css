@@ -62,8 +62,13 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-decoration: none;
+    text-decoration: none !important;
     letter-spacing: -0.5px;
+}
+
+/* Override nav link underline for logo */
+.logo-link::after {
+    display: none !important;
 }
 
 .nav-links {
