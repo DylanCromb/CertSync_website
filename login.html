@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CertSync</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CertSync</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="policies.html">Policies</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="login-btn active">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to your CertSync account to manage your credentials</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="page-content">
+        <div class="form-container">
+            <h2>Sign In</h2>
+            <form data-form-type="login">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                    <label style="margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" name="remember" style="width: auto;">
+                        Remember me
+                    </label>
+                    <a href="#forgot-password" style="color: #2B7FE0; text-decoration: none; font-size: 0.9rem;">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e1e5e9;">
+                <p style="color: #666; margin-bottom: 1rem;">Don't have an account?</p>
+                <a href="#signup" class="btn btn-secondary">Create Account</a>
+            </div>
+        </div>
+
+        <!-- Features Reminder -->
+        <div class="card" style="margin-top: 3rem;">
+            <h2>What you can do with CertSync</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Manage Credentials</h3>
+                    <p>Store and organize all your professional licenses, permits, and certifications in one secure place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Track Expirations</h3>
+                    <p>Never miss a renewal deadline with smart reminders and automated notifications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>Access your credentials anywhere with our mobile app for iOS and Android.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Sharing</h3>
+                    <p>Share credentials with employers and colleagues while maintaining full control over your data.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="card" style="background: #f8f9fa; border-left: 4px solid #2B7FE0;">
+            <h3 style="color: #2B7FE0; margin-bottom: 1rem;">🔒 Security Notice</h3>
+            <p style="margin-bottom: 1rem;">Your account is protected by:</p>
+            <ul style="margin: 0; padding-left: 2rem;">
+                <li>End-to-end encryption for all data</li>
+                <li>Multi-factor authentication support</li>
+                <li>Regular security audits and monitoring</li>
+                <li>SOC 2 Type II compliance</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>CertSync</h3>
+                <p style="color: #999;">The simple solution to credential and permit management</p>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="#careers">Careers</a>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <a href="policies.html">Policies</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="#support">Support</a>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#cookies">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="app-badges">
+            <a href="#" class="badge">
+                📱 App Store
+            </a>
+            <a href="#" class="badge">
+                🤖 Google Play
+            </a>
+        </div>
+        <p style="color: #666; margin-top: 2rem;">© 2024 CertSync. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
