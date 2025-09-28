@@ -35,7 +35,7 @@ nav {
 .logo-link {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
     transition: transform 0.3s ease;
 }
@@ -44,24 +44,26 @@ nav {
     transform: scale(1.02);
 }
 
+.logo-link:hover .logo-img {
+    transform: scale(1.05);
+}
+
 .logo-img {
     height: 50px;
     width: auto;
     transition: transform 0.3s ease;
-    margin-top: -2px;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
+    align-self: center;
 }
 
 .logo-text {
     font-size: clamp(1.5rem, 3vw, 1.8rem);
-    font-weight: bold;
-    background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%);
+    font-weight: 700;
+    background: linear-gradient(135deg, #2B7FE0 0%, #4A90E2 25%, #6B73FF 50%, #9B59B6 75%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-decoration: none;
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
