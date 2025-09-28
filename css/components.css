@@ -29,15 +29,16 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
 }
 
 .logo-link {
     display: flex;
     align-items: center;
     gap: 12px;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .logo-link:hover {
@@ -52,7 +53,7 @@ nav {
     height: 50px;
     width: auto;
     transition: transform 0.3s ease;
-    align-self: center;
+    flex-shrink: 0;
 }
 
 .logo-text {
@@ -64,11 +65,16 @@ nav {
     background-clip: text;
     text-decoration: none !important;
     letter-spacing: -0.5px;
+    flex-shrink: 0;
 }
 
-/* Override nav link underline for logo */
-.logo-link::after {
+/* Completely override any underline styles for logo */
+.logo-link::after,
+.logo-link::before,
+.logo-text::after,
+.logo-text::before {
     display: none !important;
+    content: none !important;
 }
 
 .nav-links {
@@ -88,7 +94,7 @@ nav {
     white-space: nowrap;
 }
 
-.nav-links a:not(.login-btn)::after {
+.nav-links a:not(.login-btn):not(.logo-link)::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -99,11 +105,11 @@ nav {
     transition: width 0.3s;
 }
 
-.nav-links a:not(.login-btn):hover::after {
+.nav-links a:not(.login-btn):not(.logo-link):hover::after {
     width: 100%;
 }
 
-.nav-links a:not(.login-btn):hover {
+.nav-links a:not(.login-btn):not(.logo-link):hover {
     color: #2B7FE0;
 }
 

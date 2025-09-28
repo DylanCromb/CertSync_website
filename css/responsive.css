@@ -17,6 +17,10 @@
         justify-content: center;
     }
     
+    .logo {
+        justify-content: center;
+    }
+    
     .logo-link {
         gap: 10px;
     }
