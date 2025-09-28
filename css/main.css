@@ -337,7 +337,7 @@ body {
 .desktop-mockup::before {
     content: '';
     position: absolute;
-    bottom: -50px;
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
@@ -349,7 +349,7 @@ body {
 .desktop-mockup::after {
     content: '';
     position: absolute;
-    bottom: -120px;
+    bottom: -130px;
     left: 50%;
     transform: translateX(-50%);
     width: 180px;
