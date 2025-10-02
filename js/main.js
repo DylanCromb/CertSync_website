@@ -2,72 +2,11 @@
 
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initializeNavigation();
-    initializeAnimations();
+    // Navigation and animations are handled by their respective modules
+    // navigation.js and animations.js
     initializeForms();
     initializeScrollEffects();
 });
-
-// Navigation functionality
-function initializeNavigation() {
-    // Add scroll effect to navigation
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 50) {
-            nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
-        } else {
-            nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
-        }
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Mobile menu toggle (if needed in future)
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        });
-    }
-}
-
-// Animation and scroll effects
-function initializeAnimations() {
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements that should animate on scroll
-    document.querySelectorAll('.feature-card, .path, .step').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-}
 
 // Form handling
 function initializeForms() {
@@ -137,19 +76,8 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Scroll effects
+// Scroll effects (parallax is handled by animations.js)
 function initializeScrollEffects() {
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        
-        if (hero) {
-            const rate = scrolled * -0.5;
-            hero.style.transform = `translateY(${rate}px)`;
-        }
-    });
-    
     // Back to top button
     createBackToTopButton();
 }

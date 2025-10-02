@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CertSync - Credential Management Made Simple</title>
+    <meta name="description" content="All your staff licenses & permits, in one place. CertSync helps employees track credentials and employers verify compliance with smart reminders and real-time dashboards.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://certsync.com/">
+    <meta property="og:title" content="CertSync - Credential Management Made Simple">
+    <meta property="og:description" content="All your staff licenses & permits, in one place. Track, verify, and manage professional credentials with ease.">
+    <meta property="og:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://certsync.com/">
+    <meta property="twitter:title" content="CertSync - Credential Management Made Simple">
+    <meta property="twitter:description" content="All your staff licenses & permits, in one place. Track, verify, and manage professional credentials with ease.">
+    <meta property="twitter:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -29,6 +46,7 @@
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="hero">
         <div class="particles">
             <span class="particle"></span>
@@ -76,7 +94,7 @@
                     <span class="step-number">02</span>
                     <div class="step-content">
                         <h3>Smart reminders</h3>
-                        <p>Customizable reminders keep you well before anything expires, with links convenient to renew. You'll never miss a beat with automatic back forms renewed the moment you update them.</p>
+                        <p>Customizable reminders keep you notified well before anything expires, with convenient renewal links. You'll never miss a beat with automatic updates the moment you renew your credentials.</p>
                     </div>
                 </div>
                 <div class="step">
@@ -91,9 +109,60 @@
 
         <div class="path">
             <h2>For Employers</h2>
-            <div class="device-mockup">
-                <div class="desktop-mockup floating"></div>
-            </div>
+            <figure class="monitor-figure" aria-labelledby="monitorTitle monitorDesc">
+                <!-- Responsive monitor SVG -->
+                <svg class="monitor" viewBox="0 0 1080 800" role="img">
+                    <title id="monitorTitle">Computer monitor frame</title>
+                    <desc id="monitorDesc">A stylized monitor with a 16:9 screen area for embedding a demo.</desc>
+
+                    <defs>
+                        <!-- Colors controlled by CSS variables -->
+                        <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="var(--screen-grad-top, #f4f6f8)"/>
+                            <stop offset="100%" stop-color="var(--screen-grad-bot, #e9edf2)"/>
+                        </linearGradient>
+
+                        <!-- Rounded screen mask (16:9 inside the bezel) -->
+                        <clipPath id="screenClip">
+                            <rect x="120" y="100" width="840" height="472.5" rx="24" ry="24" />
+                        </clipPath>
+
+                        <!-- Soft shadow -->
+                        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="20" stdDeviation="20" flood-opacity="0.18" />
+                        </filter>
+                    </defs>
+
+                    <!-- Bezel -->
+                    <rect x="80" y="60" width="920" height="552.5" rx="32" ry="32"
+                          fill="var(--bezel, #3f4144)" filter="url(#softShadow)"/>
+
+                    <!-- Inner screen border (offset to create bezel thickness) -->
+                    <rect x="110" y="90" width="860" height="492.5" rx="26" ry="26"
+                          fill="var(--bezel-inner, #2f3033)"/>
+
+                    <!-- Screen content background (shows gradient if no content is slotted) -->
+                    <rect x="120" y="100" width="840" height="472.5" rx="24" ry="24"
+                          fill="url(#screenGrad)"/>
+
+                    <!-- Stand -->
+                    <rect x="498" y="622" width="84" height="90" rx="10" fill="var(--stand, #6a6b6d)"/>
+                    <rect x="340" y="724" width="400" height="28" rx="14" fill="var(--base, #6a6b6d)"/>
+
+                    <!-- SLOT: anything placed in .screen-slot gets clipped to the screen -->
+                    <foreignObject x="120" y="100" width="840" height="472.5" clip-path="url(#screenClip)">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="screen-slot">
+                            <!-- Placeholder (remove when you add real content) -->
+                            <div class="screen-placeholder">Your demo goes here</div>
+                            <!-- Example usage (commented):
+                            <img src="./assets/images/demo.png" alt="CertSync demo"/>
+                            <video src="./assets/videos/demo.mp4" autoplay muted loop playsinline></video>
+                            <iframe src="https://your-demo.example" title="CertSync demo" loading="lazy"></iframe>
+                            -->
+                        </div>
+                    </foreignObject>
+                </svg>
+            </figure>
             <div class="steps">
                 <div class="step">
                     <span class="step-number">01</span>
@@ -113,7 +182,7 @@
                     <span class="step-number">03</span>
                     <div class="step-content">
                         <h3>Auditor-ready reporting</h3>
-                        <p>Export CSV/PDF permit audit matrices, demo real compliance with 1st-timer docs. Chain trace hurricane with IT or extract to org and regulators, every action fully timed and recorded with full transparency and accountability data.</p>
+                        <p>Export CSV/PDF permit audit matrices and demonstrate real-time compliance. Complete audit trails with chain-of-custody tracking, every action fully timestamped and recorded with full transparency and accountability.</p>
                     </div>
                 </div>
             </div>
@@ -156,42 +225,43 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
                 <h3>CertSync</h3>
-                <p style="color: #999;">The simple solution to credential and permit management</p>
+                <p>The simple solution to credential and permit management</p>
             </div>
             <div class="footer-column">
                 <h3>Company</h3>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="#careers">Careers</a>
+                <a href="#careers" rel="noopener">Careers</a>
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
                 <a href="policies.html">Policies</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="#support">Support</a>
+                <a href="#support" rel="noopener">Support</a>
             </div>
             <div class="footer-column">
                 <h3>Legal</h3>
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#cookies">Cookie Policy</a>
+                <a href="#privacy" rel="noopener">Privacy Policy</a>
+                <a href="#terms" rel="noopener">Terms of Service</a>
+                <a href="#cookies" rel="noopener">Cookie Policy</a>
             </div>
         </div>
         <div class="app-badges">
-            <a href="#" class="badge">
+            <a href="#" class="badge" rel="noopener" aria-label="Download on the App Store">
                 📱 App Store
             </a>
-            <a href="#" class="badge">
+            <a href="#" class="badge" rel="noopener" aria-label="Get it on Google Play">
                 🤖 Google Play
             </a>
         </div>
-        <p style="color: #666; margin-top: 2rem;">© 2024 CertSync. All rights reserved.</p>
+        <p>© 2024 CertSync. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>

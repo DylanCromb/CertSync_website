@@ -4,6 +4,7 @@ class AnimationController {
     constructor() {
         this.observers = new Map();
         this.animatedElements = new Set();
+        this.particleIntervals = [];
         this.init();
     }
     
@@ -132,13 +133,28 @@ class AnimationController {
     animateParticles() {
         const particles = document.querySelectorAll('.particle');
         particles.forEach(particle => {
-            // Add random movement
-            setInterval(() => {
+            // Add random movement with cleanup tracking
+            const interval = setInterval(() => {
                 const randomX = (Math.random() - 0.5) * 20;
                 const randomY = (Math.random() - 0.5) * 20;
                 particle.style.transform = `translate(${randomX}px, ${randomY}px)`;
             }, 3000 + Math.random() * 2000);
+
+            // Store interval for cleanup
+            this.particleIntervals.push(interval);
         });
+    }
+
+    // Cleanup method to prevent memory leaks
+    cleanup() {
+        // Clear all particle intervals
+        this.particleIntervals.forEach(interval => clearInterval(interval));
+        this.particleIntervals = [];
+
+        // Disconnect all observers
+        if (this.observer) {
+            this.observer.disconnect();
+        }
     }
     
     setupHoverEffects() {
@@ -287,8 +303,16 @@ class AnimationController {
 }
 
 // Initialize animations when DOM is loaded
+let animationController;
 document.addEventListener('DOMContentLoaded', () => {
-    new AnimationController();
+    animationController = new AnimationController();
+});
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+    if (animationController) {
+        animationController.cleanup();
+    }
 });
 
 // Export for use in other files

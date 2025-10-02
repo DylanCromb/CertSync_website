@@ -53,8 +53,8 @@
     
     .hero {
         margin-top: 120px;
-        padding: 80px 5% 100px 5%;
-        min-height: 90vh;
+        padding: 60px 5% 80px 5%;
+        min-height: 80vh;
     }
     
     .cta-buttons {
@@ -71,17 +71,16 @@
     .paths {
         grid-template-columns: 1fr;
         gap: 3rem;
-        padding: 60px 5%;
+        padding: 40px 5%;
     }
     
     .phone-mockup {
         width: 150px;
         height: 300px;
     }
-    
-    .desktop-mockup {
-        max-width: 280px;
-        height: 200px;
+
+    .monitor {
+        width: min(500px, 92vw);
     }
     
     .feature-grid {
@@ -144,6 +143,8 @@
     
     .hero {
         margin-top: 140px;
+        padding: 50px 5% 70px 5%;
+        min-height: 75vh;
     }
     
     .hero h1 {

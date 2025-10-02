@@ -15,14 +15,14 @@ body {
 /* Hero Section with Darker Gradient */
 .hero {
     margin-top: 70px;
-    padding: 120px 5% 180px 5%;
-    background: linear-gradient(135deg, #1a237e 0%, #4a148c 20%, #880e4f 40%, #2c387e 60%, #1565c0 80%, #0d47a1 100%);
+    padding: 80px 5% 100px 5%;
+    background: linear-gradient(135deg, #1a237e 0%, #4a148c 25%, #880e4f 50%, #1565c0 75%, #0d47a1 100%);
     background-size: 400% 400%;
     animation: gradientShift 20s ease infinite;
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,7 +146,7 @@ body {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 60px;
+    height: 40px;
 }
 
 .wave-divider path {
@@ -252,7 +252,7 @@ body {
 
 /* Two-Path Section */
 .paths {
-    padding: 80px 5%;
+    padding: 60px 5%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -304,7 +304,6 @@ body {
     margin: 2rem 0;
     position: relative;
     transition: transform 0.3s;
-    padding-bottom: 140px;
 }
 
 .device-mockup:hover {
@@ -320,42 +319,6 @@ body {
     margin: 0 auto;
     position: relative;
     border: 10px solid #333;
-}
-
-.desktop-mockup {
-    width: 100%;
-    max-width: 400px;
-    height: 280px;
-    background: linear-gradient(145deg, #f0f0f0, #ffffff);
-    border-radius: 10px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    margin: 0 auto;
-    position: relative;
-    border: 15px solid #333;
-}
-
-.desktop-mockup::before {
-    content: '';
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 70px;
-    background: #666;
-    border-radius: 0 0 5px 5px;
-}
-
-.desktop-mockup::after {
-    content: '';
-    position: absolute;
-    bottom: -130px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: 16px;
-    background: #555;
-    border-radius: 10px;
 }
 
 .steps {
