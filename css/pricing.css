@@ -1,9 +1,6 @@
 /* ===== Pricing Page (page-specific) ===== */
-.pricing-hero{
-  text-align:center; padding: 24px 16px 8px;
-}
+/* Note: Main .pricing-hero styles are in components.css */
 .pricing-hero h1{ margin:0; font-size: clamp(1.8rem, 3vw, 2.4rem); }
-.pricing-hero .sub{ color:#475569; margin:6px 0 14px; }
 
 /* Billing toggle */
 .billing-toggle{

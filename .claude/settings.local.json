@@ -3,7 +3,8 @@
     "allow": [
       "Bash(dir)",
       "Bash(dir csscomponents.css)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

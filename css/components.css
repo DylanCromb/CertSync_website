@@ -633,6 +633,9 @@ footer > p {
 }
 
 .pricing-hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 100px 16px 50px;
   background: linear-gradient(135deg, rgba(43, 127, 224, 0.08) 0%, rgba(43, 127, 224, 0.03) 100%);
@@ -662,10 +665,12 @@ footer > p {
 }
 
 .pricing-hero .sub{
+  display: block;
   color: #666;
   margin: 12px auto 32px;
   font-size: clamp(1rem, 2vw, 1.2rem);
-  max-width: 600px;
+  max-width: 800px;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
