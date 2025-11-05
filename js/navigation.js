@@ -6,10 +6,13 @@ class Navigation {
         this.navLinks = document.querySelector('.nav-links');
         this.mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         this.isMobileMenuOpen = false;
-        
+        this.previousScrollY = window.scrollY || 0;
+        this.scrollTicking = false;
+        this.onScroll = null;
+
         this.init();
     }
-    
+
     init() {
         this.setupScrollEffects();
         this.setupSmoothScrolling();
@@ -18,33 +21,50 @@ class Navigation {
     }
     
     setupScrollEffects() {
-        let lastScrollY = window.scrollY;
-        
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-            
-            // Add shadow when scrolled
-            if (currentScrollY > 50) {
-                this.nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
-                this.nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                this.nav.style.backdropFilter = 'blur(10px)';
-            } else {
-                this.nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
-                this.nav.style.background = 'rgba(255, 255, 255, 1)';
-                this.nav.style.backdropFilter = 'none';
+        if (!this.nav) {
+            return;
+        }
+
+        this.onScroll = () => {
+            const currentScrollY = window.scrollY || 0;
+
+            if (this.scrollTicking) {
+                this.previousScrollY = currentScrollY;
+                return;
             }
-            
-            // Hide/show nav on scroll (optional)
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down
-                this.nav.style.transform = 'translateY(-100%)';
-            } else {
-                // Scrolling up
-                this.nav.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollY = currentScrollY;
-        });
+
+            this.scrollTicking = true;
+
+            requestAnimationFrame(() => {
+                this.applyScrollEffects(currentScrollY);
+                this.scrollTicking = false;
+                this.previousScrollY = currentScrollY;
+            });
+        };
+
+        window.addEventListener('scroll', this.onScroll, { passive: true });
+    }
+
+    applyScrollEffects(currentScrollY) {
+        if (!this.nav) {
+            return;
+        }
+
+        if (currentScrollY > 50) {
+            this.nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+            this.nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            this.nav.style.backdropFilter = 'blur(10px)';
+        } else {
+            this.nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            this.nav.style.background = 'rgba(255, 255, 255, 1)';
+            this.nav.style.backdropFilter = 'none';
+        }
+
+        if (currentScrollY > this.previousScrollY && currentScrollY > 100) {
+            this.nav.style.transform = 'translateY(-100%)';
+        } else {
+            this.nav.style.transform = 'translateY(0)';
+        }
     }
     
     setupSmoothScrolling() {

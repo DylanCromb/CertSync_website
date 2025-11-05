@@ -45,6 +45,36 @@ const fmt = (n) => (n === 0 ? '$0' : (n ? `$${n.toLocaleString('en-AU', {minimum
 const el = (s, ctx = document) => ctx.querySelector(s);
 const els = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
 
+// ===== Asset monitoring =====
+function monitorPricingAssets(){
+  const debugBanner = document.getElementById('pricing-debug');
+  const sentinel = document.getElementById('pricing-css-sentinel');
+
+  if (!debugBanner || !sentinel) {
+    return;
+  }
+
+  const revealDebug = () => {
+    debugBanner.style.display = 'block';
+  };
+
+  const verifyStylesApplied = () => {
+    sentinel.className = 'pricing-grid';
+    const computed = getComputedStyle(sentinel);
+    if (!(computed.display && computed.display.includes('grid'))) {
+      revealDebug();
+    }
+  };
+
+  verifyStylesApplied();
+
+  window.addEventListener('error', (event) => {
+    if (String(event.filename || '').includes('/js/pricing.js')) {
+      revealDebug();
+    }
+  }, { once: true });
+}
+
 // ===== Render cards =====
 function renderIndividual(billing='monthly'){
   const root = el('#individual-grid'); root.innerHTML = '';
@@ -70,9 +100,12 @@ function renderIndividual(billing='monthly'){
         ${p.includes.map(x => `<li>${x}</li>`).join('')}
       </ul>
 
-      <a class="card-cta" href="${p.cta.href}" ${unavailable ? 'aria-disabled="true" tabindex="-1" style="opacity:.6;pointer-events:none;"' : ''}>
-        ${unavailable ? 'Annual not available' : p.cta.label}
-      </a>
+      <div class="tooltip-wrapper" style="width: 100%;">
+        <button class="card-cta" disabled style="width: 100%; opacity: 0.5; cursor: not-allowed;">
+          ${p.cta.label}
+        </button>
+        <span class="tooltip">Coming Soon - Platform Launching Soon</span>
+      </div>
     `;
     root.appendChild(card);
   });
@@ -165,4 +198,7 @@ function initPricing(){
   renderEnterprise(billing, empRange ? parseInt(empRange.value,10) : 12);
 }
 
-document.addEventListener('DOMContentLoaded', initPricing);
+document.addEventListener('DOMContentLoaded', () => {
+  monitorPricingAssets();
+  initPricing();
+});

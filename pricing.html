@@ -22,11 +22,8 @@
     <meta property="twitter:description" content="Choose the plan that's right for your organization. Individual ($9), Team ($29), or Enterprise ($99). 14-day free trial available.">
     <meta property="twitter:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
 
-    <base href="/" />
-    <link rel="stylesheet" href="/css/main.css?v=pricing1" />
-    <link rel="stylesheet" href="/css/components.css?v=pricing1" />
-    <link rel="stylesheet" href="/css/responsive.css?v=pricing1" />
-    <link rel="stylesheet" href="/css/pricing.css?v=pricing1" />
+    <link rel="preload" href="/css/styles.min.css" as="style">
+    <link rel="stylesheet" href="/css/styles.min.css">
     <style>
       /* Hidden by default; shown only if CSS didn't apply or JS fails */
       .pricing-debug { display:none; background:#fff3cd; color:#7c5a00;
@@ -35,26 +32,9 @@
       .pricing-css-sentinel { position:absolute; left:-9999px; top:-9999px; }
     </style>
     <div id="pricing-debug" class="pricing-debug">
-      Pricing assets didn't load. Check Network for <code>/css/pricing.css</code> and <code>/js/pricing.js</code>.
+      Pricing assets didn't load. Check Network for <code>/css/styles.min.css</code> and <code>/js/pricing.js</code>.
     </div>
     <div id="pricing-css-sentinel" class="pricing-css-sentinel"></div>
-    <script>
-      // If the sentinel does NOT get the grid style from pricing.css, reveal the banner.
-      (function(){
-        const s = document.getElementById('pricing-css-sentinel');
-        s.className = 'pricing-grid'; // this class is defined in pricing.css
-        const cs = getComputedStyle(s);
-        if (!(cs.display && cs.display.includes('grid'))) {
-          document.getElementById('pricing-debug').style.display = 'block';
-          console.warn('pricing.css not applied');
-        }
-        window.addEventListener('error', e => {
-          if (String(e.filename||'').includes('/js/pricing.js')) {
-            document.getElementById('pricing-debug').style.display = 'block';
-          }
-        }, { once:true });
-      })();
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -62,7 +42,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="/index.html" class="logo-link">
-                    <img src="/assets/images/CertSync_Icon.png" alt="CertSync Logo" class="logo-img">
+                    <img src="/assets/images/CertSync_Icon.png" alt="CertSync Logo" class="logo-img" width="64" height="64" decoding="async" fetchpriority="high">
                     <span class="logo-text">CertSync</span>
                 </a>
             </div>
@@ -132,35 +112,30 @@
                 <h3>Company</h3>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
-                <a href="#careers" rel="noopener">Careers</a>
+                <a href="/contact.html" rel="noopener">Careers <span class="coming-soon-badge">Coming Soon</span></a>
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
                 <a href="/policies.html">Policies</a>
                 <a href="/pricing.html">Pricing</a>
-                <a href="#support" rel="noopener">Support</a>
+                <a href="/contact.html" rel="noopener">Support</a>
             </div>
             <div class="footer-column">
                 <h3>Legal</h3>
-                <a href="#privacy" rel="noopener">Privacy Policy</a>
-                <a href="#terms" rel="noopener">Terms of Service</a>
-                <a href="#cookies" rel="noopener">Cookie Policy</a>
+                <a href="/policies.html#privacy-policy" rel="noopener">Privacy Policy</a>
+                <a href="/policies.html#terms-of-service" rel="noopener">Terms of Service</a>
+                <a href="/policies.html#cookie-policy" rel="noopener">Cookie Policy</a>
             </div>
         </div>
         <div class="app-badges">
-            <a href="#" class="badge" rel="noopener" aria-label="Download on the App Store">
-                📱 App Store
-            </a>
-            <a href="#" class="badge" rel="noopener" aria-label="Get it on Google Play">
-                🤖 Google Play
-            </a>
+            <p style="color: #999; margin-bottom: 0.5rem;">Mobile apps coming soon</p>
         </div>
-        <p>© 2024 CertSync. All rights reserved.</p>
+        <p>© 2025 CertSync. All rights reserved.</p>
     </footer>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/navigation.js" defer></script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/pricing.js?v=pricing1" defer></script>
+    <script src="/js/pricing.js" defer></script>
 </body>
 </html>

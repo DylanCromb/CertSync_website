@@ -22,9 +22,8 @@
     <meta property="twitter:description" content="Get in touch with CertSync for support, sales inquiries, or partnership opportunities. Available Monday-Friday 9AM-6PM EST.">
     <meta property="twitter:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
 
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/components.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="preload" href="/css/styles.min.css" as="style">
+    <link rel="stylesheet" href="/css/styles.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -32,7 +31,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="/index.html" class="logo-link">
-                    <img src="/assets/images/CertSync_Icon.png" alt="CertSync Logo" class="logo-img">
+                    <img src="/assets/images/CertSync_Icon.png" alt="CertSync Logo" class="logo-img" width="64" height="64" decoding="async" fetchpriority="high">
                     <span class="logo-text">CertSync</span>
                 </a>
             </div>
@@ -64,11 +63,11 @@
             </div>
             <div class="contact-item">
                 <h3>📞 Phone</h3>
-                <p>+1 (555) 123-4567</p>
+                <p><em>Coming Soon</em></p>
             </div>
             <div class="contact-item">
                 <h3>📍 Address</h3>
-                <p>123 Business St<br>Suite 100<br>City, State 12345</p>
+                <p><em>Coming Soon</em></p>
             </div>
             <div class="contact-item">
                 <h3>🕒 Hours</h3>
@@ -78,6 +77,10 @@
 
         <!-- Contact Form -->
         <div class="form-container">
+            <div class="tba-notice">
+                <h3>⚠️ Form Submission - TBA</h3>
+                <p>This form is not yet functional. For inquiries, please email us directly at <a href="mailto:hello@certsync.com" style="color: #2B7FE0; text-decoration: underline; font-weight: 600;">hello@certsync.com</a></p>
+            </div>
             <h2>Send us a Message</h2>
             <form data-form-type="contact">
                 <div class="form-group">
@@ -157,22 +160,22 @@
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📚</div>
-                    <h3>Documentation</h3>
+                    <h3>Documentation<span class="coming-soon-badge">Coming Soon</span></h3>
                     <p>Comprehensive guides and tutorials to help you get the most out of CertSync.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎥</div>
-                    <h3>Video Tutorials</h3>
+                    <h3>Video Tutorials<span class="coming-soon-badge">Coming Soon</span></h3>
                     <p>Step-by-step video guides covering all major features and workflows.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💬</div>
-                    <h3>Community Forum</h3>
+                    <h3>Community Forum<span class="coming-soon-badge">Coming Soon</span></h3>
                     <p>Connect with other CertSync users and get help from the community.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🆘</div>
-                    <h3>Live Support</h3>
+                    <h3>Live Support<span class="coming-soon-badge">Coming Soon</span></h3>
                     <p>Get real-time help from our support team via chat or phone.</p>
                 </div>
             </div>
@@ -191,30 +194,25 @@
                 <h3>Company</h3>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
-                <a href="#careers" rel="noopener">Careers</a>
+                <a href="/contact.html" rel="noopener">Careers <span class="coming-soon-badge">Coming Soon</span></a>
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
                 <a href="/policies.html">Policies</a>
                 <a href="/pricing.html">Pricing</a>
-                <a href="#support" rel="noopener">Support</a>
+                <a href="/contact.html" rel="noopener">Support</a>
             </div>
             <div class="footer-column">
                 <h3>Legal</h3>
-                <a href="#privacy" rel="noopener">Privacy Policy</a>
-                <a href="#terms" rel="noopener">Terms of Service</a>
-                <a href="#cookies" rel="noopener">Cookie Policy</a>
+                <a href="/policies.html#privacy-policy" rel="noopener">Privacy Policy</a>
+                <a href="/policies.html#terms-of-service" rel="noopener">Terms of Service</a>
+                <a href="/policies.html#cookie-policy" rel="noopener">Cookie Policy</a>
             </div>
         </div>
         <div class="app-badges">
-            <a href="#" class="badge" rel="noopener" aria-label="Download on the App Store">
-                📱 App Store
-            </a>
-            <a href="#" class="badge" rel="noopener" aria-label="Get it on Google Play">
-                🤖 Google Play
-            </a>
+            <p style="color: #999; margin-bottom: 0.5rem;">Mobile apps coming soon</p>
         </div>
-        <p>© 2024 CertSync. All rights reserved.</p>
+        <p>© 2025 CertSync. All rights reserved.</p>
     </footer>
 
     <script src="/js/main.js" defer></script>

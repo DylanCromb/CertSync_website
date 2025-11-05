@@ -12,6 +12,22 @@ body {
     overflow-x: hidden;
 }
 
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+}
+
+html.reduced-motion .hero {
+    transform: none !important;
+}
+
+html.reduced-motion .particles {
+    display: none;
+}
+
 /* Hero Section with Darker Gradient */
 .hero {
     margin-top: 70px;
@@ -80,6 +96,9 @@ body {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     animation: floatUp 15s infinite;
+    transform: translate(var(--particle-offset-x, 0), var(--particle-offset-y, 0));
+    transition: transform 4s ease;
+    will-change: transform;
 }
 
 .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
@@ -219,11 +238,12 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-.cta-primary:hover {
+.cta-primary:hover,
+.interactive-button.is-hovered.cta-primary {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 12px 35px rgba(0,0,0,0.4);
     background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(240,240,255,1) 100%);
@@ -238,11 +258,12 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     backdrop-filter: blur(10px);
 }
 
-.cta-secondary:hover {
+.cta-secondary:hover,
+.interactive-button.is-hovered.cta-secondary {
     background: rgba(255,255,255,0.95);
     color: #1a237e;
     transform: translateY(-3px) scale(1.05);
@@ -399,9 +420,10 @@ body {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    animation-delay: var(--feature-stagger, 0s);
 }
 
 .feature-card::before {
@@ -413,14 +435,16 @@ body {
     height: 5px;
     background: linear-gradient(90deg, #2B7FE0, #764ba2);
     transform: translateX(-100%);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
-.feature-card:hover::before {
+.feature-card:hover::before,
+.interactive-card.is-hovered::before {
     transform: translateX(0);
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.interactive-card.is-hovered {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }

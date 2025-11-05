@@ -22,9 +22,8 @@
     <meta property="twitter:description" content="All your staff licenses & permits, in one place. Track, verify, and manage professional credentials with ease.">
     <meta property="twitter:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
 
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/components.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="preload" href="/css/styles.min.css" as="style">
+    <link rel="stylesheet" href="/css/styles.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -32,7 +31,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="/index.html" class="logo-link">
-                    <img src="/assets/images/CertSync_Icon.png" alt="CertSync Logo" class="logo-img">
+                    <img src="/assets/images/CertSync_Icon.png" alt="CertSync Logo" class="logo-img" width="64" height="64" decoding="async" fetchpriority="high">
                     <span class="logo-text">CertSync</span>
                 </a>
             </div>
@@ -65,8 +64,8 @@
             <h1>Welcome to CertSync</h1>
             <p>All your staff licenses & permits, in one place</p>
             <div class="cta-buttons">
-                <button class="cta-primary">Get the app</button>
-                <button class="cta-secondary">See employer dashboard</button>
+                <button class="cta-primary" disabled style="opacity: 0.7; cursor: not-allowed;">Get the app <span class="coming-soon-badge">Coming Soon</span></button>
+                <button class="cta-secondary" disabled style="opacity: 0.7; cursor: not-allowed;">See employer dashboard <span class="coming-soon-badge">Coming Soon</span></button>
             </div>
         </div>
         <div class="wave-divider">
@@ -154,7 +153,7 @@
                     <foreignObject x="120" y="100" width="840" height="472.5" clip-path="url(#screenClip)">
                         <div xmlns="http://www.w3.org/1999/xhtml" class="screen-slot">
                             <!-- Placeholder (remove when you add real content) -->
-                            <div class="screen-placeholder">Your demo goes here</div>
+                            <div class="screen-placeholder">Platform Demo Coming Soon</div>
                             <!-- Example usage (commented):
                             <img src="./assets/images/demo.png" alt="CertSync demo"/>
                             <video src="./assets/videos/demo.mp4" autoplay muted loop playsinline></video>
@@ -239,30 +238,25 @@
                 <h3>Company</h3>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
-                <a href="#careers" rel="noopener">Careers</a>
+                <a href="/contact.html" rel="noopener">Careers <span class="coming-soon-badge">Coming Soon</span></a>
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
                 <a href="/policies.html">Policies</a>
                 <a href="/pricing.html">Pricing</a>
-                <a href="#support" rel="noopener">Support</a>
+                <a href="/contact.html" rel="noopener">Support</a>
             </div>
             <div class="footer-column">
                 <h3>Legal</h3>
-                <a href="#privacy" rel="noopener">Privacy Policy</a>
-                <a href="#terms" rel="noopener">Terms of Service</a>
-                <a href="#cookies" rel="noopener">Cookie Policy</a>
+                <a href="/policies.html#privacy-policy" rel="noopener">Privacy Policy</a>
+                <a href="/policies.html#terms-of-service" rel="noopener">Terms of Service</a>
+                <a href="/policies.html#cookie-policy" rel="noopener">Cookie Policy</a>
             </div>
         </div>
         <div class="app-badges">
-            <a href="#" class="badge" rel="noopener" aria-label="Download on the App Store">
-                📱 App Store
-            </a>
-            <a href="#" class="badge" rel="noopener" aria-label="Get it on Google Play">
-                🤖 Google Play
-            </a>
+            <p style="color: #999; margin-bottom: 0.5rem;">Mobile apps coming soon</p>
         </div>
-        <p>© 2024 CertSync. All rights reserved.</p>
+        <p>© 2025 CertSync. All rights reserved.</p>
     </footer>
 
     <script src="/js/main.js" defer></script>

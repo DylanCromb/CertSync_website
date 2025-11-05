@@ -4,16 +4,37 @@ class AnimationController {
     constructor() {
         this.observers = new Map();
         this.animatedElements = new Set();
-        this.particleIntervals = [];
+        this.heroElement = document.querySelector('.hero');
+        this.particlesContainer = document.querySelector('.particles');
+        this.particleIntervalId = null;
+        this.reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        this.prefersReducedMotion = this.reducedMotionQuery.matches;
+        this.onReducedMotionChange = this.handleReducedMotionPreference.bind(this);
+        this.scrollListener = null;
+        this.lastKnownScrollY = window.scrollY || 0;
+        this.scrollTicking = false;
         this.init();
     }
-    
+
     init() {
+        this.handleReducedMotionPreference();
+        this.reducedMotionQuery.addEventListener('change', this.onReducedMotionChange);
         this.setupIntersectionObserver();
         this.setupScrollAnimations();
-        this.setupParticleSystem();
         this.setupHoverEffects();
         this.setupLoadingAnimations();
+    }
+
+    handleReducedMotionPreference() {
+        this.prefersReducedMotion = this.reducedMotionQuery.matches;
+        document.documentElement.classList.toggle('reduced-motion', this.prefersReducedMotion);
+
+        if (this.prefersReducedMotion) {
+            this.resetHeroTransform();
+            this.teardownParticleSystem();
+        } else {
+            this.setupParticleSystem();
+        }
     }
     
     setupIntersectionObserver() {
@@ -69,31 +90,45 @@ class AnimationController {
     }
     
     setupScrollAnimations() {
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            this.updateParallax();
-            this.updateScrollProgress();
-        });
+        this.scrollListener = () => {
+            this.lastKnownScrollY = window.scrollY || 0;
+
+            if (this.scrollTicking) {
+                return;
+            }
+
+            this.scrollTicking = true;
+            requestAnimationFrame(() => {
+                this.scrollTicking = false;
+
+                if (!this.prefersReducedMotion) {
+                    this.updateParallax(this.lastKnownScrollY);
+                } else {
+                    this.resetHeroTransform();
+                }
+
+                this.updateScrollProgress(this.lastKnownScrollY);
+            });
+        };
+
+        window.addEventListener('scroll', this.scrollListener, { passive: true });
     }
-    
-    updateParallax() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        
-        if (hero) {
-            const rate = scrolled * -0.3;
-            hero.style.transform = `translateY(${rate}px)`;
+
+    updateParallax(scrollPosition = 0) {
+        if (!this.heroElement) {
+            return;
         }
-        
-        // Parallax for particles
-        const particles = document.querySelectorAll('.particle');
-        particles.forEach((particle, index) => {
-            const speed = 0.5 + (index * 0.1);
-            const yPos = scrolled * speed;
-            particle.style.transform = `translateY(${yPos}px)`;
-        });
+
+        const rate = scrollPosition * -0.15;
+        this.heroElement.style.transform = `translateY(${rate}px)`;
     }
-    
+
+    resetHeroTransform() {
+        if (this.heroElement) {
+            this.heroElement.style.transform = '';
+        }
+    }
+
     updateScrollProgress() {
         const scrollProgress = document.querySelector('.scroll-progress');
         if (scrollProgress) {
@@ -103,55 +138,96 @@ class AnimationController {
             scrollProgress.style.width = scrolled + '%';
         }
     }
-    
+
     setupParticleSystem() {
-        const hero = document.querySelector('.hero');
-        if (!hero) return;
-        
-        // Create additional particles dynamically
-        this.createDynamicParticles();
-        
-        // Animate existing particles
+        if (this.prefersReducedMotion || !this.particlesContainer) {
+            return;
+        }
+
+        this.teardownParticleSystem();
+
+        const additionalParticles = window.innerWidth > 1024 ? 4 : 2;
+        this.createDynamicParticles(additionalParticles);
         this.animateParticles();
     }
-    
-    createDynamicParticles() {
-        const particlesContainer = document.querySelector('.particles');
-        if (!particlesContainer) return;
-        
-        // Add more particles for better effect
-        for (let i = 0; i < 5; i++) {
+
+    createDynamicParticles(count = 0) {
+        if (!this.particlesContainer || !count) {
+            return;
+        }
+
+        for (let i = 0; i < count; i++) {
             const particle = document.createElement('span');
             particle.className = 'particle';
+            particle.dataset.dynamic = 'true';
             particle.style.left = Math.random() * 100 + '%';
             particle.style.animationDelay = Math.random() * 20 + 's';
             particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-            particlesContainer.appendChild(particle);
+            this.particlesContainer.appendChild(particle);
         }
     }
-    
-    animateParticles() {
-        const particles = document.querySelectorAll('.particle');
-        particles.forEach(particle => {
-            // Add random movement with cleanup tracking
-            const interval = setInterval(() => {
-                const randomX = (Math.random() - 0.5) * 20;
-                const randomY = (Math.random() - 0.5) * 20;
-                particle.style.transform = `translate(${randomX}px, ${randomY}px)`;
-            }, 3000 + Math.random() * 2000);
 
-            // Store interval for cleanup
-            this.particleIntervals.push(interval);
+    animateParticles() {
+        if (!this.particlesContainer) {
+            return;
+        }
+
+        const particles = this.particlesContainer.querySelectorAll('.particle');
+        if (!particles.length) {
+            return;
+        }
+
+        const updateOffsets = () => {
+            particles.forEach((particle) => {
+                const randomX = (Math.random() - 0.5) * 16;
+                const randomY = (Math.random() - 0.5) * 16;
+                particle.style.setProperty('--particle-offset-x', `${randomX}px`);
+                particle.style.setProperty('--particle-offset-y', `${randomY}px`);
+            });
+        };
+
+        updateOffsets();
+
+        if (this.particleIntervalId) {
+            clearInterval(this.particleIntervalId);
+        }
+
+        this.particleIntervalId = setInterval(updateOffsets, 6000);
+    }
+
+    teardownParticleSystem() {
+        if (this.particleIntervalId) {
+            clearInterval(this.particleIntervalId);
+            this.particleIntervalId = null;
+        }
+
+        if (!this.particlesContainer) {
+            return;
+        }
+
+        this.particlesContainer.querySelectorAll('[data-dynamic="true"]').forEach((particle) => {
+            particle.remove();
+        });
+
+        this.particlesContainer.querySelectorAll('.particle').forEach((particle) => {
+            particle.style.removeProperty('--particle-offset-x');
+            particle.style.removeProperty('--particle-offset-y');
         });
     }
 
     // Cleanup method to prevent memory leaks
     cleanup() {
-        // Clear all particle intervals
-        this.particleIntervals.forEach(interval => clearInterval(interval));
-        this.particleIntervals = [];
+        this.teardownParticleSystem();
 
-        // Disconnect all observers
+        if (this.scrollListener) {
+            window.removeEventListener('scroll', this.scrollListener);
+            this.scrollListener = null;
+        }
+
+        if (this.reducedMotionQuery) {
+            this.reducedMotionQuery.removeEventListener('change', this.onReducedMotionChange);
+        }
+
         if (this.observer) {
             this.observer.disconnect();
         }
@@ -159,11 +235,16 @@ class AnimationController {
     
     setupHoverEffects() {
         // Enhanced hover effects for cards
+        if (this.prefersReducedMotion) {
+            return;
+        }
+
         document.querySelectorAll('.feature-card, .pricing-card, .card').forEach(card => {
+            card.classList.add('interactive-card');
             card.addEventListener('mouseenter', () => {
                 this.enhanceCardHover(card);
             });
-            
+
             card.addEventListener('mouseleave', () => {
                 this.resetCardHover(card);
             });
@@ -171,10 +252,11 @@ class AnimationController {
         
         // Button hover effects
         document.querySelectorAll('.btn, .cta-primary, .cta-secondary').forEach(button => {
+            button.classList.add('interactive-button');
             button.addEventListener('mouseenter', () => {
                 this.enhanceButtonHover(button);
             });
-            
+
             button.addEventListener('mouseleave', () => {
                 this.resetButtonHover(button);
             });
@@ -182,58 +264,35 @@ class AnimationController {
     }
     
     enhanceCardHover(card) {
-        card.style.transform = 'translateY(-10px) scale(1.02)';
-        card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
-        
-        // Add glow effect
-        const glow = document.createElement('div');
-        glow.className = 'card-glow';
-        glow.style.cssText = `
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #2B7FE0, #764ba2);
-            border-radius: 17px;
-            z-index: -1;
-            opacity: 0.3;
-            filter: blur(10px);
-        `;
-        card.style.position = 'relative';
-        card.appendChild(glow);
+        card.classList.add('is-hovered');
     }
-    
+
     resetCardHover(card) {
-        card.style.transform = 'translateY(0) scale(1)';
-        card.style.boxShadow = '0 5px 20px rgba(0,0,0,0.08)';
-        
-        const glow = card.querySelector('.card-glow');
-        if (glow) {
-            glow.remove();
-        }
+        card.classList.remove('is-hovered');
     }
-    
+
     enhanceButtonHover(button) {
-        button.style.transform = 'translateY(-3px) scale(1.05)';
-        button.style.boxShadow = '0 10px 30px rgba(43, 127, 224, 0.4)';
+        button.classList.add('is-hovered');
     }
-    
+
     resetButtonHover(button) {
-        button.style.transform = 'translateY(0) scale(1)';
-        button.style.boxShadow = '0 4px 15px rgba(43, 127, 224, 0.3)';
+        button.classList.remove('is-hovered');
     }
-    
+
     setupLoadingAnimations() {
+        if (this.prefersReducedMotion) {
+            return;
+        }
+
         // Page load animation
         window.addEventListener('load', () => {
             this.animatePageLoad();
-        });
-        
+        }, { once: true });
+
         // Staggered animation for feature cards
         this.staggerFeatureCards();
     }
-    
+
     animatePageLoad() {
         const hero = document.querySelector('.hero');
         if (hero) {
@@ -251,7 +310,7 @@ class AnimationController {
     staggerFeatureCards() {
         const featureCards = document.querySelectorAll('.feature-card');
         featureCards.forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
+            card.style.setProperty('--feature-stagger', `${index * 0.1}s`);
         });
     }
     
@@ -289,16 +348,9 @@ class AnimationController {
         }, 100);
     }
     
-    // Method to pause animations for users who prefer reduced motion
+    // Method retained for backwards compatibility
     respectReducedMotion() {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            // Disable all animations
-            document.querySelectorAll('*').forEach(el => {
-                el.style.animationDuration = '0.01ms';
-                el.style.animationIterationCount = '1';
-                el.style.transitionDuration = '0.01ms';
-            });
-        }
+        this.handleReducedMotionPreference();
     }
 }
 
