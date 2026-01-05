@@ -1,0 +1,51 @@
+{
+  "name": "certsync_website",
+  "version": "1.0.0",
+  "description": "A modern, responsive website for CertSync - a credential management platform that helps businesses and employees track, verify, and manage professional licenses, permits, and certifications.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:hero && npm run build:pricing",
+    "build:hero": "vite build",
+    "build:pricing": "vite build --config vite.pricing.config.ts",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DylanCromb/CertSync_website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DylanCromb/CertSync_website/issues"
+  },
+  "homepage": "https://github.com/DylanCromb/CertSync_website#readme",
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "astro": "^5.14.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "styled-components": "^6.1.19",
+    "tailwind-merge": "^3.4.0",
+    "vite": "^7.1.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/styled-components": "^5.1.36",
+    "@vitejs/plugin-react": "^5.1.2",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "terser": "^5.44.1",
+    "typescript": "^5.9.3"
+  }
+}

@@ -115,12 +115,8 @@ class AnimationController {
     }
 
     updateParallax(scrollPosition = 0) {
-        if (!this.heroElement) {
-            return;
-        }
-
-        const rate = scrollPosition * -0.15;
-        this.heroElement.style.transform = `translateY(${rate}px)`;
+        // Parallax disabled for performance
+        return;
     }
 
     resetHeroTransform() {
@@ -140,59 +136,24 @@ class AnimationController {
     }
 
     setupParticleSystem() {
+        // Particles are now static HTML elements - no dynamic creation needed
+        // This improves performance significantly
         if (this.prefersReducedMotion || !this.particlesContainer) {
             return;
         }
 
         this.teardownParticleSystem();
-
-        const additionalParticles = window.innerWidth > 1024 ? 4 : 2;
-        this.createDynamicParticles(additionalParticles);
-        this.animateParticles();
     }
 
     createDynamicParticles(count = 0) {
-        if (!this.particlesContainer || !count) {
-            return;
-        }
-
-        for (let i = 0; i < count; i++) {
-            const particle = document.createElement('span');
-            particle.className = 'particle';
-            particle.dataset.dynamic = 'true';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 20 + 's';
-            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-            this.particlesContainer.appendChild(particle);
-        }
+        // Removed: dynamic particle creation disabled for performance
+        return;
     }
 
     animateParticles() {
-        if (!this.particlesContainer) {
-            return;
-        }
-
-        const particles = this.particlesContainer.querySelectorAll('.particle');
-        if (!particles.length) {
-            return;
-        }
-
-        const updateOffsets = () => {
-            particles.forEach((particle) => {
-                const randomX = (Math.random() - 0.5) * 16;
-                const randomY = (Math.random() - 0.5) * 16;
-                particle.style.setProperty('--particle-offset-x', `${randomX}px`);
-                particle.style.setProperty('--particle-offset-y', `${randomY}px`);
-            });
-        };
-
-        updateOffsets();
-
-        if (this.particleIntervalId) {
-            clearInterval(this.particleIntervalId);
-        }
-
-        this.particleIntervalId = setInterval(updateOffsets, 6000);
+        // Removed: particle offset animation disabled for performance
+        // Particles use pure CSS animation now
+        return;
     }
 
     teardownParticleSystem() {
@@ -294,17 +255,9 @@ class AnimationController {
     }
 
     animatePageLoad() {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.opacity = '0';
-            hero.style.transform = 'translateY(50px)';
-            
-            setTimeout(() => {
-                hero.style.transition = 'opacity 1s ease, transform 1s ease';
-                hero.style.opacity = '1';
-                hero.style.transform = 'translateY(0)';
-            }, 100);
-        }
+        // Removed hero page load animation for better initial performance
+        // Hero is now visible immediately on page load
+        return;
     }
     
     staggerFeatureCards() {

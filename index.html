@@ -5,25 +5,45 @@
     <meta charset="UTF-8">
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CertSync - Credential Management Made Simple</title>
-    <meta name="description" content="All your staff licenses & permits, in one place. CertSync helps employees track credentials and employers verify compliance with smart reminders and real-time dashboards.">
+    <title>CertSync - Stop Chasing Expired Licences. Stay WorkSafe Compliant.</title>
+    <meta name="description" content="CertSync helps Australian organisations and workers track licences, certifications and permits—without spreadsheets, manual checks or audit panic. Automated expiry alerts and audit-ready reporting.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://certsync.com/">
-    <meta property="og:title" content="CertSync - Credential Management Made Simple">
-    <meta property="og:description" content="All your staff licenses & permits, in one place. Track, verify, and manage professional credentials with ease.">
+    <meta property="og:title" content="CertSync - Stop Chasing Expired Licences. Stay WorkSafe Compliant.">
+    <meta property="og:description" content="CertSync helps Australian organisations and workers track licences, certifications and permits—without spreadsheets, manual checks or audit panic.">
     <meta property="og:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://certsync.com/">
-    <meta property="twitter:title" content="CertSync - Credential Management Made Simple">
-    <meta property="twitter:description" content="All your staff licenses & permits, in one place. Track, verify, and manage professional credentials with ease.">
+    <meta property="twitter:title" content="CertSync - Stop Chasing Expired Licences. Stay WorkSafe Compliant.">
+    <meta property="twitter:description" content="CertSync helps Australian organisations and workers track licences, certifications and permits—without spreadsheets, manual checks or audit panic.">
     <meta property="twitter:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
 
     <link rel="preload" href="/css/styles.min.css" as="style">
     <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/layout-system.css">
+    <link rel="stylesheet" href="/css/sections.css">
+    <link rel="stylesheet" href="/dist/certsync_website.css">
+    <style>
+        /* Fix for React hero - allow full scroll height */
+        #hero-root {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            margin-top: 70px;
+        }
+
+        /* Ensure body has white background (no black showing through) */
+        body {
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -38,191 +58,116 @@
             <div class="nav-links" id="navLinks">
                 <a href="/about.html">About</a>
                 <a href="/policies.html">Policies</a>
-                <a href="/pricing.html">Pricing</a>
                 <a href="/contact.html">Contact</a>
                 <a href="/login.html" class="login-btn">Login</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- React Hero Section -->
     <main id="main-content">
-    <section class="hero">
-        <div class="particles">
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-            <span class="particle"></span>
-        </div>
-        <div class="hero-content">
-            <h1>Welcome to CertSync</h1>
-            <p>All your staff licenses & permits, in one place</p>
-            <div class="cta-buttons">
-                <button class="cta-primary" disabled style="opacity: 0.7; cursor: not-allowed;">Get the app <span class="coming-soon-badge">Coming Soon</span></button>
-                <button class="cta-secondary" disabled style="opacity: 0.7; cursor: not-allowed;">See employer dashboard <span class="coming-soon-badge">Coming Soon</span></button>
-            </div>
-        </div>
-        <div class="wave-divider">
-            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-                <path d="M0,40 C150,80 350,0 600,30 C850,60 1050,10 1200,35 C1350,60 1400,40 1440,40 L1440,100 L0,100 Z" fill="white"></path>
-            </svg>
+    <div id="hero-root"></div>
+
+    <!-- Section 2: Value Framing -->
+    <section class="value-framing-section">
+        <div class="section-wrapper">
+            <h2>Save money. Reduce risk. Manage compliance exposure.</h2>
+            <p>Missed expiries create legal exposure. Manual tracking wastes admin hours. CertSync replaces spreadsheets and manual checks with automated credential tracking—before WorkSafe or your insurer asks.</p>
         </div>
     </section>
 
-    <!-- Two-Path Section -->
-    <section class="paths">
-        <div class="path">
-            <h2>For Employees</h2>
-            <div class="device-mockup">
-                <div class="phone-mockup floating"></div>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-number">01</span>
-                    <div class="step-content">
-                        <h3>Store & track</h3>
-                        <p>Add your licenses, tickets and permits once, access them on any device, and set expiry reminders so you always know where yours are.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <span class="step-number">02</span>
-                    <div class="step-content">
-                        <h3>Smart reminders</h3>
-                        <p>Customizable reminders keep you notified well before anything expires, with convenient renewal links. You'll never miss a beat with automatic updates the moment you renew your credentials.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <span class="step-number">03</span>
-                    <div class="step-content">
-                        <h3>Share what you choose</h3>
-                        <p>Share only what's needed. Employer needs access? Link your team in seconds. Everything is privacy controlled, and we're GDPR compliant.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="path">
-            <h2>For Employers</h2>
-            <figure class="monitor-figure" aria-labelledby="monitorTitle monitorDesc">
-                <!-- Responsive monitor SVG -->
-                <svg class="monitor" viewBox="0 0 1080 800" role="img">
-                    <title id="monitorTitle">Computer monitor frame</title>
-                    <desc id="monitorDesc">A stylized monitor with a 16:9 screen area for embedding a demo.</desc>
-
-                    <defs>
-                        <!-- Colors controlled by CSS variables -->
-                        <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="var(--screen-grad-top, #f4f6f8)"/>
-                            <stop offset="100%" stop-color="var(--screen-grad-bot, #e9edf2)"/>
-                        </linearGradient>
-
-                        <!-- Rounded screen mask (16:9 inside the bezel) -->
-                        <clipPath id="screenClip">
-                            <rect x="120" y="100" width="840" height="472.5" rx="24" ry="24" />
-                        </clipPath>
-
-                        <!-- Soft shadow -->
-                        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feDropShadow dx="0" dy="20" stdDeviation="20" flood-opacity="0.18" />
-                        </filter>
-                    </defs>
-
-                    <!-- Bezel -->
-                    <rect x="80" y="60" width="920" height="552.5" rx="32" ry="32"
-                          fill="var(--bezel, #3f4144)" filter="url(#softShadow)"/>
-
-                    <!-- Inner screen border (offset to create bezel thickness) -->
-                    <rect x="110" y="90" width="860" height="492.5" rx="26" ry="26"
-                          fill="var(--bezel-inner, #2f3033)"/>
-
-                    <!-- Screen content background (shows gradient if no content is slotted) -->
-                    <rect x="120" y="100" width="840" height="472.5" rx="24" ry="24"
-                          fill="url(#screenGrad)"/>
-
-                    <!-- Stand -->
-                    <rect x="498" y="622" width="84" height="90" rx="10" fill="var(--stand, #6a6b6d)"/>
-                    <rect x="340" y="724" width="400" height="28" rx="14" fill="var(--base, #6a6b6d)"/>
-
-                    <!-- SLOT: anything placed in .screen-slot gets clipped to the screen -->
-                    <foreignObject x="120" y="100" width="840" height="472.5" clip-path="url(#screenClip)">
-                        <div xmlns="http://www.w3.org/1999/xhtml" class="screen-slot">
-                            <!-- Placeholder (remove when you add real content) -->
-                            <div class="screen-placeholder">Platform Demo Coming Soon</div>
-                            <!-- Example usage (commented):
-                            <img src="./assets/images/demo.png" alt="CertSync demo"/>
-                            <video src="./assets/videos/demo.mp4" autoplay muted loop playsinline></video>
-                            <iframe src="https://your-demo.example" title="CertSync demo" loading="lazy"></iframe>
-                            -->
-                        </div>
-                    </foreignObject>
-                </svg>
-            </figure>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-number">01</span>
-                    <div class="step-content">
-                        <h3>Assign & verify in minutes</h3>
-                        <p>Set permit requirements by role or site with audit-friendly alerts. Start bulk assign to onboard teams, Staff upload proof documents, and managers approve.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <span class="step-number">02</span>
-                    <div class="step-content">
-                        <h3>See risk at a glance</h3>
-                        <p>A live dashboard monitors status, expiring and overdue items across your company. Filter by site, contractor or role, and bulk nudge in one click.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <span class="step-number">03</span>
-                    <div class="step-content">
-                        <h3>Auditor-ready reporting</h3>
-                        <p>Export CSV/PDF permit audit matrices and demonstrate real-time compliance. Complete audit trails with chain-of-custody tracking, every action fully timestamped and recorded with full transparency and accountability.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Section 3: What It Does -->
+    <section class="what-it-does-section">
+        <div class="section-wrapper">
+            <ul class="what-it-does-list">
+                <li class="what-it-does-item">
+                    <h3>One place for all credentials</h3>
+                    <p>Staff and organisation licences, certifications, permits</p>
+                </li>
+                <li class="what-it-does-item">
+                    <h3>Automatic tracking and alerts</h3>
+                    <p>Expiry reminders at 60, 30, 15, 7 days (or custom schedule)</p>
+                </li>
+                <li class="what-it-does-item">
+                    <h3>Real-time compliance visibility</h3>
+                    <p>See who has what across teams and sites, filter by expiring/overdue</p>
+                </li>
+                <li class="what-it-does-item">
+                    <h3>Built for organisations and individuals</h3>
+                    <p>Multi-employer workforces, personal credential vaults</p>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <h2>Why Choose CertSync?</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📋</div>
-                <h3>Complete Compliance</h3>
-                <p>Never miss a renewal or compliance deadline with automated tracking and smart notifications that keep your team ahead of requirements.</p>
+    <!-- Section 4: Proof (Compliance Precedents) -->
+    <section class="proof-section">
+        <div class="section-wrapper">
+            <p class="section-label">Compliance precedents (public regulator actions)</p>
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-study-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                            <line x1="9" y1="11" x2="15" y2="11"></line>
+                        </svg>
+                    </div>
+                    <h3>SWMS not provided before high-risk work commenced</h3>
+                    <p>A Victorian court imposed a <strong>$850,000 fine</strong> after finding that critical WHS documentation was not provided to workers before high-risk construction work began, culminating in a fatal workplace fall.</p>
+                    <p>The outcome demonstrates the regulatory exposure created when verification systems do not confirm that required documentation is issued and acknowledged before work starts.</p>
+                    <a href="https://www.worksafe.vic.gov.au/news/2020-08/construction-company-fined-850000-after-fatal-fall" target="_blank" rel="noopener noreferrer">Read the WorkSafe Victoria prosecution outcome →</a>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                            <line x1="7" y1="10" x2="17" y2="10"></line>
+                            <line x1="7" y1="14" x2="12" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Building work proceeded without licence verification</h3>
+                    <p>A Tasmanian court imposed a <strong>$40,000 penalty</strong> after finding that building and roof plumbing work was carried out without the required licences being held or verified before work commenced.</p>
+                    <p>The case illustrates the compliance risks that arise when licence verification relies on manual or fragmented processes rather than systematic, auditable controls established before work starts.</p>
+                    <a href="https://www.cbos.tas.gov.au/newsroom/public-warning-notices/court-outcome-%2440%2C000.00-penalty-for-unlicensed-building-and-roof-plumbing-contracting" target="_blank" rel="noopener noreferrer">Read the government court outcome →</a>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3>Work performed without registration verification</h3>
+                    <p>AHPRA successfully prosecuted an individual for misrepresenting professional registration status, with the court imposing <strong>$60,000 in fines</strong> plus costs.</p>
+                    <p>In regulated health services, current registration is a mandatory compliance gate. The case demonstrates the enforcement risk that arises when registration verification is not systematically confirmed before work commences.</p>
+                    <a href="https://www.ahpra.gov.au/News/2019-07-11-Former-nursing-director-successfully-prosecuted-by-AHPRA.aspx" target="_blank" rel="noopener noreferrer">Read the AHPRA prosecution notice →</a>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Bank-Level Security</h3>
-                <p>Your credentials are protected with enterprise-grade encryption and security measures that exceed industry standards.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Real-Time Analytics</h3>
-                <p>Comprehensive dashboards give you instant visibility into compliance status across your entire organization.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Quick Implementation</h3>
-                <p>Get your team up and running in minutes, not months. Our intuitive interface requires zero training.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💼</div>
-                <h3>Industry Specific</h3>
-                <p>Tailored solutions for construction, healthcare, logistics, and more. We understand your unique compliance needs.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌐</div>
-                <h3>Global Scale</h3>
-                <p>Whether you have 10 or 10,000 employees, CertSync scales effortlessly to meet your organization's needs.</p>
-            </div>
+            <p class="disclaimer">Examples are drawn from publicly available regulator and court outcomes and are provided for general compliance context only. They do not constitute legal advice.</p>
+        </div>
+    </section>
+
+    <!-- Section 5: Ease & Experience -->
+    <section class="ease-section">
+        <div class="section-wrapper">
+            <h2>Compliance without the headache</h2>
+            <p>Simple setup. Clean interface. No spreadsheets. No chasing people. Upload credentials once, set reminders, and let automated alerts handle the rest. Export audit-ready reports in seconds—CSV or PDF, filtered by team, site, or expiry date.</p>
+            <ul>
+                <li>Data hosted in Australia</li>
+                <li>Encryption in transit and at rest</li>
+                <li>Two-factor authentication available</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 6: Final CTA -->
+    <section class="final-cta-section">
+        <h2>Take control of compliance</h2>
+        <div class="cta-buttons">
+            <a href="/contact.html" class="btn btn-primary" style="text-decoration: none;">Request a demo</a>
+            <a href="/contact.html" class="btn btn-secondary" style="text-decoration: none;">Talk to us</a>
         </div>
     </section>
     </main>
@@ -231,36 +176,37 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3>CertSync</h3>
-                <p>The simple solution to credential and permit management</p>
+                <h3>Product</h3>
+                <a href="#employees">For Employees</a>
+                <a href="#employers">For Employers</a>
             </div>
             <div class="footer-column">
                 <h3>Company</h3>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
-                <a href="/contact.html" rel="noopener">Careers <span class="coming-soon-badge">Coming Soon</span></a>
-            </div>
-            <div class="footer-column">
-                <h3>Resources</h3>
                 <a href="/policies.html">Policies</a>
-                <a href="/pricing.html">Pricing</a>
-                <a href="/contact.html" rel="noopener">Support</a>
             </div>
             <div class="footer-column">
                 <h3>Legal</h3>
-                <a href="/policies.html#privacy-policy" rel="noopener">Privacy Policy</a>
-                <a href="/policies.html#terms-of-service" rel="noopener">Terms of Service</a>
-                <a href="/policies.html#cookie-policy" rel="noopener">Cookie Policy</a>
+                <a href="/policies.html#privacy-policy">Privacy Policy</a>
+                <a href="/policies.html#terms-of-service">Terms of Service</a>
+                <a href="/policies.html#cookie-policy">Cookie Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <p style="color: #999; margin: 0.5rem 0;"><a href="mailto:support@certsync.com.au" style="color: #2B7FE0; text-decoration: none;">support@certsync.com.au</a></p>
+                <a href="/contact.html">Contact Us</a>
             </div>
         </div>
-        <div class="app-badges">
-            <p style="color: #999; margin-bottom: 0.5rem;">Mobile apps coming soon</p>
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="color: #999; margin-bottom: 0.5rem;">Proudly built in Australia 🇦🇺</p>
+            <p style="color: #666;">© 2025 CertSync. All rights reserved.</p>
         </div>
-        <p>© 2025 CertSync. All rights reserved.</p>
     </footer>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/navigation.js" defer></script>
     <script src="/js/animations.js" defer></script>
+    <script type="module" src="/dist/hero.js"></script>
 </body>
 </html>

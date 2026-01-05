@@ -6,35 +6,62 @@
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing - CertSync</title>
-    <meta name="description" content="Simple, transparent pricing for CertSync credential management. Plans starting at $9/month for individuals. 14-day free trial, no credit card required.">
+    <meta name="description" content="Simple, transparent pricing for CertSync credential management. Individual plan $8/month. Enterprise plans from $99/month for up to 25 employees.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://certsync.com/pricing.html">
     <meta property="og:title" content="CertSync Pricing - Simple & Transparent Plans">
-    <meta property="og:description" content="Choose the plan that's right for your organization. Individual ($9), Team ($29), or Enterprise ($99). 14-day free trial available.">
+    <meta property="og:description" content="Individual ($8/month) or Enterprise plans starting at $99/month. Unlimited credentials and secure Australian hosting.">
     <meta property="og:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary">
     <meta property="twitter:url" content="https://certsync.com/pricing.html">
     <meta property="twitter:title" content="CertSync Pricing - Simple & Transparent Plans">
-    <meta property="twitter:description" content="Choose the plan that's right for your organization. Individual ($9), Team ($29), or Enterprise ($99). 14-day free trial available.">
+    <meta property="twitter:description" content="Individual ($8/month) or Enterprise plans starting at $99/month. Unlimited credentials and secure Australian hosting.">
     <meta property="twitter:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
 
     <link rel="preload" href="/css/styles.min.css" as="style">
     <link rel="stylesheet" href="/css/styles.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: 'hsl(210 79% 52%)',
+              'primary-foreground': 'hsl(0 0% 100%)',
+              muted: 'hsl(0 0% 96%)',
+              'muted-foreground': 'hsl(0 0% 45%)',
+              card: 'hsl(0 0% 100%)',
+              'card-foreground': 'hsl(0 0% 10%)',
+              background: 'hsl(0 0% 100%)',
+              foreground: 'hsl(0 0% 10%)',
+              border: 'hsl(0 0% 90%)',
+              ring: 'hsl(210 79% 52%)',
+            }
+          }
+        }
+      }
+    </script>
     <style>
-      /* Hidden by default; shown only if CSS didn't apply or JS fails */
-      .pricing-debug { display:none; background:#fff3cd; color:#7c5a00;
-        border:1px solid #ffe69c; padding:10px; margin:12px auto;
-        max-width:1120px; border-radius:8px; font-size:.95rem; }
-      .pricing-css-sentinel { position:absolute; left:-9999px; top:-9999px; }
+        /* Fix for React pricing - allow full width */
+        #pricing-root {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            margin-top: 70px;
+        }
+
+        /* Ensure body has white background */
+        body {
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
     </style>
-    <div id="pricing-debug" class="pricing-debug">
-      Pricing assets didn't load. Check Network for <code>/css/styles.min.css</code> and <code>/js/pricing.js</code>.
-    </div>
-    <div id="pricing-css-sentinel" class="pricing-css-sentinel"></div>
 </head>
 <body>
     <!-- Navigation -->
@@ -57,48 +84,9 @@
         </div>
     </nav>
 
-    <main class="pricing-page" id="main-content">
-        <section class="pricing-hero">
-            <h1>Choose Your Plan</h1>
-            <p class="sub">Simple, transparent pricing for individuals and teams. All prices in AUD.</p>
-
-            <!-- Billing Toggle -->
-            <div class="billing-toggle" role="group" aria-label="Billing period">
-                <button type="button" class="billing-btn" data-billing="monthly" aria-pressed="true">Monthly</button>
-                <button type="button" class="billing-btn" data-billing="annual" aria-pressed="false">Annual</button>
-            </div>
-        </section>
-
-        <!-- Tabs -->
-        <section class="pricing-tabs" role="tablist" aria-label="Plan type">
-            <button role="tab" aria-selected="true" aria-controls="tab-individual" id="tab-individual-btn" class="tab-btn">Individual</button>
-            <button role="tab" aria-selected="false" aria-controls="tab-enterprise" id="tab-enterprise-btn" class="tab-btn">Enterprise</button>
-        </section>
-
-        <!-- Individual -->
-        <section id="tab-individual" role="tabpanel" aria-labelledby="tab-individual-btn">
-            <div id="individual-grid" class="pricing-grid" aria-live="polite"></div>
-        </section>
-
-        <!-- Enterprise -->
-        <section id="tab-enterprise" role="tabpanel" aria-labelledby="tab-enterprise-btn" hidden>
-            <div class="enterprise-info">
-                <p><strong>All Enterprise plans include unlimited credentials & permits for every employee.</strong></p>
-            </div>
-            <div class="emp-size">
-                <label for="empRange">How many employees?</label>
-                <div class="emp-inline">
-                    <input type="range" id="empRange" min="1" max="600" value="12" />
-                    <output id="empCount" for="empRange">12</output>
-                </div>
-                <small class="hint">We'll recommend the most cost-effective tier.</small>
-            </div>
-            <div id="enterprise-grid" class="pricing-grid" aria-live="polite"></div>
-        </section>
-
-        <section class="notes">
-            <p><strong>Notes:</strong> Prices shown in AUD. Annual pricing shown where available. Tier 7 (500+) is custom pricing — contact us for an enterprise quote.</p>
-        </section>
+    <!-- React Pricing Section -->
+    <main id="main-content">
+        <div id="pricing-root"></div>
     </main>
 
     <!-- Footer -->
@@ -136,6 +124,6 @@
     <script src="/js/main.js" defer></script>
     <script src="/js/navigation.js" defer></script>
     <script src="/js/animations.js" defer></script>
-    <script src="/js/pricing.js" defer></script>
+    <script type="module" src="/dist/pricing.js"></script>
 </body>
 </html>
