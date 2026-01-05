@@ -5,7 +5,8 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   define: {
-    'process.env': {}
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    global: 'globalThis',
   },
   build: {
     lib: {
