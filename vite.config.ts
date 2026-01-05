@@ -9,26 +9,21 @@ export default defineConfig({
     global: 'globalThis',
   },
   build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/hero-new/main.tsx'),
-      name: 'HeroApp',
-      fileName: () => 'hero.js',
-      formats: ['iife'] // Self-executing bundle for HTML script tag
-    },
+    outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
-      external: [], // Bundle everything (restored)
+      input: path.resolve(__dirname, 'src/hero-new/main.tsx'),
       output: {
-        globals: {},
+        entryFileNames: 'hero.js',
+        assetFileNames: 'certsync_website.css',
+        format: 'iife',
         compact: true,
-        manualChunks: undefined,
       }
     },
-    outDir: 'dist',
-    // Production optimizations
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console.logs in production
+        drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug'],
         passes: 2
