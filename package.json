@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:hero && npm run build:pricing",
+    "build": "npm run build:hero",
     "build:hero": "vite build",
-    "build:pricing": "vite build --config vite.pricing.config.ts",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
