@@ -348,3 +348,118 @@
     margin-bottom: 2rem;
   }
 }
+
+/* ============================================================================
+   SUPPORT PAGE STYLES
+   Purpose: Support-specific styling for FAQ categories and contact card
+   ============================================================================ */
+
+/* Support Contact Card - Minimal Stripe-like design */
+.support-contact-card {
+  position: relative;
+  border-top: 1px solid #E2E8F0;
+}
+
+.support-email {
+  transition: color 0.2s ease;
+}
+
+.support-email:hover {
+  color: #1a5fb4 !important;
+}
+
+/* Flat CTA Buttons */
+.cta-button {
+  background: #2B7FE0;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #1a5fb4;
+}
+
+/* FAQ Grid Layout */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.faq-category-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  transition: border-color 0.2s ease;
+}
+
+.faq-category-card:hover {
+  border-color: #cbd5e0;
+}
+
+/* FAQ Category Headings */
+.faq-category-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #2B7FE0;
+}
+
+/* Help Category Cards - Text-first, left-aligned */
+.help-category-card {
+  text-align: left;
+  padding: 1.5rem;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.help-category-card:hover {
+  border-left-color: #2B7FE0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.help-category-icon {
+  color: #2B7FE0;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.help-category-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Responsive adjustments for support page */
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .faq-category-card {
+    padding: 1.5rem;
+  }
+
+  .support-email {
+    font-size: 1.25rem !important;
+  }
+
+  .help-category-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .support-email {
+    font-size: 1.125rem !important;
+  }
+
+  .faq-category-card {
+    padding: 1.25rem;
+  }
+}
