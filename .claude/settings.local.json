@@ -16,7 +16,15 @@
       "Bash(npx tailwindcss:*)",
       "Bash(./node_modules/.bin/tailwindcss:*)",
       "Bash(find:*)",
-      "Bash(npm run build:pricing:*)"
+      "Bash(npm run build:pricing:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(npm run preview:*)",
+      "Bash(timeout:*)",
+      "Bash(npm run build:hero:*)",
+      "Bash(npm run build:faq:*)",
+      "Bash(ping:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

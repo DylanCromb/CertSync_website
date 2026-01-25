@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:hero",
-    "build:hero": "vite build",
+    "build": "npm run build:hero && npm run build:faq",
+    "build:hero": "cross-env BUILD_TARGET=hero vite build",
+    "build:faq": "cross-env BUILD_TARGET=faq vite build",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,6 +43,7 @@
     "@types/styled-components": "^5.1.36",
     "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.23",
+    "cross-env": "^10.1.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "terser": "^5.44.1",

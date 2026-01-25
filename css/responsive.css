@@ -98,7 +98,23 @@
     
     .page-header {
         margin-top: 120px;
-        padding: 60px 5% 30px 5%;
+        padding: 80px 5% 50px 5%;
+        min-height: 240px;
+    }
+
+    /* Adjust credential card mockups for tablet */
+    .page-header::before {
+        width: 200px;
+        height: 130px;
+        right: 2%;
+        top: -30px;
+    }
+
+    .page-header::after {
+        width: 180px;
+        height: 120px;
+        left: 2%;
+        bottom: -20px;
     }
     
     .page-content {
@@ -176,12 +192,23 @@
         font-size: 0.85rem;
     }
     
-    .page-header h1 {
-        font-size: 1.8rem;
+    .page-header {
+        padding: 60px 5% 40px 5%;
+        min-height: 200px;
     }
-    
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
     .page-header p {
-        font-size: 1rem;
+        font-size: 1.0625rem;
+    }
+
+    /* Hide card mockups on small mobile for cleaner look */
+    .page-header::before,
+    .page-header::after {
+        opacity: 0.08; /* Very subtle */
     }
     
     .form-container {
