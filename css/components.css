@@ -179,6 +179,247 @@ nav {
     display: none !important;
 }
 
+/* Make login-btn work as a button element too */
+button.login-btn {
+    border: none;
+    font-family: inherit;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+/* Create Account Button */
+.create-account-btn {
+    padding: 0.7rem 1.5rem !important;
+    background: transparent !important;
+    color: #2B7FE0 !important;
+    border: 2px solid #2B7FE0;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700 !important;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.create-account-btn:hover {
+    background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: transparent;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 8px 30px rgba(43, 127, 224, 0.4) !important;
+}
+
+.create-account-btn::after {
+    display: none !important;
+}
+
+/* Login Modal Overlay */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.login-modal-overlay[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-modal-overlay[hidden] {
+    display: none;
+}
+
+/* Login Modal Container */
+.login-modal {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.login-modal-overlay[aria-hidden="false"] .login-modal {
+    transform: scale(1);
+}
+
+/* Modal Close Button */
+.login-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #f4f4f5;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #666;
+    transition: all 0.2s ease;
+}
+
+.login-modal-close:hover {
+    background: #e4e4e7;
+    color: #333;
+}
+
+.login-modal-close:focus {
+    outline: 2px solid #2B7FE0;
+    outline-offset: 2px;
+}
+
+/* Modal Title */
+.login-modal h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1A1A1A;
+    text-align: center;
+}
+
+.login-modal-subtitle {
+    margin: 0 0 2rem 0;
+    color: #666;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Modal Options */
+.login-modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-option {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: #f8f9fa;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+.login-option:hover {
+    background: white;
+    border-color: #2B7FE0;
+    box-shadow: 0 8px 25px rgba(43, 127, 224, 0.15);
+    transform: translateY(-2px);
+}
+
+.login-option:focus {
+    outline: 2px solid #2B7FE0;
+    outline-offset: 2px;
+}
+
+.login-option-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.login-option-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    fill: none;
+}
+
+.login-option-content h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A1A1A;
+}
+
+.login-option-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .login-modal-overlay,
+    .login-modal,
+    .login-option {
+        transition: none;
+    }
+}
+
+/* Mobile responsive modal */
+@media (max-width: 768px) {
+    .login-modal {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+
+    .login-modal h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-option {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .login-option-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .login-option-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .login-option-content h3 {
+        font-size: 1rem;
+    }
+
+    .login-option-content p {
+        font-size: 0.85rem;
+    }
+
+    /* Adjust nav buttons for mobile */
+    .nav-links .create-account-btn,
+    .nav-links button.login-btn {
+        margin: 0.5rem 0;
+        width: 80%;
+        text-align: center;
+    }
+}
+
 /* Footer */
 footer {
     background: #0A0A0A;

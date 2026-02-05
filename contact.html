@@ -41,7 +41,8 @@
                 <a href="/policies.html">Policies</a>
                 <a href="/support.html">Support</a>
                 <a href="/contact.html" class="active">Contact</a>
-                <a href="https://org.certsync.com.au/" class="login-btn">Login</a>
+                <button type="button" class="login-btn" id="loginModalTrigger" aria-haspopup="dialog" aria-expanded="false">Login</button>
+                <a href="https://org.certsync.com.au/#/register" class="create-account-btn">Create Account</a>
             </div>
         </div>
     </nav>
@@ -129,6 +130,46 @@
             <p style="color: #666;">© 2025 CertSync. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div class="login-modal-overlay" id="loginModalOverlay" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle" aria-hidden="true" hidden>
+        <div class="login-modal" role="document">
+            <button type="button" class="login-modal-close" id="loginModalClose" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 id="loginModalTitle">Choose Your Portal</h2>
+            <p class="login-modal-subtitle">Select the appropriate login for your account type</p>
+            <div class="login-modal-options">
+                <a href="https://org.certsync.com.au/" class="login-option login-option-admin">
+                    <div class="login-option-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <div class="login-option-content">
+                        <h3>Organisation Admin</h3>
+                        <p>Manage your organisation's credentials, permits, SWMS</p>
+                    </div>
+                </a>
+                <a href="https://manager.certsync.com.au/#/login" class="login-option login-option-manager">
+                    <div class="login-option-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="login-option-content">
+                        <h3>Manager</h3>
+                        <p>View your team's credentials, permits, SWMS</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="/js/main.js" defer></script>
     <script src="/js/navigation.js" defer></script>

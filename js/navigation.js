@@ -189,7 +189,8 @@ class Navigation {
                     transform: translateX(0);
                 }
                 
-                .nav-links a {
+                .nav-links a,
+                .nav-links button {
                     margin: 1rem 0;
                     font-size: 1.2rem;
                 }
@@ -274,10 +275,148 @@ class Navigation {
     }
 }
 
+// Login Modal class for handling the portal selection modal
+class LoginModal {
+    constructor() {
+        this.overlay = document.getElementById('loginModalOverlay');
+        this.modal = this.overlay?.querySelector('.login-modal');
+        this.closeBtn = document.getElementById('loginModalClose');
+        this.trigger = document.getElementById('loginModalTrigger');
+        this.previouslyFocusedElement = null;
+        this.focusableElements = [];
+
+        if (this.overlay && this.trigger) {
+            this.init();
+        }
+    }
+
+    init() {
+        // Open modal on trigger click
+        this.trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.open();
+        });
+
+        // Close on close button click
+        if (this.closeBtn) {
+            this.closeBtn.addEventListener('click', () => {
+                this.close();
+            });
+        }
+
+        // Close on overlay click (outside modal)
+        this.overlay.addEventListener('click', (e) => {
+            if (e.target === this.overlay) {
+                this.close();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen()) {
+                this.close();
+            }
+        });
+
+        // Handle tab key for focus trap
+        this.overlay.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab' && this.isOpen()) {
+                this.handleTabKey(e);
+            }
+        });
+    }
+
+    open() {
+        // Store the previously focused element
+        this.previouslyFocusedElement = document.activeElement;
+
+        // Show the modal
+        this.overlay.hidden = false;
+        this.overlay.setAttribute('aria-hidden', 'false');
+        this.trigger.setAttribute('aria-expanded', 'true');
+
+        // Lock body scroll
+        document.body.style.overflow = 'hidden';
+
+        // Update focusable elements list
+        this.updateFocusableElements();
+
+        // Focus the close button or first focusable element
+        setTimeout(() => {
+            if (this.closeBtn) {
+                this.closeBtn.focus();
+            } else if (this.focusableElements.length > 0) {
+                this.focusableElements[0].focus();
+            }
+        }, 100);
+    }
+
+    close() {
+        // Hide the modal
+        this.overlay.setAttribute('aria-hidden', 'true');
+        this.trigger.setAttribute('aria-expanded', 'false');
+
+        // Unlock body scroll
+        document.body.style.overflow = '';
+
+        // Return focus to the trigger element
+        if (this.previouslyFocusedElement) {
+            this.previouslyFocusedElement.focus();
+        }
+
+        // Hide after transition
+        setTimeout(() => {
+            this.overlay.hidden = true;
+        }, 300);
+    }
+
+    isOpen() {
+        return this.overlay.getAttribute('aria-hidden') === 'false';
+    }
+
+    updateFocusableElements() {
+        const focusableSelectors = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+        ].join(', ');
+
+        this.focusableElements = Array.from(
+            this.modal.querySelectorAll(focusableSelectors)
+        ).filter(el => el.offsetParent !== null);
+    }
+
+    handleTabKey(e) {
+        if (this.focusableElements.length === 0) return;
+
+        const firstElement = this.focusableElements[0];
+        const lastElement = this.focusableElements[this.focusableElements.length - 1];
+
+        if (e.shiftKey) {
+            // Shift + Tab
+            if (document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            }
+        } else {
+            // Tab
+            if (document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
+    }
+}
+
 // Initialize navigation when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new Navigation();
+    new LoginModal();
 });
 
 // Export for use in other files
 window.Navigation = Navigation;
+window.LoginModal = LoginModal;
