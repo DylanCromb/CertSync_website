@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:hero && npm run build:faq",
+    "build": "npm run build:hero && npm run build:faq && npm run build:pricing",
     "build:hero": "cross-env BUILD_TARGET=hero vite build",
     "build:faq": "cross-env BUILD_TARGET=faq vite build",
+    "build:pricing": "vite build --config vite.pricing.config.ts",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

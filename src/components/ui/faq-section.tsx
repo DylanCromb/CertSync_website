@@ -35,7 +35,7 @@ export default function FAQSection() {
     },
     {
       q: "Can I import existing employee data?",
-      a: "Yes. CertSync supports bulk employee invites via CSV upload. Contact our support team at support@certsync.com.au for a CSV template and assistance with team setup.",
+      a: "Yes. CertSync supports bulk employee invites via CSV upload. Contact our support team at Dev@kaylos.com.au for a CSV template and assistance with team setup.",
       category: "Getting Started",
     },
     {
@@ -61,7 +61,7 @@ export default function FAQSection() {
     },
     {
       q: "Can I delete my account?",
-      a: 'Yes. You can delete your account under "Account Settings." Warning: This action cannot be undone. Please reach out to support@certsync.com.au before deleting if you have any questions.',
+      a: 'Yes. You can delete your account under "Account Settings." Warning: This action cannot be undone. Please reach out to Dev@kaylos.com.au before deleting if you have any questions.',
       category: "Account Management",
     },
     // Compliance & Tracking (4)
@@ -104,12 +104,12 @@ export default function FAQSection() {
     // Troubleshooting (3)
     {
       q: "I didn't receive my verification email. What should I do?",
-      a: 'Check your spam/junk folder. If it\'s not there, click "Resend verification email" on the login page. If the issue persists, contact support@certsync.com.au.',
+      a: 'Check your spam/junk folder. If it\'s not there, click "Resend verification email" on the login page. If the issue persists, contact Dev@kaylos.com.au.',
       category: "Troubleshooting",
     },
     {
       q: "Why can't I upload a credential document?",
-      a: "Ensure the file is in a supported format (PDF, JPG, PNG) and under 10MB. Clear your browser cache and try again. If the problem continues, email us the file at support@certsync.com.au.",
+      a: "Ensure the file is in a supported format (PDF, JPG, PNG) and under 10MB. Clear your browser cache and try again. If the problem continues, email us the file at Dev@kaylos.com.au.",
       category: "Troubleshooting",
     },
     {

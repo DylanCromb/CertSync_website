@@ -4,8 +4,8 @@
 //
 // RECIPIENT CONFIG — update these to change where form submissions go:
 const RECIPIENTS = {
-  'custom-plan': ['dev@kaylos.com.au'],
-  'contact': ['support@certsync.com.au'],
+  'custom-plan': ['Dev@kaylos.com.au'],
+  'contact': ['Dev@kaylos.com.au'],
   // To add CC: just append more emails to the array above
 };
 

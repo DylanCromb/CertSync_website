@@ -95,3 +95,8 @@ jspm_packages/
 # Temporary files
 tmp/
 temp/
+
+.claude/worktrees/
+tmpclaude-*-cwd
+nul
+*original_support.html
