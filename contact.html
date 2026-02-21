@@ -10,20 +10,168 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://certsync.com/contact.html">
+    <meta property="og:url" content="https://www.certsync.com.au/contact.html">
     <meta property="og:title" content="Contact CertSync - Get in Touch">
-    <meta property="og:description" content="Get in touch with CertSync for support, sales inquiries, or partnership opportunities. Available Monday-Friday 9AM-6PM EST.">
-    <meta property="og:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
+    <meta property="og:description" content="Get in touch with CertSync for support, sales inquiries, or partnership opportunities. We respond within 24 hours during business days.">
+    <meta property="og:image" content="https://www.certsync.com.au/assets/images/CertSync_Icon.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:url" content="https://certsync.com/contact.html">
+    <meta property="twitter:url" content="https://www.certsync.com.au/contact.html">
     <meta property="twitter:title" content="Contact CertSync - Get in Touch">
-    <meta property="twitter:description" content="Get in touch with CertSync for support, sales inquiries, or partnership opportunities. Available Monday-Friday 9AM-6PM EST.">
-    <meta property="twitter:image" content="https://certsync.com/assets/images/CertSync_Icon.png">
+    <meta property="twitter:description" content="Get in touch with CertSync for support, sales inquiries, or partnership opportunities. We respond within 24 hours during business days.">
+    <meta property="twitter:image" content="https://www.certsync.com.au/assets/images/CertSync_Icon.png">
 
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="preload" href="/css/styles.min.css" as="style">
     <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/layout-system.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .contact-info-card .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card .info-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: #fff;
+        }
+
+        .contact-info-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-card p {
+            color: #4A5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .contact-info-card a {
+            color: #2B7FE0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form styles */
+        .field-error-msg {
+            display: none;
+            color: #d32f2f;
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+        }
+
+        .form-group.has-error input,
+        .form-group.has-error textarea,
+        .form-group.has-error select {
+            border-color: #d32f2f;
+        }
+
+        .form-group.has-error .field-error-msg {
+            display: block;
+        }
+
+        .form-error-banner {
+            display: none;
+            background: #fdecea;
+            border: 1px solid #f5c6c6;
+            color: #b71c1c;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .form-error-banner a {
+            color: #b71c1c;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .form-success .success-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%);
+            margin-bottom: 1.25rem;
+        }
+
+        .form-success .success-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: #fff;
+        }
+
+        .form-success h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1A1A1A;
+        }
+
+        .form-success p {
+            color: #4A5568;
+            line-height: 1.6;
+        }
+
+        .req { color: #d32f2f; margin-left: 2px; }
+        .opt { font-weight: 400; color: #888; font-size: 0.9em; }
+
+        .form-privacy-note {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 1rem 0 1.25rem;
+            line-height: 1.5;
+        }
+
+        .form-privacy-note a {
+            color: #2B7FE0;
+            text-decoration: underline;
+        }
+
+        #contactSubmitBtn {
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
+            border-radius: 50px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -54,53 +202,180 @@
         <p>We'd love to hear from you</p>
     </section>
 
-    <!-- Main Content -->
-    <section class="page-content">
-        <!-- Primary Contact Card -->
-        <div class="card" style="max-width: 600px; margin: 0 auto 3rem; text-align: center;">
-            <h2>Contact Us</h2>
-            <p style="margin: 1.5rem 0; font-size: 1.1rem; color: #4A5568;">For all inquiries, support requests, and general questions, please email us at:</p>
-            <a href="mailto:support@certsync.com.au" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; box-shadow: 0 8px 25px rgba(43, 127, 224, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                support@certsync.com.au
-            </a>
-            <p style="margin-top: 1.5rem; color: #666; font-size: 0.95rem;">We typically respond within 24 hours during business days</p>
-        </div>
+    <!-- Contact Form + Info -->
+    <section class="section section-white">
+        <div class="section-wrapper">
+            <div class="contact-grid">
 
-        <!-- FAQ Section -->
-        <div class="card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-number">Q</span>
-                    <div class="step-content">
-                        <h3>How quickly do you respond to inquiries?</h3>
-                        <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                <!-- Left: Contact Form -->
+                <div class="card">
+                    <h2 style="margin-bottom: 1.5rem;">Send Us a Message</h2>
+
+                    <!-- Success state -->
+                    <div class="form-success" id="contactSuccess" role="status" aria-live="polite">
+                        <div class="success-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h2>Message sent!</h2>
+                        <p>Thank you for reaching out. We'll get back to you within 24 hours during business days.</p>
+                    </div>
+
+                    <!--
+                        NOTIFICATION CONFIG
+                        Primary recipient: support@certsync.com.au
+                        To change recipients: edit RECIPIENTS in api/submit-form.js
+                    -->
+                    <form
+                        name="contact"
+                        method="POST"
+                        action="/api/submit-form"
+                        novalidate
+                        id="contactForm"
+                    >
+                        <p style="display:none" aria-hidden="true">
+                            <label>Do not fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                        </p>
+                        <input type="hidden" name="form-name" value="contact">
+
+
+                        <div class="form-group" id="fg-c-name">
+                            <label for="c-name">
+                                Your name <span class="req" aria-label="required">*</span>
+                            </label>
+                            <input type="text" id="c-name" name="name" required autocomplete="name" placeholder="e.g. Jane Smith">
+                            <span class="field-error-msg" id="err-c-name" role="alert">Please enter your name.</span>
+                        </div>
+
+                        <div class="form-group" id="fg-c-email">
+                            <label for="c-email">
+                                Email <span class="req" aria-label="required">*</span>
+                            </label>
+                            <input type="email" id="c-email" name="email" required autocomplete="email" placeholder="e.g. jane@example.com.au">
+                            <span class="field-error-msg" id="err-c-email" role="alert">Please enter a valid email address.</span>
+                        </div>
+
+                        <div class="form-group" id="fg-c-subject">
+                            <label for="c-subject">
+                                Subject <span class="req" aria-label="required">*</span>
+                            </label>
+                            <select id="c-subject" name="subject" required>
+                                <option value="">Select a topic…</option>
+                                <option value="General enquiry">General enquiry</option>
+                                <option value="Sales / pricing">Sales / pricing</option>
+                                <option value="Technical support">Technical support</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Demo request">Demo request</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="field-error-msg" id="err-c-subject" role="alert">Please select a subject.</span>
+                        </div>
+
+                        <div class="form-group" id="fg-c-message">
+                            <label for="c-message">
+                                Message <span class="req" aria-label="required">*</span>
+                            </label>
+                            <textarea id="c-message" name="message" rows="5" required placeholder="How can we help?"></textarea>
+                            <span class="field-error-msg" id="err-c-message" role="alert">Please enter a message.</span>
+                        </div>
+
+                        <div class="form-error-banner" id="contactError" role="alert">
+                            Something went wrong. Please try again or email us directly at
+                            <a href="mailto:support@certsync.com.au">support@certsync.com.au</a>.
+                        </div>
+
+                        <p class="form-privacy-note">
+                            By submitting this form, you agree to our
+                            <a href="/policies.html#privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                        </p>
+
+                        <button type="submit" class="btn btn-primary btn-full-width" id="contactSubmitBtn">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Contact Info Cards -->
+                <div>
+                    <div class="card contact-info-card" style="margin-bottom: 1.5rem;">
+                        <div class="info-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:support@certsync.com.au">support@certsync.com.au</a></p>
+                        <p style="margin-top: 0.5rem;">We typically respond within 24 hours during business days.</p>
+                    </div>
+
+                    <div class="card contact-info-card" style="margin-bottom: 1.5rem;">
+                        <div class="info-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Business Hours</h3>
+                        <p>Monday – Friday<br>9:00 AM – 5:00 PM AEST</p>
+                    </div>
+
+                    <div class="card contact-info-card">
+                        <div class="info-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Melbourne, Australia</p>
                     </div>
                 </div>
-                <div class="step">
-                    <span class="step-number">Q</span>
-                    <div class="step-content">
-                        <h3>Do you offer custom solutions for large organizations?</h3>
-                        <p>Yes, we work with enterprise clients to create custom solutions that meet their specific needs. Contact us to discuss your requirements.</p>
+
+            </div><!-- /.contact-grid -->
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-grey">
+        <div class="section-wrapper">
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-number">Q</span>
+                        <div class="step-content">
+                            <h3>How quickly do you respond to enquiries?</h3>
+                            <p>We typically respond to all enquiries within 24 hours during business days.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="step">
-                    <span class="step-number">Q</span>
-                    <div class="step-content">
-                        <h3>Is there a demo available?</h3>
-                        <p>Absolutely! We offer personalized demos to show you how CertSync can work for your organization. Email us to schedule a demo.</p>
+                    <div class="step">
+                        <span class="step-number">Q</span>
+                        <div class="step-content">
+                            <h3>Do you offer custom solutions for large organisations?</h3>
+                            <p>Yes! We work with enterprise clients to create tailored plans. <a href="/custom-plan.html" style="color: #2B7FE0;">Request a custom plan</a> for organisations with 50+ employees.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="step">
-                    <span class="step-number">Q</span>
-                    <div class="step-content">
-                        <h3>What industries do you serve?</h3>
-                        <p>We serve a wide range of industries including construction, healthcare, logistics, manufacturing, and many others. Our platform is designed to be flexible for any industry.</p>
+                    <div class="step">
+                        <span class="step-number">Q</span>
+                        <div class="step-content">
+                            <h3>Is there a demo available?</h3>
+                            <p>Absolutely! We offer personalised demos to show you how CertSync can work for your organisation. Select "Demo request" in the form above or email us to schedule one.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">Q</span>
+                        <div class="step-content">
+                            <h3>What industries do you serve?</h3>
+                            <p>We serve a wide range of industries including construction, mining, healthcare, logistics, labour hire, and facility management. Our platform is designed to be flexible for any industry with compliance requirements.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     </main>
 
     <!-- Footer -->
@@ -174,5 +449,130 @@
     <script src="/js/main.js" defer></script>
     <script src="/js/navigation.js" defer></script>
     <script src="/js/animations.js" defer></script>
+
+    <!-- Contact form handling -->
+    <script>
+    (function () {
+        'use strict';
+
+        var API_ENDPOINT = '/api/submit-form';
+        var EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form      = document.getElementById('contactForm');
+            var successEl = document.getElementById('contactSuccess');
+            var errorEl   = document.getElementById('contactError');
+            var submitBtn = document.getElementById('contactSubmitBtn');
+
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                clearErrors();
+
+                if (!validateForm()) return;
+
+                submitBtn.textContent = 'Sending\u2026';
+                submitBtn.disabled = true;
+                errorEl.style.display = 'none';
+
+                var data = {};
+                new FormData(form).forEach(function (val, key) { data[key] = val; });
+
+                fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        form.style.display = 'none';
+                        successEl.style.display = 'block';
+                        successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        throw new Error('Response not OK: ' + response.status);
+                    }
+                })
+                .catch(function () {
+                    errorEl.style.display = 'block';
+                    errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    submitBtn.textContent = 'Send Message';
+                    submitBtn.disabled = false;
+                });
+            });
+
+            function validateForm() {
+                var valid = true;
+                var firstError = null;
+
+                var name = document.getElementById('c-name');
+                if (!name.value.trim()) {
+                    setError('fg-c-name', 'err-c-name');
+                    if (!firstError) firstError = name;
+                    valid = false;
+                }
+
+                var email = document.getElementById('c-email');
+                if (!email.value.trim() || !EMAIL_REGEX.test(email.value.trim())) {
+                    setError('fg-c-email', 'err-c-email');
+                    if (!firstError) firstError = email;
+                    valid = false;
+                }
+
+                var subject = document.getElementById('c-subject');
+                if (!subject.value) {
+                    setError('fg-c-subject', 'err-c-subject');
+                    if (!firstError) firstError = subject;
+                    valid = false;
+                }
+
+                var message = document.getElementById('c-message');
+                if (!message.value.trim()) {
+                    setError('fg-c-message', 'err-c-message');
+                    if (!firstError) firstError = message;
+                    valid = false;
+                }
+
+                if (firstError) {
+                    firstError.focus();
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                return valid;
+            }
+
+            function setError(groupId, errId) {
+                var group = document.getElementById(groupId);
+                var msg   = document.getElementById(errId);
+                if (group) group.classList.add('has-error');
+                if (msg)   msg.style.display = 'block';
+            }
+
+            function clearErrors() {
+                var groups = form.querySelectorAll('.form-group.has-error');
+                for (var i = 0; i < groups.length; i++) {
+                    groups[i].classList.remove('has-error');
+                }
+                var msgs = form.querySelectorAll('.field-error-msg');
+                for (var j = 0; j < msgs.length; j++) {
+                    msgs[j].style.display = 'none';
+                }
+                var inputs = form.querySelectorAll('input, textarea, select');
+                for (var k = 0; k < inputs.length; k++) {
+                    (function (input) {
+                        input.addEventListener('input', function () {
+                            var fg = input.closest('.form-group');
+                            if (fg) fg.classList.remove('has-error');
+                        }, { once: true });
+                        input.addEventListener('change', function () {
+                            var fg = input.closest('.form-group');
+                            if (fg) fg.classList.remove('has-error');
+                        }, { once: true });
+                    })(inputs[k]);
+                }
+            }
+        });
+    })();
+    </script>
 </body>
 </html>

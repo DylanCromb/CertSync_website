@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Custom Plan - CertSync</title>
+    <meta name="description" content="Request a custom CertSync plan for organisations with more than 50 employees or tailored requirements. Submit your details and we'll be in touch.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.certsync.com.au/custom-plan.html">
+    <meta property="og:title" content="Request a Custom Plan - CertSync">
+    <meta property="og:description" content="For organisations needing more than 50 employees or tailored requirements. Submit the form and we'll contact you.">
+    <meta property="og:image" content="https://www.certsync.com.au/assets/images/CertSync_Icon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://www.certsync.com.au/custom-plan.html">
+    <meta property="twitter:title" content="Request a Custom Plan - CertSync">
+    <meta property="twitter:description" content="For organisations needing more than 50 employees or tailored requirements. Submit the form and we'll contact you.">
+    <meta property="twitter:image" content="https://www.certsync.com.au/assets/images/CertSync_Icon.png">
+
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="/css/styles.min.css" as="style">
+    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/layout-system.css">
+
+    <style>
+        /* ── Page-specific form styles ── */
+
+        /* Widen the form card slightly to accommodate all fields comfortably */
+        .custom-plan-card {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* Inline field error messages */
+        .field-error-msg {
+            display: none;
+            color: #d32f2f;
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+        }
+
+        /* Red border on invalid fields */
+        .form-group.has-error input,
+        .form-group.has-error textarea {
+            border-color: #d32f2f;
+        }
+
+        .form-group.has-error .field-error-msg {
+            display: block;
+        }
+
+        /* Error banner above submit button */
+        .form-error-banner {
+            display: none;
+            background: #fdecea;
+            border: 1px solid #f5c6c6;
+            color: #b71c1c;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .form-error-banner a {
+            color: #b71c1c;
+        }
+
+        /* Privacy note line */
+        .form-privacy-note {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 1rem 0 1.25rem;
+            line-height: 1.5;
+        }
+
+        .form-privacy-note a {
+            color: #2B7FE0;
+            text-decoration: underline;
+        }
+
+        /* Success card */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .form-success .success-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%);
+            margin-bottom: 1.25rem;
+        }
+
+        .form-success .success-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: #fff;
+        }
+
+        .form-success h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1A1A1A;
+        }
+
+        .form-success p {
+            color: #4A5568;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Required asterisk colour */
+        .req {
+            color: #d32f2f;
+            margin-left: 2px;
+        }
+
+        /* Optional label suffix */
+        .opt {
+            font-weight: 400;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* Slightly larger submit button */
+        #submitBtn {
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/index.html" class="logo-link">
+                    <img src="/assets/images/CertSync_Icon.png" alt="CertSync Logo" class="logo-img" width="64" height="64" decoding="async" fetchpriority="high">
+                    <span class="logo-text">CertSync</span>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="/index.html">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/policies.html">Policies</a>
+                <a href="/support.html">Support</a>
+                <a href="/contact.html">Contact</a>
+                <button type="button" class="login-btn" id="loginModalTrigger" aria-haspopup="dialog" aria-expanded="false">Login</button>
+                <a href="https://org.certsync.com.au/#/register" class="create-account-btn">Create Account</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Request a Custom Plan</h1>
+            <p>For organisations needing more than 50 employees or tailored requirements</p>
+        </section>
+
+        <!-- Form Section -->
+        <section class="section section-white">
+            <div class="section-wrapper">
+                <div class="card custom-plan-card">
+
+                    <!-- Intro copy -->
+                    <p style="color: #4A5568; margin-bottom: 2rem; line-height: 1.6;">
+                        Submit the form below and our team will contact you within 1–2 business days to discuss a plan that fits your organisation's needs.
+                    </p>
+
+                    <!-- ── SUCCESS STATE (hidden until submission succeeds) ── -->
+                    <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+                        <div class="success-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h2>Request received!</h2>
+                        <p>Thank you — we've received your request and will be in touch within 1–2 business days.</p>
+                    </div>
+
+                    <!-- ── FORM ── -->
+                    <!--
+                        NOTIFICATION CONFIG
+                        Primary recipient: dev@kaylos.com.au
+                        To change recipients: edit RECIPIENTS in api/submit-form.js
+                    -->
+                    <form
+                        name="custom-plan"
+                        method="POST"
+                        action="/api/submit-form"
+                        novalidate
+                        id="customPlanForm"
+                    >
+                        <!-- Honeypot: hidden from real users, catches basic bots -->
+                        <p style="display:none" aria-hidden="true">
+                            <label>Do not fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                        </p>
+                        <input type="hidden" name="form-name" value="custom-plan">
+
+                        <!-- Organisation / Company name (required) -->
+                        <div class="form-group" id="fg-organisation">
+                            <label for="organisation">
+                                Organisation / Company name <span class="req" aria-label="required">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="organisation"
+                                name="organisation"
+                                required
+                                autocomplete="organization"
+                                placeholder="e.g. Acme Construction Pty Ltd"
+                            >
+                            <span class="field-error-msg" id="err-organisation" role="alert">Please enter your organisation name.</span>
+                        </div>
+
+                        <!-- Contact name (required) -->
+                        <div class="form-group" id="fg-contact-name">
+                            <label for="contact-name">
+                                Contact name <span class="req" aria-label="required">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="contact-name"
+                                name="contact_name"
+                                required
+                                autocomplete="name"
+                                placeholder="e.g. Jane Smith"
+                            >
+                            <span class="field-error-msg" id="err-contact-name" role="alert">Please enter your name.</span>
+                        </div>
+
+                        <!-- Email (required) -->
+                        <div class="form-group" id="fg-email">
+                            <label for="email">
+                                Email <span class="req" aria-label="required">*</span>
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                autocomplete="email"
+                                placeholder="e.g. jane@example.com.au"
+                            >
+                            <span class="field-error-msg" id="err-email" role="alert">Please enter a valid email address.</span>
+                        </div>
+
+                        <!-- Phone (required) -->
+                        <div class="form-group" id="fg-phone">
+                            <label for="phone">
+                                Phone number <span class="req" aria-label="required">*</span>
+                            </label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                required
+                                autocomplete="tel"
+                                placeholder="e.g. 0400 000 000"
+                            >
+                            <span class="field-error-msg" id="err-phone" role="alert">Please enter your phone number.</span>
+                        </div>
+
+                        <!-- Number of employees (required, min 51) -->
+                        <div class="form-group" id="fg-employees">
+                            <label for="employees">
+                                Number of employees (51+) <span class="req" aria-label="required">*</span>
+                            </label>
+                            <input
+                                type="number"
+                                id="employees"
+                                name="employees"
+                                required
+                                min="51"
+                                step="1"
+                                inputmode="numeric"
+                                placeholder="e.g. 75"
+                            >
+                            <span class="field-error-msg" id="err-employees" role="alert">Please enter 51 or more.</span>
+                        </div>
+
+                        <!-- Notes / requirements (optional) -->
+                        <div class="form-group" id="fg-notes">
+                            <label for="notes">
+                                Notes / requirements <span class="opt">(optional)</span>
+                            </label>
+                            <textarea
+                                id="notes"
+                                name="notes"
+                                rows="4"
+                                placeholder="Tell us about your specific needs, industries, or integrations required…"
+                            ></textarea>
+                        </div>
+
+                        <!-- Error banner (shown on fetch failure) -->
+                        <div class="form-error-banner" id="formError" role="alert">
+                            Something went wrong submitting the form. Please try again, or email us directly at
+                            <a href="mailto:dev@kaylos.com.au">dev@kaylos.com.au</a>.
+                        </div>
+
+                        <!-- Privacy consent note -->
+                        <p class="form-privacy-note">
+                            By submitting this form, you agree to our
+                            <a href="/policies.html#privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                        </p>
+
+                        <button type="submit" class="btn btn-primary btn-full-width" id="submitBtn">
+                            Submit Request
+                        </button>
+                    </form>
+
+                </div><!-- /.card -->
+            </div><!-- /.section-wrapper -->
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>CertSync</h3>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/policies.html">Policies</a>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="/policies.html#privacy-policy">Privacy Policy</a>
+                <a href="/policies.html#terms-of-service">Terms of Service</a>
+                <a href="/policies.html#cookie-policy">Cookie Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="/support.html">Help Center</a>
+                <p style="color: #999; margin: 0.5rem 0;"><a href="mailto:support@certsync.com.au" style="color: #2B7FE0; text-decoration: none;">support@certsync.com.au</a></p>
+                <a href="/contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="color: #999; margin-bottom: 0.5rem;">Proudly built in Australia 🇦🇺</p>
+            <p style="color: #666;">© 2025 CertSync. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="login-modal-overlay" id="loginModalOverlay" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle" aria-hidden="true" hidden>
+        <div class="login-modal" role="document">
+            <button type="button" class="login-modal-close" id="loginModalClose" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 id="loginModalTitle">Choose Your Portal</h2>
+            <p class="login-modal-subtitle">Select the appropriate login for your account type</p>
+            <div class="login-modal-options">
+                <a href="https://org.certsync.com.au/" class="login-option login-option-admin">
+                    <div class="login-option-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <div class="login-option-content">
+                        <h3>Organisation Admin</h3>
+                        <p>Manage your organisation's credentials, permits, SWMS</p>
+                    </div>
+                </a>
+                <a href="https://manager.certsync.com.au/#/login" class="login-option login-option-manager">
+                    <div class="login-option-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="login-option-content">
+                        <h3>Manager</h3>
+                        <p>View your team's credentials, permits, SWMS</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/navigation.js" defer></script>
+    <script src="/js/animations.js" defer></script>
+
+    <!-- Page-specific form handling -->
+    <script>
+    (function () {
+        'use strict';
+
+        // ── CONFIG ──────────────────────────────────────────────────────────────
+        // Primary recipient: dev@kaylos.com.au
+        // To change recipients: edit RECIPIENTS in api/submit-form.js
+        // ────────────────────────────────────────────────────────────────────────
+
+        var API_ENDPOINT = '/api/submit-form';
+        var EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form       = document.getElementById('customPlanForm');
+            var successEl  = document.getElementById('formSuccess');
+            var errorEl    = document.getElementById('formError');
+            var submitBtn  = document.getElementById('submitBtn');
+
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Clear previous error state
+                clearErrors();
+
+                if (!validateForm()) return;
+
+                // Loading state
+                submitBtn.textContent = 'Sending\u2026';
+                submitBtn.disabled = true;
+                errorEl.style.display = 'none';
+
+                var data = {};
+                new FormData(form).forEach(function (val, key) { data[key] = val; });
+
+                fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        // Show success, hide form
+                        form.style.display = 'none';
+                        successEl.style.display = 'block';
+                        successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        throw new Error('Response not OK: ' + response.status);
+                    }
+                })
+                .catch(function () {
+                    errorEl.style.display = 'block';
+                    errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    submitBtn.textContent = 'Submit Request';
+                    submitBtn.disabled = false;
+                });
+            });
+
+            function validateForm() {
+                var valid = true;
+                var firstError = null;
+
+                // Organisation name
+                var org = document.getElementById('organisation');
+                if (!org.value.trim()) {
+                    setError('fg-organisation', 'err-organisation');
+                    if (!firstError) firstError = org;
+                    valid = false;
+                }
+
+                // Contact name
+                var contactName = document.getElementById('contact-name');
+                if (!contactName.value.trim()) {
+                    setError('fg-contact-name', 'err-contact-name');
+                    if (!firstError) firstError = contactName;
+                    valid = false;
+                }
+
+                // Email
+                var email = document.getElementById('email');
+                if (!email.value.trim() || !EMAIL_REGEX.test(email.value.trim())) {
+                    setError('fg-email', 'err-email');
+                    if (!firstError) firstError = email;
+                    valid = false;
+                }
+
+                // Phone
+                var phone = document.getElementById('phone');
+                if (!phone.value.trim()) {
+                    setError('fg-phone', 'err-phone');
+                    if (!firstError) firstError = phone;
+                    valid = false;
+                }
+
+                // Employees (required, must be >= 51)
+                var employees = document.getElementById('employees');
+                var empVal = parseInt(employees.value, 10);
+                if (!employees.value.trim() || isNaN(empVal) || empVal < 51) {
+                    setError('fg-employees', 'err-employees');
+                    if (!firstError) firstError = employees;
+                    valid = false;
+                }
+
+                if (firstError) {
+                    firstError.focus();
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                return valid;
+            }
+
+            function setError(groupId, errId) {
+                var group = document.getElementById(groupId);
+                var msg   = document.getElementById(errId);
+                if (group) group.classList.add('has-error');
+                if (msg)   msg.style.display = 'block';
+            }
+
+            function clearErrors() {
+                var groups = form.querySelectorAll('.form-group.has-error');
+                for (var i = 0; i < groups.length; i++) {
+                    groups[i].classList.remove('has-error');
+                }
+                var msgs = form.querySelectorAll('.field-error-msg');
+                for (var j = 0; j < msgs.length; j++) {
+                    msgs[j].style.display = 'none';
+                }
+                // Also clear on input so the red border disappears as soon as the user fixes the field
+                var inputs = form.querySelectorAll('input, textarea');
+                for (var k = 0; k < inputs.length; k++) {
+                    (function (input) {
+                        input.addEventListener('input', function () {
+                            var fg = input.closest('.form-group');
+                            if (fg) fg.classList.remove('has-error');
+                        }, { once: true });
+                    })(inputs[k]);
+                }
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
