@@ -9,18 +9,18 @@ import { SCENE_BREAKPOINTS } from './config/cardPositions';
 
 const HeroScrollSpace = styled.section`
   position: relative;
-  min-height: 250vh;
+  min-height: 180vh;
   width: 100%;
   margin-top: 70px;
   background: transparent; /* gradient is in sticky viewport */
 
   @media (max-width: 768px) {
-    min-height: 220vh;
+    min-height: 160vh;
     margin-top: 60px;
   }
 
   @media (max-width: 480px) {
-    min-height: 220vh;
+    min-height: 160vh;
     margin-top: 60px;
   }
 `;
