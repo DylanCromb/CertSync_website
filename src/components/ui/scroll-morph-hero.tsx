@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { CredentialCard } from "../../hero/components/CredentialCard";
 import { CredentialCardBack } from "../../hero/components/CredentialCardBack";
 import type { CredentialType } from "../../hero/types/animation.types";
@@ -26,8 +26,19 @@ export default function ScrollMorphHero() {
     // Tagline fades in as you scroll
     const taglineOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
 
+    // CTAs appear after cards are organised (70%+ progress)
+    const ctaOpacity = useTransform(scrollYProgress, [0.70, 0.85], [0, 1]);
+    const ctaY = useTransform(scrollYProgress, [0.70, 0.85], [20, 0]);
+
+    const handleScrollDown = () => {
+        const valueSection = document.querySelector('.value-framing-section');
+        if (valueSection) {
+            valueSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
-        <div ref={containerRef} style={{ height: '450vh', position: 'relative', width: '100%' }}>
+        <div ref={containerRef} style={{ height: '180vh', position: 'relative', width: '100%' }}>
             <div style={{
                 position: 'sticky',
                 top: 0,
@@ -66,6 +77,61 @@ export default function ScrollMorphHero() {
                     }}>
                         Compliance. Organised.
                     </motion.p>
+
+                    {/* CTAs appear once cards are organised */}
+                    <motion.div style={{
+                        display: 'flex',
+                        gap: '1rem',
+                        justifyContent: 'center',
+                        flexWrap: 'wrap' as const,
+                        marginTop: '2rem',
+                        opacity: ctaOpacity,
+                        y: ctaY,
+                        pointerEvents: 'auto'
+                    }}>
+                        <a
+                            href="https://www.certsync.com.au/contact.html"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: '0.875rem 2rem',
+                                borderRadius: '999px',
+                                border: 'none',
+                                background: 'rgba(255,255,255,0.92)',
+                                color: '#0d1c3b',
+                                fontWeight: 600,
+                                fontSize: '0.875rem',
+                                letterSpacing: '0.8px',
+                                textTransform: 'uppercase' as const,
+                                boxShadow: '0 20px 40px rgba(7,18,46,0.3)',
+                                cursor: 'pointer',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            Book a Demo
+                        </a>
+                        <button
+                            onClick={handleScrollDown}
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: '0.875rem 2rem',
+                                borderRadius: '999px',
+                                border: '2px solid rgba(255,255,255,0.7)',
+                                background: 'transparent',
+                                color: '#FFFFFF',
+                                fontWeight: 600,
+                                fontSize: '0.875rem',
+                                letterSpacing: '0.8px',
+                                textTransform: 'uppercase' as const,
+                                cursor: 'pointer',
+                            }}
+                        >
+                            See how it works
+                        </button>
+                    </motion.div>
                 </div>
 
 
