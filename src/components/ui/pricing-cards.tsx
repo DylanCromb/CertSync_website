@@ -11,36 +11,36 @@ import { Button } from "@/components/ui/button";
 
 function Pricing() {
   return (
-    <div className="w-full py-20 lg:py-40">
-      <div className="container mx-auto">
-        <div className="flex text-center justify-center items-center gap-4 flex-col">
-          <Badge>Pricing</Badge>
-          <div className="flex gap-2 flex-col">
-            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">
+    <div className="w-full bg-gradient-to-b from-slate-50 to-white py-20 lg:py-28">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-center gap-4 text-center flex-col">
+          <Badge className="px-3 py-1">Plans</Badge>
+          <div className="flex gap-3 flex-col">
+            <h2 className="text-3xl md:text-5xl tracking-tight max-w-2xl text-center font-semibold text-slate-900">
               Simple, Transparent Pricing
             </h2>
-            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
-              Choose the plan that fits your needs. All plans include secure Australian hosting and 24/7 support.
+            <p className="text-lg leading-relaxed tracking-normal text-muted-foreground max-w-2xl text-center">
+              Built for individuals, teams, and enterprise operations that need clear compliance visibility.
             </p>
           </div>
-          <div className="grid pt-20 text-left grid-cols-1 lg:grid-cols-4 w-full gap-8">
+          <div className="grid pt-12 text-left grid-cols-1 lg:grid-cols-4 w-full gap-6">
             {/* Individual Plan */}
-            <Card className="w-full rounded-md">
+            <Card className="w-full rounded-xl border-slate-200 shadow-sm">
               <CardHeader>
                 <CardTitle>
-                  <span className="flex flex-row gap-4 items-center font-normal">
+                  <span className="flex flex-row gap-4 items-center font-medium">
                     Individual
                   </span>
                 </CardTitle>
                 <CardDescription>
-                  Perfect for individuals managing their own credentials and permits.
+                  For contractors and workers managing personal credentials.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col gap-8 justify-start">
-                  <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl">$8</span>
-                    <span className="text-sm text-muted-foreground">
+                <div className="flex flex-col gap-7 justify-start">
+                  <p className="flex flex-row items-end gap-2 text-xl">
+                    <span className="text-4xl font-semibold text-slate-900">$8</span>
+                    <span className="text-sm text-muted-foreground pb-1">
                       / month
                     </span>
                   </p>
@@ -73,7 +73,7 @@ function Pricing() {
                       </div>
                     </div>
                   </div>
-                  <Button variant="outline" className="gap-4" asChild>
+                  <Button variant="outline" className="gap-2 border-slate-300 hover:border-slate-400" asChild>
                     <a href="/contact.html">Get Started <MoveRight className="w-4 h-4" /></a>
                   </Button>
                 </div>
@@ -81,22 +81,22 @@ function Pricing() {
             </Card>
 
             {/* Starter Plan */}
-            <Card className="w-full rounded-md">
+            <Card className="w-full rounded-xl border-slate-200 shadow-sm">
               <CardHeader>
                 <CardTitle>
-                  <span className="flex flex-row gap-4 items-center font-normal">
+                  <span className="flex flex-row gap-4 items-center font-medium">
                     Starter
                   </span>
                 </CardTitle>
                 <CardDescription>
-                  For small businesses managing credentials for their team.
+                  For small businesses with a growing frontline team.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col gap-8 justify-start">
-                  <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl">$99</span>
-                    <span className="text-sm text-muted-foreground">
+                <div className="flex flex-col gap-7 justify-start">
+                  <p className="flex flex-row items-end gap-2 text-xl">
+                    <span className="text-4xl font-semibold text-slate-900">$99</span>
+                    <span className="text-sm text-muted-foreground pb-1">
                       / month
                     </span>
                   </p>
@@ -130,7 +130,7 @@ function Pricing() {
                       </div>
                     </div>
                   </div>
-                  <Button variant="outline" className="gap-4" asChild>
+                  <Button variant="outline" className="gap-2 border-slate-300 hover:border-slate-400" asChild>
                     <a href="/contact.html">Get Started <MoveRight className="w-4 h-4" /></a>
                   </Button>
                 </div>
@@ -138,25 +138,26 @@ function Pricing() {
             </Card>
 
             {/* Basic Plan - Highlighted */}
-            <Card className="w-full shadow-2xl rounded-md border-2 border-primary">
+            <Card className="w-full rounded-xl border-2 border-primary/60 shadow-lg relative overflow-hidden">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-indigo-500" />
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <CardTitle>
-                    <span className="flex flex-row gap-4 items-center font-normal">
+                    <span className="flex flex-row gap-4 items-center font-semibold">
                       Basic
                     </span>
                   </CardTitle>
-                  <Badge>Popular</Badge>
+                  <Badge>Most Selected</Badge>
                 </div>
                 <CardDescription>
-                  For growing businesses with larger teams and advanced needs.
+                  For teams that need stronger reporting and oversight.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col gap-8 justify-start">
-                  <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl">$199</span>
-                    <span className="text-sm text-muted-foreground">
+                <div className="flex flex-col gap-7 justify-start">
+                  <p className="flex flex-row items-end gap-2 text-xl">
+                    <span className="text-4xl font-semibold text-slate-900">$199</span>
+                    <span className="text-sm text-muted-foreground pb-1">
                       / month
                     </span>
                   </p>
@@ -190,7 +191,7 @@ function Pricing() {
                       </div>
                     </div>
                   </div>
-                  <Button className="gap-4" asChild>
+                  <Button className="gap-2" asChild>
                     <a href="/contact.html">Get Started <MoveRight className="w-4 h-4" /></a>
                   </Button>
                 </div>
@@ -198,21 +199,21 @@ function Pricing() {
             </Card>
 
             {/* Enterprise/Custom Plan */}
-            <Card className="w-full rounded-md">
+            <Card className="w-full rounded-xl border-slate-200 shadow-sm">
               <CardHeader>
                 <CardTitle>
-                  <span className="flex flex-row gap-4 items-center font-normal">
+                  <span className="flex flex-row gap-4 items-center font-medium">
                     Enterprise
                   </span>
                 </CardTitle>
                 <CardDescription>
-                  Custom solutions for large organisations with specific requirements.
+                  For multi-site or complex compliance environments.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col gap-8 justify-start">
-                  <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl">Custom</span>
+                <div className="flex flex-col gap-7 justify-start">
+                  <p className="flex flex-row items-end gap-2 text-xl">
+                    <span className="text-4xl font-semibold text-slate-900">Custom</span>
                   </p>
                   <p className="text-sm text-muted-foreground">75+ employees</p>
                   <div className="flex flex-col gap-4 justify-start">
@@ -244,7 +245,7 @@ function Pricing() {
                       </div>
                     </div>
                   </div>
-                  <Button variant="outline" className="gap-4" asChild>
+                  <Button variant="outline" className="gap-2 border-slate-300 hover:border-slate-400" asChild>
                     <a href="/contact.html">Contact Sales <PhoneCall className="w-4 h-4" /></a>
                   </Button>
                 </div>

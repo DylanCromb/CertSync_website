@@ -24,7 +24,98 @@
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="preload" href="/css/styles.min.css" as="style">
     <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/professional-ui.css">
     <link rel="stylesheet" href="/css/layout-system.css">
+    <style>
+        .support-lead-card {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .support-lead-card .support-email {
+            display: inline-block;
+            margin: 1.25rem 0;
+            font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+            font-weight: 700;
+            color: #2B7FE0;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        .support-lead-card .support-email:hover {
+            text-decoration: underline;
+        }
+
+        .support-kpis {
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #e5eaf1;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .support-kpis p {
+            margin: 0.2rem 0;
+        }
+
+        .support-kpis strong {
+            color: #1f2937;
+        }
+
+        .support-topic-title,
+        .support-guide-title,
+        .support-resource-title {
+            text-align: center;
+            margin-bottom: 2.25rem;
+            font-size: clamp(1.55rem, 2.7vw, 2rem);
+            color: #1A1A1A;
+        }
+
+        .support-guide-cta {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .support-guide-note {
+            margin-bottom: 0.65rem;
+            font-size: 1.05rem;
+        }
+
+        .support-resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+            max-width: 940px;
+            margin: 0 auto;
+        }
+
+        .support-resource-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .support-resource-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #2B7FE0 0%, #5b63c6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .support-resource-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: #fff;
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -60,16 +151,18 @@
         <!-- Quick Contact Card Section -->
         <section class="section section-white">
             <div class="section-wrapper">
-                <div class="card support-contact-card" style="max-width: 700px; margin: 0 auto; text-align: center;">
-                    <h2 style="margin-bottom: 1rem;">Get in Touch</h2>
-                    <p style="margin: 1rem 0; color: #4A5568;">For all inquiries, support requests, and general questions, please email us at:</p>
-                    <a href="mailto:support@certsync.com.au" class="support-email" style="display: inline-block; font-size: 1.5rem; font-weight: 700; color: #2B7FE0; text-decoration: none; margin: 1.5rem 0;">
+                <div class="card support-contact-card support-lead-card">
+                    <h2>Get in Touch</h2>
+                    <p class="professional-muted">For all inquiries, support requests, and general questions, please email us at:</p>
+                    <a href="mailto:support@certsync.com.au" class="support-email">
                         support@certsync.com.au
                     </a>
-                    <p style="margin: 1.5rem 0 0.5rem; color: #666;"><strong>Response Time:</strong> We respond to all inquiries within 24 business hours</p>
-                    <p style="margin: 0.5rem 0 2rem; color: #666;"><strong>Business Hours:</strong> Monday–Friday, 9:00 AM – 5:00 PM AEST</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="/contact.html" class="cta-button" style="display: inline-block; padding: 0.875rem 2rem; background: #2B7FE0; color: white; text-decoration: none; border-radius: 50px; font-weight: 600;">
+                    <div class="support-kpis">
+                        <p><strong>Response Time:</strong> We respond to all inquiries within 24 business hours</p>
+                        <p><strong>Business Hours:</strong> Monday-Friday, 9:00 AM - 5:00 PM AEST</p>
+                    </div>
+                    <div>
+                        <a href="/contact.html" class="cta-button">
                             Send us a message
                         </a>
                     </div>
@@ -80,9 +173,9 @@
         <!-- Help Categories Section -->
         <section class="section section-grey">
             <div class="section-wrapper">
-                <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem; color: #1A1A1A;">Browse Help Topics</h2>
+                <h2 class="support-topic-title">Browse Help Topics</h2>
                 <div class="feature-grid">
-                    <a href="#getting-started" class="feature-card help-category-card" style="text-decoration: none; color: inherit;">
+                    <a href="#getting-started" class="feature-card help-category-card" style="text-decoration: none; color: inherit; display: block;">
                         <div class="help-category-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -91,7 +184,7 @@
                         <h3>Getting Started</h3>
                         <p>New to CertSync? Learn how to set up your account, add credentials, and invite your team.</p>
                     </a>
-                    <a href="#faq-root" class="feature-card help-category-card" style="text-decoration: none; color: inherit;">
+                    <a href="#faq-root" class="feature-card help-category-card" style="text-decoration: none; color: inherit; display: block;">
                         <div class="help-category-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -101,7 +194,7 @@
                         <h3>Account Management</h3>
                         <p>Manage your profile, billing settings, user permissions, and organisation details.</p>
                     </a>
-                    <a href="#faq-root" class="feature-card help-category-card" style="text-decoration: none; color: inherit;">
+                    <a href="#faq-root" class="feature-card help-category-card" style="text-decoration: none; color: inherit; display: block;">
                         <div class="help-category-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -121,7 +214,7 @@
         <!-- Getting Started Guide Section -->
         <section class="section section-grey" id="getting-started">
             <div class="section-wrapper">
-                <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem; color: #1A1A1A;">Get Started in Four Easy Steps</h2>
+                <h2 class="support-guide-title">Get Started in Four Easy Steps</h2>
                 <div class="card">
                     <div class="steps">
                         <div class="step">
@@ -153,9 +246,9 @@
                             </div>
                         </div>
                     </div>
-                    <div style="text-align: center; margin-top: 2.5rem;">
-                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: #4A5568;">Ready to get started?</p>
-                        <a href="/contact.html" class="cta-button" style="display: inline-block; padding: 0.875rem 2rem; background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="support-guide-cta">
+                        <p class="professional-muted support-guide-note">Ready to get started?</p>
+                        <a href="/contact.html" class="cta-button">
                             Contact us for a demo
                         </a>
                     </div>
@@ -166,10 +259,10 @@
         <!-- Additional Resources Section -->
         <section class="section section-white">
             <div class="section-wrapper">
-                <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem; color: #1A1A1A;">Additional Resources</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
-                    <a href="/policies.html" class="case-study-card" style="text-decoration: none; color: inherit; display: flex; align-items: flex-start; gap: 1.25rem;">
-                        <div style="flex-shrink: 0; width: 48px; height: 48px; background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <h2 class="support-resource-title">Additional Resources</h2>
+                <div class="support-resource-grid">
+                    <a href="/policies.html" class="case-study-card support-resource-link">
+                        <div class="support-resource-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
@@ -179,18 +272,18 @@
                             </svg>
                         </div>
                         <div style="flex: 1;">
-                            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: #1A1A1A;">Privacy Policy & Terms</h3>
+                            <h3 style="margin: 0 0 0.45rem 0; font-size: 1.15rem; color: #1A1A1A;">Privacy Policy & Terms</h3>
                             <p style="margin: 0; color: #4A5568; line-height: 1.6;">Review our privacy policy, terms of service, and data handling practices. <span style="color: #2B7FE0;">→</span></p>
                         </div>
                     </a>
-                    <a href="/contact.html" class="case-study-card" style="text-decoration: none; color: inherit; display: flex; align-items: flex-start; gap: 1.25rem;">
-                        <div style="flex-shrink: 0; width: 48px; height: 48px; background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <a href="/contact.html" class="case-study-card support-resource-link">
+                        <div class="support-resource-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                             </svg>
                         </div>
                         <div style="flex: 1;">
-                            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: #1A1A1A;">Contact Support</h3>
+                            <h3 style="margin: 0 0 0.45rem 0; font-size: 1.15rem; color: #1A1A1A;">Contact Support</h3>
                             <p style="margin: 0; color: #4A5568; line-height: 1.6;">Can't find what you're looking for? Send us a message and we'll respond within 24 hours. <span style="color: #2B7FE0;">→</span></p>
                         </div>
                     </a>
@@ -221,9 +314,9 @@
                 <a href="/contact.html">Contact Us</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <p style="color: #999; margin-bottom: 0.5rem;">Proudly built in Australia 🇦🇺</p>
-            <p style="color: #666;">© 2025 CertSync. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p class="footer-note">Proudly built in Australia 🇦🇺</p>
+            <p class="footer-copy">© 2026 CertSync. All rights reserved.</p>
         </div>
     </footer>
 

@@ -25,7 +25,28 @@
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="preload" href="/css/styles.min.css" as="style">
     <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/professional-ui.css">
     <link rel="stylesheet" href="/css/layout-system.css">
+    <style>
+        .policies-stack {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .policies-lead {
+            margin: 1.25rem 0;
+        }
+
+        .policies-contact-block {
+            margin-top: 1.25rem;
+        }
+
+        .policies-contact-note {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -63,10 +84,10 @@
             <h2>Privacy Policy</h2>
             <p><strong>Last updated:</strong> January 2026</p>
 
-            <p style="margin: 1.5rem 0;">CertSync ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and disclose personal information when you use the CertSync mobile application and website (the "Platform").</p>
+            <p class="policies-lead">CertSync ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and disclose personal information when you use the CertSync mobile application and website (the "Platform").</p>
 
-            <div style="margin: 2rem 0; padding: 1.25rem 1.5rem; background: #f4f4f5; border: 1px solid #d4d4d8; border-radius: 4px;">
-                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;"><strong>Important Notice:</strong> CertSync is a credential storage and reminder tool. We do not verify credentials, provide compliance advice, or guarantee regulatory outcomes.</p>
+            <div class="policy-callout">
+                <p><strong>Important Notice:</strong> CertSync is a credential storage and reminder tool. We do not verify credentials, provide compliance advice, or guarantee regulatory outcomes.</p>
             </div>
 
             <h3>Information We Collect</h3>
@@ -132,11 +153,11 @@
                 <li>Export your data</li>
                 <li>Opt out of non-essential communications</li>
             </ul>
-            <p>Requests can be made by contacting <a href="mailto:support@certsync.com.au" style="color: #2B7FE0;">support@certsync.com.au</a></p>
+            <p>Requests can be made by contacting <a href="mailto:support@certsync.com.au" class="policy-link">support@certsync.com.au</a></p>
 
             <h3>Contact</h3>
             <p>For privacy-related enquiries, contact:</p>
-            <p><a href="mailto:support@certsync.com.au" style="color: #2B7FE0; font-weight: 600;">support@certsync.com.au</a></p>
+            <p><a href="mailto:support@certsync.com.au" class="policy-link">support@certsync.com.au</a></p>
             </div>
         </div>
     </section>
@@ -148,7 +169,7 @@
             <h2>Terms of Service</h2>
             <p><strong>Last updated:</strong> January 2026</p>
 
-            <p style="margin: 1.5rem 0;">By accessing or using CertSync, you agree to these Terms of Service ("Terms"). If you do not agree, do not use the Platform.</p>
+            <p class="policies-lead">By accessing or using CertSync, you agree to these Terms of Service ("Terms"). If you do not agree, do not use the Platform.</p>
 
             <h3>Description of Service</h3>
             <p>CertSync provides a digital platform for storing, managing, and sharing credentials, licences, certifications, and permits, and for sending optional reminders based on user-defined settings.</p>
@@ -287,8 +308,8 @@
             <h2>Security Overview</h2>
             <p><strong>Last updated:</strong> January 2026</p>
 
-            <div style="margin: 2rem 0; padding: 1.25rem 1.5rem; background: #f4f4f5; border: 1px solid #d4d4d8; border-radius: 4px;">
-                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;"><strong>Security Notice:</strong> CertSync applies security controls appropriate for a growing workforce-management platform. While we implement industry-standard security measures, no system is completely secure.</p>
+            <div class="policy-callout">
+                <p><strong>Security Notice:</strong> CertSync applies security controls appropriate for a growing workforce-management platform. While we implement industry-standard security measures, no system is completely secure.</p>
             </div>
 
             <h3>Security Measures</h3>
@@ -313,7 +334,7 @@
 
             <h3>Security Reporting</h3>
             <p>Security issues should be reported to:</p>
-            <p><a href="mailto:support@certsync.com.au" style="color: #2B7FE0; font-weight: 600;">support@certsync.com.au</a></p>
+            <p><a href="mailto:support@certsync.com.au" class="policy-link">support@certsync.com.au</a></p>
             </div>
         </div>
     </section>
@@ -339,7 +360,7 @@
             <p>Cookies can be controlled through your browser settings. Disabling cookies may affect functionality.</p>
 
             <h3>Contact</h3>
-            <p><a href="mailto:support@certsync.com.au" style="color: #2B7FE0; font-weight: 600;">support@certsync.com.au</a></p>
+            <p><a href="mailto:support@certsync.com.au" class="policy-link">support@certsync.com.au</a></p>
             </div>
         </div>
     </section>
@@ -350,11 +371,11 @@
             <div class="card">
             <h2>Contact Us</h2>
             <p>For questions about privacy, security, data processing, or these policies, please contact:</p>
-            <div class="contact-info" style="margin-top: 1.5rem;">
+            <div class="contact-info policies-contact-block">
                 <div class="contact-item">
                     <h3>Support & Enquiries</h3>
-                    <p><a href="mailto:support@certsync.com.au" style="color: #2B7FE0; text-decoration: none; font-weight: 600;">support@certsync.com.au</a></p>
-                    <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">Privacy, security, data access, account deletion, general enquiries</p>
+                    <p><a href="mailto:support@certsync.com.au" class="policy-link">support@certsync.com.au</a></p>
+                    <p class="policies-contact-note">Privacy, security, data access, account deletion, general enquiries</p>
                 </div>
             </div>
             </div>
@@ -384,9 +405,9 @@
                 <a href="/contact.html">Contact Us</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <p style="color: #999; margin-bottom: 0.5rem;">Proudly built in Australia 🇦🇺</p>
-            <p style="color: #666;">© 2025 CertSync. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p class="footer-note">Proudly built in Australia 🇦🇺</p>
+            <p class="footer-copy">© 2026 CertSync. All rights reserved.</p>
         </div>
     </footer>
 

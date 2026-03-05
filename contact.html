@@ -25,13 +25,14 @@
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="preload" href="/css/styles.min.css" as="style">
     <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/professional-ui.css">
     <link rel="stylesheet" href="/css/layout-system.css">
 
     <style>
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2rem;
             align-items: start;
         }
 
@@ -43,7 +44,16 @@
 
         .contact-info-card {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 1.75rem 1.25rem;
+        }
+
+        .contact-info-stack {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-main-card {
+            padding: 2rem;
         }
 
         .contact-info-card .info-icon {
@@ -169,7 +179,12 @@
         #contactSubmitBtn {
             padding: 1rem 2rem;
             font-size: 1.05rem;
-            border-radius: 50px;
+            border-radius: 12px;
+        }
+
+        .contact-faq-card {
+            max-width: 860px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -208,7 +223,7 @@
             <div class="contact-grid">
 
                 <!-- Left: Contact Form -->
-                <div class="card">
+                <div class="card contact-main-card">
                     <h2 style="margin-bottom: 1.5rem;">Send Us a Message</h2>
 
                     <!-- Success state -->
@@ -297,8 +312,8 @@
                 </div>
 
                 <!-- Right: Contact Info Cards -->
-                <div>
-                    <div class="card contact-info-card" style="margin-bottom: 1.5rem;">
+                <div class="contact-info-stack">
+                    <div class="card contact-info-card">
                         <div class="info-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -310,7 +325,7 @@
                         <p style="margin-top: 0.5rem;">We typically respond within 24 hours during business days.</p>
                     </div>
 
-                    <div class="card contact-info-card" style="margin-bottom: 1.5rem;">
+                    <div class="card contact-info-card">
                         <div class="info-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
@@ -340,7 +355,7 @@
     <!-- FAQ Section -->
     <section class="section section-grey">
         <div class="section-wrapper">
-            <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <div class="card contact-faq-card">
                 <h2 style="margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
                 <div class="steps">
                     <div class="step">
@@ -400,9 +415,9 @@
                 <a href="/contact.html">Contact Us</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <p style="color: #999; margin-bottom: 0.5rem;">Proudly built in Australia 🇦🇺</p>
-            <p style="color: #666;">© 2025 CertSync. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p class="footer-note">Proudly built in Australia 🇦🇺</p>
+            <p class="footer-copy">© 2026 CertSync. All rights reserved.</p>
         </div>
     </footer>
 

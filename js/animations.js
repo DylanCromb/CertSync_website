@@ -61,8 +61,7 @@ class AnimationController {
             '.path',
             '.step',
             '.pricing-card',
-            '.contact-item',
-            '.card'
+            '.contact-item'
         ];
         
         selectors.forEach(selector => {
@@ -75,8 +74,8 @@ class AnimationController {
     
     prepareElementForAnimation(element) {
         element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        element.style.transform = 'translateY(12px)';
+        element.style.transition = 'opacity 260ms ease, transform 260ms ease';
         this.animatedElements.add(element);
     }
     
@@ -196,11 +195,12 @@ class AnimationController {
     
     setupHoverEffects() {
         // Enhanced hover effects for cards
-        if (this.prefersReducedMotion) {
+        const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        if (this.prefersReducedMotion || !canHover) {
             return;
         }
 
-        document.querySelectorAll('.feature-card, .pricing-card, .card').forEach(card => {
+        document.querySelectorAll('.feature-card, .pricing-card').forEach(card => {
             card.classList.add('interactive-card');
             card.addEventListener('mouseenter', () => {
                 this.enhanceCardHover(card);
@@ -212,7 +212,7 @@ class AnimationController {
         });
         
         // Button hover effects
-        document.querySelectorAll('.btn, .cta-primary, .cta-secondary').forEach(button => {
+        document.querySelectorAll('.btn, .cta-primary, .cta-secondary, .cta-button').forEach(button => {
             button.classList.add('interactive-button');
             button.addEventListener('mouseenter', () => {
                 this.enhanceButtonHover(button);
