@@ -11,9 +11,9 @@ const CREDENTIAL_TYPES: CredentialType[] = [
     'forklift', 'heights', 'high-risk-work',
 ];
 
-const CARD_WIDTH = 180;  // Reduced from 240
-const CARD_HEIGHT = 114; // Reduced from 152
-const CARD_SCALE = 0.75; // 75% of original size
+const CARD_WIDTH = 180;
+const CARD_HEIGHT = 114;
+const CARD_SCALE = 0.75;
 
 export default function ScrollMorphHero() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -23,11 +23,16 @@ export default function ScrollMorphHero() {
         offset: ["start start", "end start"]
     });
 
-    // Tagline fades in as you scroll
-    const taglineOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
+    // Tagline fades in while cards are still organising
+    const taglineOpacity = useTransform(scrollYProgress, [0.20, 0.40], [0, 1]);
+
+    // Button appears just as cards finish settling
+    const ctaOpacity = useTransform(scrollYProgress, [0.50, 0.65], [0, 1]);
+    const ctaY = useTransform(scrollYProgress, [0.50, 0.65], [16, 0]);
 
     return (
-        <div ref={containerRef} style={{ height: '450vh', position: 'relative', width: '100%' }}>
+        // 200vh: animation completes by ~55%, leaving ~90vh of settled hero before next section
+        <div ref={containerRef} style={{ height: '200vh', position: 'relative', width: '100%' }}>
             <div style={{
                 position: 'sticky',
                 top: 0,
@@ -36,7 +41,7 @@ export default function ScrollMorphHero() {
                 background: 'linear-gradient(to bottom right, #050b1e, #0d1c3b, #1a2a4e)',
                 overflow: 'hidden'
             }}>
-                {/* Title - ALWAYS VISIBLE */}
+                {/* Title — always visible */}
                 <div style={{
                     position: 'absolute',
                     top: '50%',
@@ -56,20 +61,51 @@ export default function ScrollMorphHero() {
                         CertSync
                     </h1>
 
-                    {/* Tagline fades in below title */}
+                    {/* Tagline fades in mid-animation */}
                     <motion.p style={{
                         fontSize: '1.5rem',
                         color: '#FFFFFF',
                         fontWeight: '600',
                         textShadow: '0 2px 10px rgba(0,0,0,0.5)',
-                        opacity: taglineOpacity
+                        marginBottom: '2rem',
+                        marginTop: 0,
+                        opacity: taglineOpacity,
                     }}>
                         Compliance. Organised.
                     </motion.p>
+
+                    {/* Book a Demo — appears as cards lock into place */}
+                    <motion.div style={{
+                        opacity: ctaOpacity,
+                        y: ctaY,
+                        pointerEvents: 'auto',
+                    }}>
+                        <a
+                            href="https://www.certsync.com.au/contact.html"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: '0.875rem 2rem',
+                                borderRadius: '999px',
+                                border: 'none',
+                                background: 'rgba(255,255,255,0.92)',
+                                color: '#0d1c3b',
+                                fontWeight: 600,
+                                fontSize: '0.875rem',
+                                letterSpacing: '0.8px',
+                                textTransform: 'uppercase' as const,
+                                boxShadow: '0 20px 40px rgba(7,18,46,0.3)',
+                                cursor: 'pointer',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            Book a Demo
+                        </a>
+                    </motion.div>
                 </div>
 
-
-                {/* Cards Container */}
+                {/* Cards — organise from circle into grid by 55% scroll */}
                 <div style={{
                     position: 'absolute',
                     top: '50%',
@@ -79,38 +115,32 @@ export default function ScrollMorphHero() {
                     transform: 'translate(-50%, -50%)'
                 }}>
                     {CREDENTIAL_TYPES.map((type, i) => {
-                        // Circle position - centered around viewport center
                         const angle = (i / 12) * 360;
                         const rad = (angle * Math.PI) / 180;
-                        const circleRadius = 420; // Slightly smaller circle
+                        const circleRadius = 420;
                         const circleX = Math.cos(rad) * circleRadius - (CARD_WIDTH / 2);
                         const circleY = Math.sin(rad) * circleRadius - (CARD_HEIGHT / 2);
 
-                        // Grid position - frame layout around title (closer spacing)
                         let gridX = 0;
                         let gridY = 0;
 
                         if (i < 2) {
-                            // Top: 2 cards
                             gridX = (i - 0.5) * 220 - (CARD_WIDTH / 2);
                             gridY = -260 - (CARD_HEIGHT / 2);
                         } else if (i >= 2 && i < 6) {
-                            // Left side: 4 cards vertically
                             gridX = -420 - (CARD_WIDTH / 2);
                             gridY = ((i - 2) - 1.5) * 140 - (CARD_HEIGHT / 2);
                         } else if (i >= 6 && i < 10) {
-                            // Right side: 4 cards vertically
                             gridX = 420 - (CARD_WIDTH / 2);
                             gridY = ((i - 6) - 1.5) * 140 - (CARD_HEIGHT / 2);
                         } else {
-                            // Bottom: 2 cards
                             gridX = ((i - 10) - 0.5) * 220 - (CARD_WIDTH / 2);
                             gridY = 260 - (CARD_HEIGHT / 2);
                         }
 
-                        // Animation completes by 70% of scroll, stays organized for final 30%
-                        const x = useTransform(scrollYProgress, [0, 0.7], [circleX, gridX]);
-                        const y = useTransform(scrollYProgress, [0, 0.7], [circleY, gridY]);
+                        // Cards finish organising at 55% — locked in for remaining 45%
+                        const x = useTransform(scrollYProgress, [0, 0.55], [circleX, gridX]);
+                        const y = useTransform(scrollYProgress, [0, 0.55], [circleY, gridY]);
 
                         return (
                             <motion.div

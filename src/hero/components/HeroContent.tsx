@@ -114,8 +114,19 @@ const ScrollIndicator = styled(motion.div)`
   }
 `;
 
-const CTAButton = styled(motion.button)`
-  margin: 2.5rem auto 0;
+const CTARow = styled(motion.div)`
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  pointer-events: auto;
+`;
+
+const PrimaryButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem 2.5rem;
   border-radius: 999px;
   border: none;
@@ -127,11 +138,37 @@ const CTAButton = styled(motion.button)`
   text-transform: uppercase;
   box-shadow: 0 20px 40px rgba(7, 18, 46, 0.3);
   cursor: pointer;
+  text-decoration: none;
   transition: box-shadow 0.3s ease;
-  pointer-events: auto;
 
   &:hover {
     box-shadow: 0 25px 60px rgba(7, 18, 46, 0.35);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 320px;
+  }
+`;
+
+const SecondaryButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: white;
   }
 
   @media (max-width: 768px) {
@@ -216,9 +253,14 @@ export function HeroContent({ scrollYProgress }: HeroContentProps) {
       <ContentContainer>
         <BrandName>CertSync</BrandName>
         <Tagline>Compliance. Organised.</Tagline>
-        <CTAButton onClick={handleCTA}>
-          See how it works
-        </CTAButton>
+        <CTARow>
+          <PrimaryButton href="https://www.certsync.com.au/contact.html">
+            Book a Demo
+          </PrimaryButton>
+          <SecondaryButton onClick={handleCTA}>
+            See how it works
+          </SecondaryButton>
+        </CTARow>
       </ContentContainer>
     );
   }
@@ -240,13 +282,15 @@ export function HeroContent({ scrollYProgress }: HeroContentProps) {
         <span>v</span> Scroll
       </ScrollIndicator>
 
-      {/* CTA appears when fully organized */}
-      <CTAButton
-        style={{ opacity: ctaOpacity, y: ctaTranslate }}
-        onClick={handleCTA}
-      >
-        See how it works
-      </CTAButton>
+      {/* CTAs appear when fully organized */}
+      <CTARow style={{ opacity: ctaOpacity, y: ctaTranslate }}>
+        <PrimaryButton href="https://www.certsync.com.au/contact.html">
+          Book a Demo
+        </PrimaryButton>
+        <SecondaryButton onClick={handleCTA}>
+          See how it works
+        </SecondaryButton>
+      </CTARow>
     </ContentContainer>
   );
 }

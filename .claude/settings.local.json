@@ -24,7 +24,8 @@
       "Bash(npm run build:hero:*)",
       "Bash(npm run build:faq:*)",
       "Bash(ping:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git status:*)"
     ],
     "deny": [],
     "ask": []
