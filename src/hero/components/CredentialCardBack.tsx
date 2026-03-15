@@ -46,26 +46,23 @@ const credentialColors: Record<CredentialType, { primary: string; secondary: str
   }
 };
 
+// Outer container — explicit dimensions match CardContainer (240×152) so
+// the 0.75 scale applied by the scene wrapper renders both faces identically
 const BackContainer = styled.div<{ $type: CredentialType }>`
-  width: 100%;
-  height: 100%;
+  width: 240px;
+  height: 152px;
   border-radius: 8px;
   background: ${props => credentialColors[props.$type].primary};
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
 `;
 
+// Header flows in the column — no absolute positioning
 const BackHeader = styled.div<{ $type: CredentialType }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  flex-shrink: 0;
   background: ${props => credentialColors[props.$type].secondary};
   padding: 6px 12px;
   text-align: center;
@@ -77,21 +74,31 @@ const BackHeader = styled.div<{ $type: CredentialType }>`
   text-transform: uppercase;
 `;
 
+// Body takes remaining space and centres content
+const BackContent = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px 10px;
+`;
+
 const VerifiedBadge = styled.div<{ $type: CredentialType }>`
-  width: 60px;
-  height: 60px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: ${props => credentialColors[props.$type].secondary};
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 7px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 `;
 
 const CheckIcon = styled.div<{ $type: CredentialType }>`
   color: ${props => credentialColors[props.$type].accent};
-  font-size: 32px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 1;
 `;
@@ -100,33 +107,34 @@ const StatusText = styled.div<{ $type: CredentialType }>`
   color: ${props => props.$type === 'white-card' ? '#333333' : '#FFFFFF'};
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   letter-spacing: 0.5px;
 `;
 
 const SubText = styled.div<{ $type: CredentialType }>`
-  color: ${props => props.$type === 'white-card' ? '#666666' : 'rgba(255, 255, 255, 0.8)'};
+  color: ${props => props.$type === 'white-card' ? '#666666' : 'rgba(255, 255, 255, 0.75)'};
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 10px;
   text-align: center;
   letter-spacing: 0.3px;
 `;
 
+// QR code — smaller and tucked in bottom-right corner
 const QRPlaceholder = styled.div<{ $type: CredentialType }>`
   position: absolute;
-  bottom: 12px;
-  right: 12px;
-  width: 40px;
-  height: 40px;
-  background: ${props => props.$type === 'white-card' ? '#f0f0f0' : 'rgba(255, 255, 255, 0.2)'};
-  border-radius: 4px;
+  bottom: 8px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background: ${props => props.$type === 'white-card' ? '#f0f0f0' : 'rgba(255, 255, 255, 0.15)'};
+  border-radius: 3px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 2px;
-  padding: 4px;
+  gap: 1px;
+  padding: 3px;
 `;
 
 const QRPixel = styled.div<{ $filled?: boolean; $type: CredentialType }>`
@@ -142,20 +150,20 @@ interface CredentialCardBackProps {
 
 const statusTexts: Record<CredentialType, string> = {
   'high-risk-work': 'VERIFIED',
-  'white-card': 'CERTIFIED',
-  'first-aid': 'QUALIFIED',
-  'forklift': 'LICENSED',
+  'white-card':     'CERTIFIED',
+  'first-aid':      'QUALIFIED',
+  'forklift':       'LICENSED',
   'confined-space': 'AUTHORISED',
-  'heights': 'CERTIFIED',
-  'drivers-license': 'VALID',
-  'certificate': 'ACCREDITED'
+  'heights':        'CERTIFIED',
+  'drivers-license':'VALID',
+  'certificate':    'ACCREDITED'
 };
 
 const qrPatterns = [
-  [true, false, true, true],
-  [false, true, true, false],
-  [true, true, false, true],
-  [true, false, true, false]
+  [true,  false, true,  true ],
+  [false, true,  true,  false],
+  [true,  true,  false, true ],
+  [true,  false, true,  false]
 ];
 
 export function CredentialCardBack({ type }: CredentialCardBackProps) {
@@ -165,17 +173,19 @@ export function CredentialCardBack({ type }: CredentialCardBackProps) {
         CERTSYNC VERIFIED
       </BackHeader>
 
-      <VerifiedBadge $type={type}>
-        <CheckIcon $type={type}>✓</CheckIcon>
-      </VerifiedBadge>
+      <BackContent>
+        <VerifiedBadge $type={type}>
+          <CheckIcon $type={type}>✓</CheckIcon>
+        </VerifiedBadge>
 
-      <StatusText $type={type}>
-        {statusTexts[type]}
-      </StatusText>
+        <StatusText $type={type}>
+          {statusTexts[type]}
+        </StatusText>
 
-      <SubText $type={type}>
-        Australian Compliance
-      </SubText>
+        <SubText $type={type}>
+          Australian Compliance
+        </SubText>
+      </BackContent>
 
       <QRPlaceholder $type={type}>
         {qrPatterns.map((row, i) =>

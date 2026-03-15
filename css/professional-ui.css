@@ -78,6 +78,13 @@ nav {
     transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard) !important;
 }
 
+.login-btn {
+    background: transparent !important;
+    color: #2B7FE0 !important;
+    border: 2px solid #2B7FE0 !important;
+    animation: none !important;
+}
+
 .create-account-btn {
     background: #2B7FE0 !important;
     color: #fff !important;
@@ -90,7 +97,10 @@ nav {
 }
 
 .login-btn:hover {
-    box-shadow: 0 6px 20px rgba(43, 127, 224, 0.24) !important;
+    background: #2B7FE0 !important;
+    color: white !important;
+    border-color: #2B7FE0 !important;
+    box-shadow: 0 6px 20px rgba(43, 127, 224, 0.3) !important;
 }
 
 .create-account-btn:hover {
@@ -162,15 +172,6 @@ nav {
     background: #2B7FE0 !important;
 }
 
-/* Remove template-like entrance choreography on content sections */
-.path,
-.step,
-.feature-card,
-.pricing-card,
-.case-study-card {
-    animation: none !important;
-    opacity: 1 !important;
-}
 
 h2, h3, h4 {
     color: var(--brand-ink);

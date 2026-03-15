@@ -39,52 +39,87 @@ class AnimationController {
     
     setupIntersectionObserver() {
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.08,
+            rootMargin: '0px 0px -20px 0px'
         };
-        
+
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    this.animateElement(entry.target);
+                    const delay = (entry.target._staggerDelay || 0);
+                    this.animateElement(entry.target, delay);
                 }
             });
         }, observerOptions);
-        
+
         // Observe elements that should animate on scroll
         this.observeElements();
     }
-    
+
     observeElements() {
         const selectors = [
             '.feature-card',
             '.path',
             '.step',
             '.pricing-card',
-            '.contact-item'
+            '.contact-item',
+            '.case-study-card',
+            '.testimonial-card',
+            '.what-it-does-item',
+            '.help-category-card',
+            '.faq-category-card',
+            '.card'
         ];
-        
+
+        // Track which elements have already been registered to avoid double-observing
+        // when an element matches multiple selectors (e.g. .card.feature-card)
+        const registered = new Set();
+
         selectors.forEach(selector => {
+            // Group siblings by parent so we can stagger them
+            const byParent = new Map();
+
             document.querySelectorAll(selector).forEach(el => {
-                this.prepareElementForAnimation(el);
-                this.observer.observe(el);
+                if (registered.has(el)) return;
+
+                // Don't hide elements already visible in the viewport on page load
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) return;
+
+                const parent = el.parentElement;
+                if (!byParent.has(parent)) byParent.set(parent, []);
+                byParent.get(parent).push(el);
+            });
+
+            byParent.forEach(siblings => {
+                siblings.forEach((el, index) => {
+                    el._staggerDelay = index * 80;
+                    this.prepareElementForAnimation(el);
+                    this.observer.observe(el);
+                    registered.add(el);
+                });
             });
         });
     }
-    
+
     prepareElementForAnimation(element) {
         element.style.opacity = '0';
-        element.style.transform = 'translateY(12px)';
-        element.style.transition = 'opacity 260ms ease, transform 260ms ease';
+        element.style.transform = 'translateY(24px) scale(0.97)';
         this.animatedElements.add(element);
     }
-    
-    animateElement(element) {
+
+    animateElement(element, delay = 0) {
         if (this.animatedElements.has(element)) {
+            const easing = 'cubic-bezier(0.16, 1, 0.3, 1)';
+            element.style.transition = `opacity 500ms ${easing} ${delay}ms, transform 500ms ${easing} ${delay}ms`;
             element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
+            element.style.transform = 'translateY(0) scale(1)';
             this.animatedElements.delete(element);
             this.observer.unobserve(element);
+            // Remove transition-delay after animation so hover effects aren't delayed
+            setTimeout(() => {
+                element.style.transitionDelay = '';
+            }, 500 + delay);
         }
     }
     

@@ -12,6 +12,12 @@
   # Node.js version
   NODE_VERSION = "18"
 
+# Serve favicon.ico from assets directory
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/assets/favicon.ico"
+  status = 200
+
 # Redirect rules for SPA-like behavior
 [[redirects]]
   from = "/*"

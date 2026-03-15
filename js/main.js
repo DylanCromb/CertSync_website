@@ -84,25 +84,29 @@ function initializeScrollEffects() {
 
 function createBackToTopButton() {
     const backToTop = document.createElement('button');
-    backToTop.innerHTML = '↑';
+    backToTop.innerHTML = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="#2B7FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
     backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
     backToTop.style.cssText = `
         position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
+        bottom: 32px;
+        right: 32px;
+        width: 44px;
+        height: 44px;
         border: none;
         border-radius: 50%;
-        background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%);
-        color: white;
-        font-size: 1.5rem;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 4px 15px rgba(43, 127, 224, 0.3);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
     `;
     
     document.body.appendChild(backToTop);
@@ -128,13 +132,13 @@ function createBackToTopButton() {
     
     // Hover effect
     backToTop.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1)';
-        this.style.boxShadow = '0 6px 20px rgba(43, 127, 224, 0.4)';
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1)';
     });
-    
+
     backToTop.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-        this.style.boxShadow = '0 4px 15px rgba(43, 127, 224, 0.3)';
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)';
     });
 }
 
