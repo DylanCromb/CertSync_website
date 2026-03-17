@@ -6,6 +6,7 @@
 const RECIPIENTS = {
   'custom-plan': ['Dev@kaylos.com.au'],
   'contact': ['Dev@kaylos.com.au'],
+  'demo-request': ['Dev@kaylos.com.au'],
   // To add CC: just append more emails to the array above
 };
 
@@ -57,6 +58,9 @@ export default async function handler(req, res) {
     } else if (formName === 'contact') {
       subject = `Contact: ${body.subject || 'General enquiry'} from ${body.name || 'Unknown'}`;
       htmlBody = buildContactEmail(body);
+    } else if (formName === 'demo-request') {
+      subject = `Demo request from ${body.company || body.name || body.email || 'Unknown'}`;
+      htmlBody = buildDemoRequestEmail(body);
     } else {
       subject = `Form submission: ${formName}`;
       htmlBody = buildGenericEmail(body);
@@ -127,6 +131,31 @@ function buildContactEmail(data) {
           ${row('Message', data.message)}
         </table>
         <p style="color: #6b7280; font-size: 13px; margin-top: 24px;">Submitted from certsync.com.au/contact</p>
+      </div>
+    </div>`;
+}
+
+function buildDemoRequestEmail(data) {
+  return `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
+      <div style="background: linear-gradient(135deg, #2B7FE0 0%, #764ba2 100%); padding: 24px 32px; border-radius: 8px 8px 0 0;">
+        <h1 style="color: #fff; margin: 0; font-size: 20px;">Demo request</h1>
+      </div>
+      <div style="padding: 24px 32px; background: #f9fafb; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
+        <table style="width: 100%; border-collapse: collapse;">
+          ${row('Name', data.name)}
+          ${row('Company', data.company)}
+          ${row('Company size', data['company-size'])}
+          ${row('Industry', data.industry)}
+          ${row('Email', data.email)}
+          ${row('Phone', data.phone)}
+          ${row('Preferred contact method', data['contact-method'])}
+          ${row('Preferred date', data['preferred-date'])}
+          ${row('Preferred time', data['preferred-time'])}
+          ${row('Timezone', data.timezone)}
+          ${row('Notes', data.notes || '-')}
+        </table>
+        <p style="color: #6b7280; font-size: 13px; margin-top: 24px;">Submitted from certsync.com.au/book-demo</p>
       </div>
     </div>`;
 }

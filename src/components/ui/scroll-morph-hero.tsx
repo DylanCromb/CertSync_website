@@ -81,7 +81,7 @@ export default function ScrollMorphHero() {
                         pointerEvents: 'auto',
                     }}>
                         <a
-                            href="https://www.certsync.com.au/contact.html"
+                            href="https://www.certsync.com.au/book-demo.html"
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',

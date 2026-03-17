@@ -458,21 +458,12 @@
         /* ── Page header variant ────────────────────────── */
         .demo-page-header {
             background: linear-gradient(135deg, #1a3a5c 0%, #2B7FE0 60%, #764ba2 100%);
-            padding: 4rem 1.5rem 3rem;
+            padding: calc(4rem + 70px) 1.5rem 3rem;
             text-align: center;
             color: #fff;
         }
         .demo-page-header .demo-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.18);
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 100px;
-            padding: 0.35rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+            display: none !important;
         }
         .demo-page-header h1 {
             font-size: clamp(1.75rem, 4vw, 2.6rem);
@@ -515,7 +506,6 @@
 
     <!-- Page Header -->
     <header class="demo-page-header">
-        <div class="demo-badge">Free · No obligation · 30 minutes</div>
         <h1>See CertSync in Action</h1>
         <p>Book a free live walkthrough tailored to your industry. We'll show you exactly how CertSync keeps your team compliant and audit-ready.</p>
     </header>
@@ -544,7 +534,7 @@
 
                     <!--
                         NOTIFICATION CONFIG
-                        Primary recipient: support@certsync.com.au
+                        Primary recipient: Dev@kaylos.com.au
                         To change recipients: edit RECIPIENTS in api/submit-form.js
                         form-name: "demo-request"
                     -->
@@ -731,8 +721,8 @@
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
                         </div>
-                        <h3>Confirmation within 1 business day</h3>
-                        <p>We'll review your request and send a calendar invite with a video link to your preferred contact. Demos run Monday to Friday, 9 AM – 5 PM AEST.</p>
+                        <h3>We'll be in touch</h3>
+                        <p>We'll contact you as soon as possible to organise a demo time that works for you.</p>
                     </div>
 
                     <div class="card demo-info-card">

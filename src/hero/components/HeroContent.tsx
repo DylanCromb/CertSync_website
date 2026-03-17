@@ -254,7 +254,7 @@ export function HeroContent({ scrollYProgress }: HeroContentProps) {
         <BrandName>CertSync</BrandName>
         <Tagline>Compliance. Organised.</Tagline>
         <CTARow>
-          <PrimaryButton href="https://www.certsync.com.au/contact.html">
+          <PrimaryButton href="https://www.certsync.com.au/book-demo.html">
             Book a Demo
           </PrimaryButton>
           <SecondaryButton onClick={handleCTA}>
@@ -284,7 +284,7 @@ export function HeroContent({ scrollYProgress }: HeroContentProps) {
 
       {/* CTAs appear when fully organized */}
       <CTARow style={{ opacity: ctaOpacity, y: ctaTranslate }}>
-        <PrimaryButton href="https://www.certsync.com.au/contact.html">
+        <PrimaryButton href="https://www.certsync.com.au/book-demo.html">
           Book a Demo
         </PrimaryButton>
         <SecondaryButton onClick={handleCTA}>
