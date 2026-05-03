@@ -10,7 +10,11 @@
     "build:faq": "cross-env BUILD_TARGET=faq vite build",
     "build:pricing": "vite build --config vite.pricing.config.ts",
     "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "test": "npm run seo:audit"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
   },
   "repository": {
     "type": "git",
@@ -26,7 +30,6 @@
   "homepage": "https://github.com/DylanCromb/CertSync_website#readme",
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
-    "astro": "^5.14.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",

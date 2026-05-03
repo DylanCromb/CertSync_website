@@ -5,25 +5,18 @@
   # Directory that contains the deploy-ready HTML files and assets
   publish = "."
 
-  # Build command - builds React hero
-  command = "npm install && npm run build"
+  # Build command - installs from lockfile and builds React islands
+  command = "npm ci && npm run build"
 
 [build.environment]
   # Node.js version
-  NODE_VERSION = "18"
+  NODE_VERSION = "20.19.0"
 
 # Serve favicon.ico from assets directory
 [[redirects]]
   from = "/favicon.ico"
   to = "/assets/favicon.ico"
   status = 200
-
-# Redirect rules for SPA-like behavior
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"], Country = ["US"]}
 
 # Headers for security and performance
 [[headers]]
@@ -34,6 +27,23 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
 
 # Cache static assets
 [[headers]]

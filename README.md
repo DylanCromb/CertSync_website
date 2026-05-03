@@ -1,211 +1,93 @@
 # CertSync Website
 
-A modern, responsive website for CertSync - a credential management platform that helps businesses and employees track, verify, and manage professional licenses, permits, and certifications.
+Static marketing website for CertSync, an Australian credential management and workforce compliance platform.
 
-## 🚀 Features
+The site is mostly hand-authored HTML/CSS with a few Vite-built React islands:
 
-- **Modern Design**: Clean, professional design with smooth animations and gradients
-- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
-- **Multiple Pages**: Homepage, About, Pricing, Contact, Policies, and Login pages
-- **Interactive Elements**: Smooth scrolling, hover effects, and dynamic animations
-- **SEO Optimized**: Proper meta tags, semantic HTML, and structured content
-- **Performance Focused**: Optimized CSS and JavaScript for fast loading
+- `index.html` mounts the animated hero from `src/hero-new/main.tsx`.
+- `support.html` mounts the FAQ island from `src/faq/main.tsx`.
+- `pricing.html` mounts the pricing island from `src/pricing-new/main.tsx`.
 
-## 📁 Project Structure
+## Canonical Domain
 
-```
-CertSync_website/
-├── index.html              # Homepage
-├── about.html              # About page
-├── pricing.html            # Pricing page
-├── contact.html            # Contact page
-├── policies.html           # Policies page
-├── login.html              # Login page
-├── css/
-│   ├── main.css            # Main styles and layout
-│   ├── components.css      # Component-specific styles
-│   └── responsive.css      # Mobile and responsive styles
-├── js/
-│   ├── main.js             # Main JavaScript functionality
-│   ├── navigation.js       # Navigation and menu handling
-│   └── animations.js       # Animation and visual effects
-├── components/
-│   ├── header.html         # Reusable header component
-│   ├── footer.html         # Reusable footer component
-│   └── navigation.html     # Navigation component
-├── assets/
-│   ├── images/             # Image assets
-│   └── icons/              # Icon assets
-├── netlify.toml            # Netlify configuration
-├── .gitignore              # Git ignore file
-└── README.md               # This file
+Production SEO metadata uses:
+
+```text
+https://www.certsync.com.au
 ```
 
-## 🛠️ Technologies Used
+Use that domain for canonicals, Open Graph URLs, Twitter URLs, sitemap entries, and structured data.
 
-- **HTML5**: Semantic markup and modern HTML features
-- **CSS3**: Flexbox, Grid, animations, and responsive design
-- **JavaScript (ES6+)**: Modern JavaScript with classes and modules
-- **Netlify**: Hosting and deployment platform
+## Project Structure
 
-## 🚀 Getting Started
+```text
+.
+├── *.html                 Static pages served from the site root
+├── api/                   Serverless form handler
+├── assets/                Favicons and image assets
+├── css/                   Shared static CSS
+├── dist/                  Vite-built browser bundles used by HTML pages
+├── js/                    Shared static browser scripts
+├── scripts/               Repo automation and audits
+├── src/                   React island source
+├── robots.txt             Search crawler rules
+├── sitemap.xml            Canonical public URL list
+├── netlify.toml           Netlify build, headers, and cache policy
+├── package.json           Build and audit scripts
+└── vite*.config.ts        Vite build targets
+```
 
-### Prerequisites
+## Local Development
 
-- A modern web browser
-- Git (for version control)
-- Netlify account (for deployment)
+Install dependencies:
 
-### Local Development
+```bash
+npm ci
+```
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd CertSync_website
-   ```
+Run the Vite dev server:
 
-2. Open the project in your preferred code editor
+```bash
+npm run dev
+```
 
-3. Serve the files locally using a simple HTTP server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js (if you have http-server installed)
-   npx http-server
-   
-   # Using PHP
-   php -S localhost:8000
-   ```
+Build all React islands into `dist/`:
 
-4. Open your browser and navigate to `http://localhost:8000`
+```bash
+npm run build
+```
 
-### Deployment to Netlify
+Run SEO metadata checks:
 
-#### Option 1: Drag and Drop
-1. Zip the entire project folder
-2. Go to [Netlify](https://netlify.com)
-3. Drag and drop the zip file to deploy
+```bash
+npm run seo:audit
+```
 
-#### Option 2: Git Integration
-1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
-2. Connect your repository to Netlify
-3. Netlify will automatically deploy on every push
+`npm test` currently runs the SEO audit.
 
-#### Option 3: Netlify CLI
-1. Install Netlify CLI:
-   ```bash
-   npm install -g netlify-cli
-   ```
+## SEO Readiness
 
-2. Deploy:
-   ```bash
-   netlify deploy --prod --dir .
-   ```
+The SEO baseline is intentionally machine-checkable. The audit verifies:
 
-## 📱 Pages Overview
+- every HTML page has `lang="en-AU"`;
+- public pages have `index, follow`, a canonical URL, Open Graph tags, Twitter tags, and valid JSON-LD;
+- `login.html` is marked `noindex, follow`;
+- `robots.txt` points to the canonical sitemap;
+- `sitemap.xml` includes public pages and excludes login;
+- page metadata does not drift back to the old `certsync.com` domain.
 
-### Homepage (`index.html`)
-- Hero section with animated background
-- Two-path section (Employees vs Employers)
-- Features showcase
-- Call-to-action buttons
+When adding a new public page, add it to:
 
-### About (`about.html`)
-- Company mission and story
-- Values and principles
-- Team information
-- Why choose CertSync
+- `scripts/seo-audit.mjs`;
+- `sitemap.xml`;
+- the relevant navigation/footer links.
 
-### Pricing (`pricing.html`)
-- Three-tier pricing structure
-- Feature comparison table
-- FAQ section
-- Call-to-action buttons
+## Deployment
 
-### Contact (`contact.html`)
-- Contact form with validation
-- Company contact information
-- FAQ section
-- Support resources
+Netlify builds with Node `20.19.0` and runs:
 
-### Policies (`policies.html`)
-- Privacy Policy
-- Terms of Service
-- Cookie Policy
-- Security Policy
-- Data Processing Agreement
+```bash
+npm ci && npm run build
+```
 
-### Login (`login.html`)
-- User authentication form
-- Security features overview
-- Account creation link
-
-## 🎨 Customization
-
-### Colors
-The main color scheme is defined in CSS custom properties. Key colors:
-- Primary Blue: `#2B7FE0`
-- Secondary Purple: `#764ba2`
-- Text Dark: `#1A1A1A`
-- Background Light: `#F8F9FA`
-
-### Fonts
-The site uses system fonts for optimal performance:
-- Primary: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif`
-
-### Animations
-Custom CSS animations and JavaScript effects are used throughout:
-- Gradient background animations
-- Particle effects
-- Hover animations
-- Scroll-triggered animations
-
-## 📊 Performance
-
-- **Lighthouse Score**: Optimized for 90+ scores
-- **Mobile First**: Responsive design with mobile-first approach
-- **Fast Loading**: Optimized CSS and JavaScript
-- **SEO Ready**: Proper meta tags and semantic HTML
-
-## 🔧 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📝 License
-
-This project is proprietary software for CertSync. All rights reserved.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📞 Support
-
-For support and questions:
-- Email: hello@certsync.com
-- Website: [CertSync](https://certsync.com)
-- Documentation: [Docs](https://docs.certsync.com)
-
-## 🚀 Future Enhancements
-
-- [ ] Add blog section
-- [ ] Implement user dashboard
-- [ ] Add more interactive features
-- [ ] Integrate with backend API
-- [ ] Add multi-language support
-- [ ] Implement dark mode
-- [ ] Add more animation effects
-- [ ] Optimize for Core Web Vitals
-
----
-
-**CertSync** - Simplifying credential management for businesses worldwide.
+The publish directory is the repo root because the HTML files are served directly.
