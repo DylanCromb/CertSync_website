@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE_URL = 'https://www.certsync.com.au';
+const APK_DOWNLOAD_URL = 'https://github.com/DylanCromb/CertSync_website/releases/download/v1.0.24/certsync_1.0.24.apk';
 const PUBLIC_PAGES = [
   'index.html',
   'about.html',
@@ -13,6 +14,7 @@ const PUBLIC_PAGES = [
   'custom-plan.html',
   'book-demo.html',
   'policies.html',
+  'download.html',
 ];
 const NOINDEX_PAGES = ['login.html'];
 
@@ -86,8 +88,8 @@ for (const page of htmlPages) {
   validateLength(page, 'title', title, 20, 80);
   validateLength(page, 'description', description, 50, 180);
 
-  if (faviconHref !== '/assets/favicon.ico') {
-    fail(page, 'favicon should use /assets/favicon.ico');
+  if (!['/assets/favicon.ico', 'assets/favicon.ico'].includes(faviconHref)) {
+    fail(page, 'favicon should use assets/favicon.ico');
   }
 
   if (canonical !== expectedCanonical) {
@@ -133,6 +135,16 @@ for (const page of htmlPages) {
   if (/https:\/\/certsync\.com(?!\.au)/i.test(head)) {
     fail(page, 'uses legacy certsync.com domain in metadata');
   }
+
+  if (/assets\/resources\/certsync_1\.0\.24\.apk/i.test(html)) {
+    fail(page, `APK downloads must use ${APK_DOWNLOAD_URL}`);
+  }
+}
+
+const downloadHtml = readFileSync(path.join(ROOT, 'download.html'), 'utf8');
+const apkLinkCount = (downloadHtml.match(new RegExp(escapeRegExp(APK_DOWNLOAD_URL), 'g')) ?? []).length;
+if (apkLinkCount < 3) {
+  errors.push(`download.html: expected APK release URL in structured data and download links`);
 }
 
 const robotsPath = path.join(ROOT, 'robots.txt');
