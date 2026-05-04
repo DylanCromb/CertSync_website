@@ -212,3 +212,5 @@ Current stack is intentionally simple (static HTML + single React component). If
 - CMS → Astro + Markdown or headless CMS integration
 
 **Do not over-engineer prematurely**. The current hybrid approach is appropriate for a pre-launch marketing site.
+
+<!-- Last reviewed: 2026-04-07 -->
