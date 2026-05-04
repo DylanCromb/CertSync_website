@@ -106,7 +106,7 @@
         }
 
         .download-hero-actions .download-badge-link {
-            padding: 0.2rem;
+            padding: 0.75rem 1.25rem;
             border-radius: 8px;
             background: #ffffff;
             box-shadow: 0 8px 24px rgba(16, 37, 63, 0.1);
@@ -308,9 +308,56 @@
             text-decoration: underline;
         }
 
+        @media (max-width: 768px) {
+            nav {
+                height: 64px;
+                padding: 0 16px !important;
+            }
+
+            .nav-container {
+                flex-wrap: nowrap !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 0.75rem;
+                text-align: left !important;
+            }
+
+            .logo {
+                width: auto !important;
+                margin: 0 !important;
+                justify-content: flex-start !important;
+            }
+
+            .logo-link {
+                gap: 8px;
+            }
+
+            .logo-img {
+                height: 38px !important;
+            }
+
+            .logo-text {
+                font-size: 1.12rem !important;
+                line-height: 1;
+            }
+
+            .mobile-menu-toggle {
+                margin-left: auto !important;
+                flex: 0 0 auto;
+                width: 34px !important;
+                height: 34px !important;
+            }
+
+            .nav-links {
+                top: 64px !important;
+                height: calc(100vh - 64px) !important;
+            }
+        }
+
         @media (max-width: 820px) {
             .download-hero {
-                padding: 34px 5% 36px;
+                margin-top: 64px;
+                padding: 38px 5% 42px;
             }
 
             .download-hero-inner,
@@ -324,26 +371,7 @@
             }
 
             .download-icon-panel {
-                order: -1;
-                justify-self: center;
-                width: min(100%, 210px);
-                padding: 1.15rem;
-                box-shadow: 0 10px 30px rgba(16, 37, 63, 0.1);
-            }
-
-            .download-app-icon-frame {
-                width: 86px;
-                height: 86px;
-                border-radius: 20px;
-            }
-
-            .download-app-icon-frame img {
-                width: 66px;
-                height: 66px;
-            }
-
-            .download-icon-panel strong {
-                margin-top: 0.7rem;
+                display: none;
             }
 
             .download-hero p {
@@ -354,12 +382,15 @@
 
             .download-hero-actions {
                 justify-content: center;
+                max-width: 360px;
+                margin-right: auto;
+                margin-left: auto;
             }
         }
 
         @media (max-width: 520px) {
             .download-hero {
-                padding: 24px 4.5% 28px;
+                padding: 32px 5% 38px;
             }
 
             .download-kicker {
@@ -368,8 +399,8 @@
             }
 
             .download-hero h1 {
-                font-size: clamp(2rem, 11vw, 2.75rem);
-                line-height: 1.08;
+                font-size: clamp(2rem, 10vw, 2.55rem);
+                line-height: 1.05;
             }
 
             .download-hero p {
@@ -382,10 +413,12 @@
                 grid-template-columns: 1fr;
                 gap: 0.7rem;
                 margin-top: 1.2rem;
+                max-width: 320px;
             }
 
             .download-hero-actions .download-badge-link {
-                min-height: 60px;
+                min-height: 78px;
+                padding: 0.75rem 1rem;
             }
 
             .download-section {
@@ -397,7 +430,7 @@
             }
 
             .download-options {
-                gap: 1rem;
+                display: none;
             }
 
             .download-option,
@@ -468,8 +501,8 @@
             <div class="download-hero-inner">
                 <div>
                     <p class="download-kicker">CertSync mobile app</p>
-                    <h1>Download CertSync for your phone.</h1>
-                    <p>Use CertSync on site, in the office, or wherever credentials need to be uploaded, checked, and kept current.</p>
+                    <h1>Download CertSync</h1>
+                    <p>Install the mobile app to upload, check, and manage credentials from your phone.</p>
                     <div class="download-hero-actions" aria-label="Primary app download links">
                         <a class="download-badge-link" href="https://apps.apple.com/np/app/certsync/id6758596879" target="_blank" rel="noopener noreferrer" aria-label="Download CertSync on the App Store">
                             <img src="assets/images/ios_download.png" alt="Download on the App Store" class="download-badge" loading="eager" decoding="async">

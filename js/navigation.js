@@ -166,6 +166,8 @@ class Navigation {
             @media (max-width: 768px) {
                 .mobile-menu-toggle {
                     display: flex !important;
+                    margin-left: auto;
+                    flex: 0 0 auto;
                 }
                 
                 .nav-links {
