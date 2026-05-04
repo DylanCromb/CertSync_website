@@ -2389,22 +2389,20 @@ footer > p {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     nav {
-        padding: 0.8rem 3%;
+        padding: 0.75rem 3%;
     }
     
     .nav-container {
-        justify-content: center;
-        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        text-align: left;
     }
     
     .logo {
-        width: 100%;
-        margin-bottom: 0.5rem;
-        justify-content: center;
-    }
-    
-    .logo {
-        justify-content: center;
+        width: auto;
+        margin-bottom: 0;
+        justify-content: flex-start;
     }
     
     .logo-link {
@@ -2418,6 +2416,11 @@ footer > p {
     .logo-text {
         font-size: 1.2rem;
         letter-spacing: -0.3px;
+    }
+
+    .mobile-menu-toggle {
+        margin-left: auto;
+        flex: 0 0 auto;
     }
     
     .nav-links {
@@ -2478,7 +2481,7 @@ footer > p {
     }
 
     .hero {
-        margin-top: 120px;
+        margin-top: 64px;
         padding: 60px 5% 80px 5%;
         min-height: 80vh;
     }
@@ -2523,8 +2526,8 @@ footer > p {
     }
     
     .page-header {
-        margin-top: 120px;
-        padding: 60px 5% 30px 5%;
+        margin-top: 64px;
+        padding: 56px 5% 42px 5%;
     }
     
     .page-content {
@@ -2568,7 +2571,7 @@ footer > p {
     }
     
     .hero {
-        margin-top: 140px;
+        margin-top: 64px;
         padding: 50px 5% 70px 5%;
         min-height: 75vh;
     }

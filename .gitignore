@@ -92,11 +92,16 @@ jspm_packages/
 # Netlify
 .netlify
 
+# Framework/tool caches
+.astro/
+.claude/
+
 # Temporary files
 tmp/
 temp/
 
-.claude/worktrees/
 tmpclaude-*-cwd
 nul
+npx
+srchero*/
 *original_support.html
