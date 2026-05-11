@@ -1,0 +1,22 @@
+{
+  "name": "CertSync",
+  "short_name": "CertSync",
+  "description": "Credential management software for Australian teams tracking licences, permits, certifications, expiry alerts, and audit-ready records.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2B7FE0",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

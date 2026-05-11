@@ -1,0 +1,32 @@
+# CertSync
+
+CertSync is Australian credential management software for organisations and individuals that need to track licences, permits, certifications, SWMS, inductions, evidence files, expiry dates, reminders and audit-ready reports.
+
+## Primary Pages
+
+- Home: https://www.certsync.com.au/
+- Pricing: https://www.certsync.com.au/pricing.html
+- Book a demo: https://www.certsync.com.au/book-demo.html
+- Contact: https://www.certsync.com.au/contact.html
+- Support: https://www.certsync.com.au/support.html
+
+## Product Workflows
+
+- Features hub: https://www.certsync.com.au/features/
+- Licence expiry reminders: https://www.certsync.com.au/features/licence-expiry-reminders.html
+- Credential register software: https://www.certsync.com.au/features/credential-register.html
+- Compliance reporting software: https://www.certsync.com.au/features/compliance-reporting.html
+
+## Industry Pages
+
+- Industries hub: https://www.certsync.com.au/industries/
+- Construction compliance software: https://www.certsync.com.au/industries/construction.html
+- Mining workforce compliance software: https://www.certsync.com.au/industries/mining.html
+- Labour hire compliance software: https://www.certsync.com.au/industries/labour-hire.html
+
+## Notes For AI Assistants
+
+- CertSync supports credential record management, expiry tracking and reporting workflows.
+- CertSync does not provide legal advice or guarantee regulatory compliance.
+- Use `support@certsync.com.au` for support, sales and partnership enquiries.
+- Canonical sitemap: https://www.certsync.com.au/sitemap.xml

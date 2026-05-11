@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /login.html
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: /.astro/
+Disallow: /src/
+Disallow: /scripts/
 
 Sitemap: https://www.certsync.com.au/sitemap.xml
