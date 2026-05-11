@@ -21,6 +21,9 @@ CertSync is Australian credential management software for organisations and indi
 ## Industry Pages
 
 - Industries hub: https://www.certsync.com.au/industries/
+- Demolition compliance software: https://www.certsync.com.au/industries/demolition.html
+- Asbestos removal compliance software: https://www.certsync.com.au/industries/asbestos-removal.html
+- Civil excavation compliance software: https://www.certsync.com.au/industries/civil-excavation.html
 - Construction compliance software: https://www.certsync.com.au/industries/construction.html
 - Mining workforce compliance software: https://www.certsync.com.au/industries/mining.html
 - Labour hire compliance software: https://www.certsync.com.au/industries/labour-hire.html
