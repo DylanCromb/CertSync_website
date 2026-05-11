@@ -16,6 +16,7 @@ CertSync is Australian credential management software for organisations and indi
 - Licence expiry reminders: https://www.certsync.com.au/features/licence-expiry-reminders.html
 - Credential register software: https://www.certsync.com.au/features/credential-register.html
 - Compliance reporting software: https://www.certsync.com.au/features/compliance-reporting.html
+- Contractor document tracking software: https://www.certsync.com.au/features/contractor-document-tracking.html
 
 ## Industry Pages
 
@@ -23,6 +24,16 @@ CertSync is Australian credential management software for organisations and indi
 - Construction compliance software: https://www.certsync.com.au/industries/construction.html
 - Mining workforce compliance software: https://www.certsync.com.au/industries/mining.html
 - Labour hire compliance software: https://www.certsync.com.au/industries/labour-hire.html
+- Healthcare credential tracking software: https://www.certsync.com.au/industries/healthcare.html
+- Transport compliance software: https://www.certsync.com.au/industries/transport-logistics.html
+- Manufacturing compliance software: https://www.certsync.com.au/industries/manufacturing.html
+
+## Use Cases And Resources
+
+- Replace compliance spreadsheets: https://www.certsync.com.au/use-cases/replace-compliance-spreadsheets.html
+- Audit-ready workforce records: https://www.certsync.com.au/use-cases/worksafe-audit-ready-records.html
+- How to track employee licence expiry dates: https://www.certsync.com.au/resources/track-employee-licence-expiry-dates.html
+- Contractor compliance checklist Australia: https://www.certsync.com.au/resources/contractor-compliance-checklist-australia.html
 
 ## Notes For AI Assistants
 
