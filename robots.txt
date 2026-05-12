@@ -8,4 +8,34 @@ Disallow: /.astro/
 Disallow: /src/
 Disallow: /scripts/
 
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: /.astro/
+Disallow: /src/
+Disallow: /scripts/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: /.astro/
+Disallow: /src/
+Disallow: /scripts/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: /.astro/
+Disallow: /src/
+Disallow: /scripts/
+
 Sitemap: https://www.certsync.com.au/sitemap.xml

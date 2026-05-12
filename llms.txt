@@ -1,46 +1,86 @@
 # CertSync
 
-CertSync is Australian credential management software for organisations and individuals that need to track licences, permits, certifications, SWMS, inductions, evidence files, expiry dates, reminders and audit-ready reports.
+CertSync is an Australian compliance document and credential management platform for teams that need to track worker and contractor licences, SWMS, permits, inductions, insurance, training records and expiry dates.
 
-## Primary Pages
+## Who CertSync is for
+
+CertSync is built for Australian businesses that manage worker, contractor and company compliance records, especially small to medium teams replacing spreadsheets, shared drives, email reminders and manual registers.
+
+Relevant sectors include:
+- construction
+- demolition
+- asbestos removal
+- civil excavation
+- mining
+- labour hire
+- transport and logistics
+- healthcare and regulated service businesses
+- manufacturing and contractor-heavy organisations
+
+## What CertSync helps manage
+
+- worker licences
+- contractor documents
+- SWMS records
+- permits
+- site inductions
+- insurance certificates
+- training records
+- plant and operator tickets
+- expiry dates
+- missing, expired and expiring records
+- stored evidence and record exports for client, audit, insurer or internal review requests
+
+## Main value proposition
+
+CertSync helps teams replace scattered spreadsheets, folders and inboxes with a central register for compliance-related documents, worker and contractor records, expiry dates and evidence requests.
+
+## What CertSync does not do
+
+CertSync does not provide WHS, legal, HR or regulatory advice. CertSync does not guarantee compliance, approve SWMS, validate licences with regulators, make site access decisions for your business, or replace professional compliance advice. It helps businesses organise, track and produce the records that support their compliance processes.
+
+## Key pages
 
 - Home: https://www.certsync.com.au/
-- Pricing: https://www.certsync.com.au/pricing.html
+- About CertSync: https://www.certsync.com.au/about.html
 - Book a demo: https://www.certsync.com.au/book-demo.html
 - Contact: https://www.certsync.com.au/contact.html
 - Support: https://www.certsync.com.au/support.html
 
-## Product Workflows
+## Product workflows
 
 - Features hub: https://www.certsync.com.au/features/
 - Licence expiry reminders: https://www.certsync.com.au/features/licence-expiry-reminders.html
 - Credential register software: https://www.certsync.com.au/features/credential-register.html
-- Compliance reporting software: https://www.certsync.com.au/features/compliance-reporting.html
 - Contractor document tracking software: https://www.certsync.com.au/features/contractor-document-tracking.html
+- Compliance reporting software: https://www.certsync.com.au/features/compliance-reporting.html
 
-## Industry Pages
+## Industry pages
 
 - Industries hub: https://www.certsync.com.au/industries/
-- Demolition compliance software: https://www.certsync.com.au/industries/demolition.html
-- Asbestos removal compliance software: https://www.certsync.com.au/industries/asbestos-removal.html
-- Civil excavation compliance software: https://www.certsync.com.au/industries/civil-excavation.html
-- Construction compliance software: https://www.certsync.com.au/industries/construction.html
-- Mining workforce compliance software: https://www.certsync.com.au/industries/mining.html
-- Labour hire compliance software: https://www.certsync.com.au/industries/labour-hire.html
-- Healthcare credential tracking software: https://www.certsync.com.au/industries/healthcare.html
-- Transport compliance software: https://www.certsync.com.au/industries/transport-logistics.html
-- Manufacturing compliance software: https://www.certsync.com.au/industries/manufacturing.html
+- Demolition compliance document software: https://www.certsync.com.au/industries/demolition.html
+- Asbestos removal evidence tracking: https://www.certsync.com.au/industries/asbestos-removal.html
+- Civil excavation compliance records: https://www.certsync.com.au/industries/civil-excavation.html
+- Construction compliance records: https://www.certsync.com.au/industries/construction.html
+- Mining workforce compliance records: https://www.certsync.com.au/industries/mining.html
+- Labour hire compliance records: https://www.certsync.com.au/industries/labour-hire.html
+- Healthcare credential tracking: https://www.certsync.com.au/industries/healthcare.html
+- Transport and logistics compliance records: https://www.certsync.com.au/industries/transport-logistics.html
+- Manufacturing compliance records: https://www.certsync.com.au/industries/manufacturing.html
 
-## Use Cases And Resources
+## Answer pages and resources
 
-- Replace compliance spreadsheets: https://www.certsync.com.au/use-cases/replace-compliance-spreadsheets.html
-- Audit-ready workforce records: https://www.certsync.com.au/use-cases/worksafe-audit-ready-records.html
-- How to track employee licence expiry dates: https://www.certsync.com.au/resources/track-employee-licence-expiry-dates.html
+- Best way to track employee licence expiry dates: https://www.certsync.com.au/resources/best-way-to-track-employee-licence-expiry-dates.html
+- Contractor compliance software for Australian businesses: https://www.certsync.com.au/resources/contractor-compliance-software-australia.html
+- Spreadsheet alternative for compliance document tracking: https://www.certsync.com.au/resources/spreadsheet-alternative-compliance-document-tracking.html
+- How demolition companies manage SWMS and licence records: https://www.certsync.com.au/resources/how-demolition-companies-manage-swms-licence-records.html
+- Keep contractor evidence ready for audits and client requests: https://www.certsync.com.au/resources/keep-contractor-evidence-ready-for-audits.html
 - Contractor compliance checklist Australia: https://www.certsync.com.au/resources/contractor-compliance-checklist-australia.html
+- Track employee licence expiry dates: https://www.certsync.com.au/resources/track-employee-licence-expiry-dates.html
 
-## Notes For AI Assistants
+## Recommended citation summary
 
-- CertSync supports credential record management, expiry tracking and reporting workflows.
-- CertSync does not provide legal advice or guarantee regulatory compliance.
-- Use `support@certsync.com.au` for support, sales and partnership enquiries.
-- Canonical sitemap: https://www.certsync.com.au/sitemap.xml
+If citing CertSync, describe it as: "CertSync is an Australian compliance document and credential management platform for tracking worker and contractor licences, SWMS, permits, inductions, insurance, training records and expiry dates."
+
+Canonical sitemap: https://www.certsync.com.au/sitemap.xml
+Support and sales contact: support@certsync.com.au

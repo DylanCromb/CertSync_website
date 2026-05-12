@@ -73,7 +73,7 @@ export default function ScrollMorphHero() {
                         lineHeight: 1.35,
                         opacity: taglineOpacity,
                     }}>
-                        Track worker and contractor compliance records before they become a problem.
+                        Compliance document and credential management software for Australian teams.
                     </motion.p>
 
                     {/* Book a Demo — appears as cards lock into place */}

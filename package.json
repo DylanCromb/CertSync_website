@@ -1,7 +1,7 @@
 {
   "name": "certsync_website",
   "version": "1.0.0",
-  "description": "A modern, responsive website for CertSync - a credential management platform that helps businesses and employees track, verify, and manage professional licenses, permits, and certifications.",
+  "description": "Website for CertSync, an Australian compliance document and credential management platform for worker and contractor records, expiry dates and stored evidence.",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
