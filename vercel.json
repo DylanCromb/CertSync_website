@@ -4,6 +4,11 @@
   },
   "redirects": [
     {
+      "source": "/pricing.html",
+      "destination": "/book-demo.html",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {

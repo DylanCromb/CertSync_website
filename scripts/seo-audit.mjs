@@ -27,7 +27,6 @@ const PUBLIC_PAGES = [
   'resources/track-employee-licence-expiry-dates.html',
   'resources/contractor-compliance-checklist-australia.html',
   'about.html',
-  'pricing.html',
   'support.html',
   'contact.html',
   'custom-plan.html',
@@ -35,7 +34,7 @@ const PUBLIC_PAGES = [
   'policies.html',
   'download.html',
 ];
-const NOINDEX_PAGES = ['login.html'];
+const NOINDEX_PAGES = ['login.html', 'pricing.html'];
 
 const errors = [];
 
