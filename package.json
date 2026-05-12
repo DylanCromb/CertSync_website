@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/DylanCromb/CertSync_website/issues"
   },
-  "homepage": "https://github.com/DylanCromb/CertSync_website#readme",
+  "homepage": "https://www.certsync.com.au/",
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",

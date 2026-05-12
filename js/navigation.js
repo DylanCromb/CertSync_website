@@ -182,6 +182,8 @@ class Navigation {
                     justify-content: flex-start;
                     align-items: center;
                     padding: 2rem 0;
+                    overflow-y: auto;
+                    -webkit-overflow-scrolling: touch;
                     transform: translateX(-100%);
                     transition: transform 0.3s ease;
                     z-index: 1000;
@@ -239,13 +241,25 @@ class Navigation {
         // Highlight current page in navigation
         const currentPage = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-links a');
+        const industryDropdown = document.querySelector('.nav-dropdown');
+
+        if (industryDropdown && currentPage.startsWith('/industries/')) {
+            industryDropdown.classList.add('is-active');
+        }
         
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
+            let hrefPath = href;
+
+            try {
+                hrefPath = new URL(href, window.location.origin).pathname;
+            } catch (error) {
+                hrefPath = href;
+            }
             
-            if (href === currentPage || 
-                (currentPage === '/' && href === 'index.html') ||
-                (currentPage === '/index.html' && href === 'index.html')) {
+            if (hrefPath === currentPage ||
+                (currentPage === '/' && hrefPath === '/index.html') ||
+                (currentPage === '/index.html' && hrefPath === '/index.html')) {
                 link.classList.add('active');
             }
         });

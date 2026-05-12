@@ -11,12 +11,10 @@
     <link rel="alternate" hreflang="en-AU" href="https://www.certsync.com.au/" />
     <link rel="alternate" hreflang="x-default" href="https://www.certsync.com.au/" />
     <meta name="theme-color" content="#2B7FE0" />
-    <title>
-      CertSync | Credential Management & Workforce Compliance Software Australia
-    </title>
+    <title>CertSync | Compliance Document & Credential Management Software Australia</title>
     <meta
       name="description"
-      content="CertSync helps Australian organisations track licences, certifications and permits with automated expiry alerts, compliance visibility and audit-ready reporting."
+      content="Track worker and contractor licences, permits, SWMS, inductions, insurance, training records and expiry dates in one central CertSync register."
     />
 
     <!-- Open Graph / Facebook -->
@@ -24,11 +22,11 @@
     <meta property="og:url" content="https://www.certsync.com.au/" />
     <meta
       property="og:title"
-      content="CertSync - Stop Chasing Expired Licences. Stay WorkSafe Compliant."
+      content="CertSync | Compliance Document Management Software Australia"
     />
     <meta
       property="og:description"
-      content="CertSync helps Australian organisations track licences, certifications and permits with automated expiry alerts and audit-ready reporting."
+      content="Track worker and contractor compliance records, expiry dates and stored evidence in one central CertSync register."
     />
     <meta
       property="og:image"
@@ -48,11 +46,11 @@
     <meta name="twitter:url" content="https://www.certsync.com.au/" />
     <meta
       name="twitter:title"
-      content="CertSync - Stop Chasing Expired Licences. Stay WorkSafe Compliant."
+      content="CertSync | Compliance Document Management Software Australia"
     />
     <meta
       name="twitter:description"
-      content="CertSync helps Australian organisations track licences, certifications and permits with automated expiry alerts and audit-ready reporting."
+      content="Track worker and contractor compliance records, expiry dates and stored evidence in one central CertSync register."
     />
     <meta
       name="twitter:image"
@@ -71,8 +69,11 @@
             "@type": "Organization",
             "@id": "https://www.certsync.com.au/#organization",
             "name": "CertSync",
+            "alternateName": "CertSync Australia",
             "url": "https://www.certsync.com.au/",
-            "logo": "https://www.certsync.com.au/assets/images/CertSync_Icon.png",
+            "logo": "https://www.certsync.com.au/assets/icons/icon-512x512.png",
+            "image": "https://www.certsync.com.au/assets/images/certsync-og.png",
+            "description": "CertSync helps Australian businesses store, track and manage worker and contractor compliance records, expiry dates and uploaded evidence.",
             "email": "support@certsync.com.au",
             "areaServed": "AU"
           },
@@ -93,7 +94,7 @@
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
             "url": "https://www.certsync.com.au/",
-            "description": "Credential management and workforce compliance software for Australian organisations tracking licences, certifications, permits and audit readiness.",
+            "description": "Credential management and compliance record software for Australian organisations tracking licences, permits, SWMS, inductions, insurance, training records and expiry dates.",
             "provider": {
               "@id": "https://www.certsync.com.au/#organization"
             },
@@ -102,7 +103,14 @@
         ]
       }
     </script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -115,6 +123,10 @@
       href="/assets/icons/apple-touch-icon.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
+    <meta
+      name="msapplication-TileImage"
+      content="/assets/icons/icon-192x192.png"
+    />
     <link rel="preload" href="css/styles.min.css" as="style" />
     <link rel="stylesheet" href="css/styles.min.css" />
     <link rel="stylesheet" href="css/layout-system.css" />
@@ -135,6 +147,93 @@
         background: #ffffff;
         margin: 0;
         padding: 0;
+      }
+
+      .hero-seo-fallback {
+        min-height: 720px;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+        padding: 7.5rem 1.5rem 5rem;
+      }
+
+      .hero-seo-fallback-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .hero-seo-fallback-kicker {
+        color: #087f73;
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero-seo-fallback h1 {
+        max-width: 850px;
+        margin: 1rem 0 1.25rem;
+        color: #071322;
+        font-size: 5.75rem;
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .hero-seo-fallback p {
+        max-width: 760px;
+        color: #536173;
+        font-size: 1.25rem;
+        line-height: 1.7;
+      }
+
+      .hero-seo-fallback-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .hero-seo-fallback-actions a {
+        min-height: 3.25rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        padding: 0.9rem 1.35rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .hero-seo-fallback-primary {
+        background: #2b7fe0;
+        color: #ffffff;
+      }
+
+      .hero-seo-fallback-secondary {
+        color: #0b4a7a;
+        border: 1px solid #c9d8e8;
+        background: #ffffff;
+      }
+
+      @media (max-width: 900px) {
+        .hero-seo-fallback h1 {
+          font-size: 4rem;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .hero-seo-fallback {
+          min-height: 620px;
+          padding: 6rem 1.25rem 4rem;
+        }
+
+        .hero-seo-fallback h1 {
+          font-size: 3rem;
+        }
+
+        .hero-seo-fallback p {
+          font-size: 1.05rem;
+        }
       }
     </style>
   </head>
@@ -159,6 +258,23 @@
         </div>
         <div class="nav-links" id="navLinks">
           <a href="about.html">About</a>
+                <div class="nav-dropdown">
+                    <a class="nav-dropdown-trigger" href="/industries/index.html" aria-haspopup="true">
+                        Industries
+                        <span class="nav-dropdown-chevron" aria-hidden="true">&#9662;</span>
+                    </a>
+                    <div class="nav-dropdown-menu" aria-label="Industry pages">
+                        <a href="/industries/demolition.html">Demolition</a>
+                        <a href="/industries/asbestos-removal.html">Asbestos Removal</a>
+                        <a href="/industries/civil-excavation.html">Civil Excavation</a>
+                        <a href="/industries/construction.html">Construction</a>
+                        <a href="/industries/mining.html">Mining</a>
+                        <a href="/industries/labour-hire.html">Labour Hire</a>
+                        <a href="/industries/healthcare.html">Healthcare</a>
+                        <a href="/industries/manufacturing.html">Manufacturing</a>
+                        <a href="/industries/transport-logistics.html">Transport &amp; Logistics</a>
+                    </div>
+                </div>
           <a href="policies.html">Policies</a>
           <a href="support.html">Support</a>
           <a href="contact.html">Contact</a>
@@ -174,7 +290,7 @@
           <a
             href="https://org.certsync.com.au/#/register"
             class="create-account-btn"
-            >Create Account</a
+             rel="nofollow">Create Account</a
           >
         </div>
       </div>
@@ -182,7 +298,33 @@
 
     <!-- React Hero Section -->
     <main id="main-content">
-      <div id="hero-root"></div>
+      <div id="hero-root">
+        <section class="hero-seo-fallback" aria-label="CertSync overview">
+          <div class="hero-seo-fallback-inner">
+            <p class="hero-seo-fallback-kicker">
+              Australian compliance document management software
+            </p>
+            <h1>
+              Track worker and contractor compliance records before they become
+              a problem.
+            </h1>
+            <p>
+              CertSync keeps licences, permits, SWMS, inductions, insurance
+              documents, training records and contractor evidence in one place,
+              with expiry reminders and clear visibility over what is current,
+              missing or expiring.
+            </p>
+            <div class="hero-seo-fallback-actions">
+              <a class="hero-seo-fallback-primary" href="/book-demo.html">
+                Book Demo
+              </a>
+              <a class="hero-seo-fallback-secondary" href="/pricing.html">
+                View Pricing
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <!-- App Promo Strip -->
       <section
@@ -228,11 +370,12 @@
       <!-- Section 2: Value Framing -->
       <section class="value-framing-section">
         <div class="section-wrapper">
-          <h2>Avoid penalties. Reduce risk. Stay compliance-ready.</h2>
+          <h2>Track compliance records before they slow the job down.</h2>
           <p>
-            Missed expiries create legal exposure. Manual tracking wastes admin
-            hours. CertSync replaces spreadsheets and manual checks with
-            automated credential tracking - before WorkSafe or your insurer asks.
+            CertSync keeps worker and contractor evidence, expiry dates and
+            record status connected in one register, so teams can see what is
+            current, missing or expiring before a client, insurer or internal
+            reviewer asks for proof.
           </p>
         </div>
       </section>
@@ -242,23 +385,22 @@
         <div class="section-wrapper">
           <ul class="what-it-does-list">
             <li class="what-it-does-item">
-              <h3>One place for all credentials</h3>
-              <p>Staff and organisation licences, certifications, permits</p>
+              <h3>One register for key records</h3>
+              <p>Licences, permits, SWMS, inductions, insurance and training evidence</p>
             </li>
             <li class="what-it-does-item">
-              <h3>Automatic tracking and alerts</h3>
-              <p>Expiry reminders at 60, 30, 15, 7 days (or custom schedule)</p>
+              <h3>Expiry reminders</h3>
+              <p>Surface licences, tickets and insurance renewals before they lapse</p>
             </li>
             <li class="what-it-does-item">
-              <h3>Real-time compliance visibility</h3>
+              <h3>Missing and expired visibility</h3>
               <p>
-                See who has what across teams and sites, filter by
-                expiring/overdue
+                See what is current, missing, expired or expiring soon
               </p>
             </li>
             <li class="what-it-does-item">
-              <h3>Built for organisations and individuals</h3>
-              <p>Multi-employer workforces, personal credential vaults</p>
+              <h3>Evidence exports</h3>
+              <p>Prepare stored records faster for client, audit and internal reviews</p>
             </li>
           </ul>
         </div>
@@ -297,9 +439,9 @@
                 a fatal workplace fall.
               </p>
               <p>
-                The outcome demonstrates the regulatory exposure created when
-                verification systems do not confirm that required documentation
-                is issued and acknowledged before work starts.
+                The outcome shows why high-risk teams need a clear way to
+                manage required documents and keep evidence easier to find
+                before work starts.
               </p>
               <a
                 href="https://www.worksafe.vic.gov.au/news/2020-08/construction-company-fined-850000-after-fatal-fall"
@@ -331,10 +473,8 @@
                 being held or verified before work commenced.
               </p>
               <p>
-                The case illustrates the compliance risks that arise when
-                licence verification relies on manual or fragmented processes
-                rather than systematic, auditable controls established before
-                work starts.
+                The case illustrates the risk of relying on fragmented licence
+                records, emails and manual checks when work is being planned.
               </p>
               <a
                 href="https://www.cbos.tas.gov.au/newsroom/public-warning-notices/court-outcome-%2440%2C000.00-penalty-for-unlicensed-building-and-roof-plumbing-contracting"
@@ -364,10 +504,9 @@
                 <strong>$60,000 in fines</strong> plus costs.
               </p>
               <p>
-                In regulated health services, current registration is a
-                mandatory compliance gate. The case demonstrates the enforcement
-                risk that arises when registration verification is not
-                systematically confirmed before work commences.
+                In regulated health services, registration evidence needs to be
+                easy to review. The case shows why current records and expiry
+                dates should not be buried in inboxes or shared folders.
               </p>
               <a
                 href="https://www.ahpra.gov.au/News/2019-07-11-Former-nursing-director-successfully-prosecuted-by-AHPRA.aspx"
@@ -388,12 +527,12 @@
       <!-- Section 5: Ease & Experience -->
       <section class="ease-section">
         <div class="section-wrapper">
-          <h2>Compliance without the headache</h2>
+          <h2>Compliance record management without spreadsheet chasing</h2>
           <p>
-            Simple setup. Clean interface. No spreadsheets. No chasing people.
-            Upload credentials once, set reminders, and let automated alerts
-            handle the rest. Export audit-ready reports in seconds - CSV or PDF,
-            filtered by team, site, or expiry date.
+            Upload credential evidence, set reminder dates, review record
+            status and export stored records when someone asks for evidence.
+            CertSync helps teams replace scattered spreadsheets, inboxes and
+            shared folders with a register built for daily operations.
           </p>
           <ul>
             <li>Data hosted in Australia</li>
@@ -403,103 +542,116 @@
         </div>
       </section>
 
-      <!-- Section 6: ICP Hubs -->
-      <section class="section intent-hub-section" id="high-risk-contractor-teams">
-        <div class="section-wrapper intent-hub">
-          <div class="intent-hub-header">
-            <p class="section-label">Built for high-risk contractor teams</p>
-            <h2>Credential control for crews that cannot afford expired paperwork</h2>
+      <!-- Section 6: Focused Industry Hubs -->
+      <section
+        class="section section-white focus-industries-section"
+        id="high-risk-contractor-teams"
+      >
+        <div class="section-wrapper">
+          <div class="focus-industries-header">
+            <p class="section-label">High-risk contractor workflows</p>
+            <h2>Credential control for contractor crews with high-risk paperwork</h2>
             <p>
-              CertSync is being tuned around the teams already feeling the pain:
-              demolition contractors, asbestos removal specialists and civil
-              excavation crews managing licences, SWMS, plant tickets, permits
-              and site evidence before work starts.
+              For demolition, asbestos removal and civil excavation teams, the
+              risk is rarely one missing file in isolation. It is licences,
+              SWMS, asbestos evidence, plant tickets, permits, inductions and
+              subcontractor records spread across inboxes, drives and
+              spreadsheets.
             </p>
           </div>
 
-          <div class="intent-icp-grid" aria-label="Primary CertSync industries">
-            <a class="intent-card intent-card-featured" href="industries/demolition.html">
-              <span class="intent-card-kicker">Primary ICP</span>
-              <span class="intent-glyph" aria-hidden="true">DE</span>
+          <div class="case-study-grid focus-industries-grid">
+            <a class="case-study-card industry-focus-card" href="industries/demolition.html">
+              <div class="industry-focus-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M14 12 5.5 20.5a2.1 2.1 0 0 1-3-3L11 9" />
+                  <path d="m15 6 3 3" />
+                  <path d="m10 4 10 10" />
+                  <path d="m8 6 3-3 2 2-3 3z" />
+                </svg>
+              </div>
               <h3>Demolition contractors</h3>
               <p>
-                Track demolition licences, SWMS, asbestos checks, plant tickets,
-                permits and expiring subcontractor evidence.
+                Track demolition licences, SWMS, asbestos evidence, plant
+                tickets, permits and expiring subcontractor records.
               </p>
-              <span class="intent-card-meta">Demolition licence | SWMS | asbestos register</span>
-              <span class="intent-card-action">Open demolition workflow</span>
+              <ul class="industry-focus-list">
+                <li>Demolition licence evidence</li>
+                <li>SWMS and site-specific permits</li>
+                <li>Plant tickets and subcontractor files</li>
+              </ul>
+              <span class="industry-focus-link">Explore demolition workflow</span>
             </a>
-            <a class="intent-card" href="industries/asbestos-removal.html">
-              <span class="intent-card-kicker">Adjacent ICP</span>
-              <span class="intent-glyph" aria-hidden="true">AS</span>
+            <a class="case-study-card industry-focus-card" href="industries/asbestos-removal.html">
+              <div class="industry-focus-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" />
+                  <path d="m8.5 12 2.3 2.3 4.7-5" />
+                </svg>
+              </div>
               <h3>Asbestos removal teams</h3>
               <p>
-                Keep removal licences, training evidence, clearance documents,
-                SWMS and renewal reminders in one register.
+                Keep removal licences, training evidence, clearances, SWMS,
+                permits and renewal reminders in one credential register.
               </p>
-              <span class="intent-card-meta">Class A/B licences | clearances | refreshers</span>
-              <span class="intent-card-action">Open asbestos workflow</span>
+              <ul class="industry-focus-list">
+                <li>Class A and Class B licences</li>
+                <li>Training and refresher records</li>
+                <li>Clearance and supporting evidence</li>
+              </ul>
+              <span class="industry-focus-link">Explore asbestos workflow</span>
             </a>
-            <a class="intent-card" href="industries/civil-excavation.html">
-              <span class="intent-card-kicker">Adjacent ICP</span>
-              <span class="intent-glyph" aria-hidden="true">CX</span>
+            <a class="case-study-card industry-focus-card" href="industries/civil-excavation.html">
+              <div class="industry-focus-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M2.5 21.5 7 17" />
+                  <path d="m9 15 6-6" />
+                  <path d="m14 4 6 6" />
+                  <path d="m17 3 4 4" />
+                  <path d="m4 20 4-4 3 3-4 4H4v-3z" />
+                </svg>
+              </div>
               <h3>Civil excavation crews</h3>
               <p>
-                Manage excavation permits, plant competency, inductions,
+                Manage excavation permits, plant tickets, inductions,
                 high-risk licences and trenching-related evidence.
               </p>
-              <span class="intent-card-meta">Excavation permits | plant tickets | inductions</span>
-              <span class="intent-card-action">Open civil workflow</span>
+              <ul class="industry-focus-list">
+                <li>Excavation and trenching permits</li>
+                <li>Plant operator competency records</li>
+                <li>Site inductions and contractor evidence</li>
+              </ul>
+              <span class="industry-focus-link">Explore civil workflow</span>
             </a>
           </div>
 
-          <div class="intent-ops-panel">
-            <div class="intent-ops-copy">
-              <p class="intent-panel-label">Compliance operating system</p>
+          <div class="industry-workflow-panel">
+            <div>
+              <p class="section-label">Core CertSync workflows</p>
               <h3>One register for the records site teams ask for first</h3>
               <p>
-                Focus the workflow around the high-risk document set: current
-                evidence, expiry status, renewal ownership and exportable proof.
+                Support site-readiness checks by keeping evidence, expiry status
+                and record ownership together for the crews and contractors
+                moving onto site.
               </p>
             </div>
-            <div class="intent-workflow-grid">
-              <a class="intent-mini-card" href="features/licence-expiry-reminders.html">
-                <span>01</span>
-                <strong>Expiry reminders</strong>
-                <small>Licences, permits, tickets, certificates and insurances.</small>
-              </a>
-              <a class="intent-mini-card" href="features/credential-register.html">
-                <span>02</span>
-                <strong>Credential register</strong>
-                <small>Worker, contractor and evidence files in one place.</small>
-              </a>
-              <a class="intent-mini-card" href="features/contractor-document-tracking.html">
-                <span>03</span>
-                <strong>Contractor documents</strong>
-                <small>SWMS, permits, insurances and onboarding evidence.</small>
-              </a>
-              <a class="intent-mini-card" href="features/compliance-reporting.html">
-                <span>04</span>
-                <strong>Audit reporting</strong>
-                <small>Export records by person, company, type or expiry status.</small>
-              </a>
+            <div class="industry-workflow-links">
+              <a href="features/licence-expiry-reminders.html">Expiry reminders</a>
+              <a href="features/credential-register.html">Credential register</a>
+              <a href="features/contractor-document-tracking.html">Contractor documents</a>
+              <a href="features/compliance-reporting.html">Compliance reporting</a>
             </div>
-          </div>
-
-          <div class="intent-resource-row">
-            <a href="use-cases/replace-compliance-spreadsheets.html">Replace compliance spreadsheets</a>
-            <a href="use-cases/worksafe-audit-ready-records.html">Audit-ready workforce records</a>
-            <a href="resources/contractor-compliance-checklist-australia.html">Contractor checklist</a>
           </div>
         </div>
       </section>
 
       <!-- Section 7: Final CTA -->
       <section class="final-cta-section">
-        <p class="final-cta-kicker">Ready to remove compliance guesswork?</p>
+        <p class="final-cta-kicker">Ready to reduce spreadsheet chasing?</p>
         <h2>Book a live CertSync demo</h2>
         <p class="final-cta-copy">
-          We will walk you through setup, alerts, and reporting for your team.
+          We will walk you through setup, expiry reminders, record visibility
+          and evidence exports for your team.
         </p>
         <div class="cta-buttons">
           <a
@@ -614,7 +766,7 @@
           <a
             href="https://org.certsync.com.au/"
             class="login-option login-option-admin"
-          >
+           rel="nofollow">
             <div class="login-option-icon">
               <svg
                 viewBox="0 0 24 24"
@@ -636,7 +788,7 @@
           <a
             href="https://manager.certsync.com.au/#/login"
             class="login-option login-option-manager"
-          >
+           rel="nofollow">
             <div class="login-option-icon">
               <svg
                 viewBox="0 0 24 24"

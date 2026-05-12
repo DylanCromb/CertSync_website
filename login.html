@@ -14,7 +14,7 @@
     <link rel="alternate" hreflang="x-default" href="https://www.certsync.com.au/login.html">
     <meta name="theme-color" content="#2B7FE0">
     <title>CertSync Login | Account Access</title>
-    <meta name="description" content="Sign in to your CertSync account to manage your professional credentials, track expirations, and share credentials securely with employers.">
+    <meta name="description" content="Access CertSync portals for organisation admins and managers to manage credential records, expiry reminders and stored evidence.">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/favicon-48x48.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
@@ -37,11 +37,28 @@
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
+                <div class="nav-dropdown">
+                    <a class="nav-dropdown-trigger" href="/industries/index.html" aria-haspopup="true">
+                        Industries
+                        <span class="nav-dropdown-chevron" aria-hidden="true">&#9662;</span>
+                    </a>
+                    <div class="nav-dropdown-menu" aria-label="Industry pages">
+                        <a href="/industries/demolition.html">Demolition</a>
+                        <a href="/industries/asbestos-removal.html">Asbestos Removal</a>
+                        <a href="/industries/civil-excavation.html">Civil Excavation</a>
+                        <a href="/industries/construction.html">Construction</a>
+                        <a href="/industries/mining.html">Mining</a>
+                        <a href="/industries/labour-hire.html">Labour Hire</a>
+                        <a href="/industries/healthcare.html">Healthcare</a>
+                        <a href="/industries/manufacturing.html">Manufacturing</a>
+                        <a href="/industries/transport-logistics.html">Transport &amp; Logistics</a>
+                    </div>
+                </div>
                 <a href="policies.html">Policies</a>
                 <a href="support.html">Support</a>
                 <a href="contact.html">Contact</a>
                 <button type="button" class="login-btn active" id="loginModalTrigger" aria-haspopup="dialog" aria-expanded="false">Login</button>
-                <a href="https://org.certsync.com.au/#/register" class="create-account-btn">Create Account</a>
+                <a href="https://org.certsync.com.au/#/register" class="create-account-btn" rel="nofollow">Create Account</a>
             </div>
         </div>
     </nav>
@@ -50,83 +67,62 @@
     <!-- Page Header -->
     <section class="page-header">
         <h1>Welcome Back</h1>
-        <p>Sign in to your CertSync account to manage your credentials</p>
+        <p>Access the right CertSync portal for your organisation or manager account.</p>
     </section>
 
     <!-- Main Content -->
     <section class="page-content">
-        <!-- Coming Soon Banner -->
         <div class="coming-soon-banner">
-            <h3>🚧 Platform Preview - Coming Soon</h3>
-            <p>This is a preview site. The authentication system is currently in development. For early access inquiries, please contact us at <a href="mailto:support@certsync.com.au">support@certsync.com.au</a></p>
+            <h3>Portal access</h3>
+            <p>Use the organisation or manager portal to manage credential records, expiry reminders and stored evidence. For access help, contact <a href="mailto:support@certsync.com.au">support@certsync.com.au</a>.</p>
         </div>
 
         <div class="form-container">
-            <h2>Sign In</h2>
-            <form data-form-type="login">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-
-                <div class="form-group form-checkbox-group">
-                    <label class="form-checkbox-label">
-                        <input type="checkbox" name="remember">
-                        Remember me
-                    </label>
-                    <a href="#forgot-password" class="forgot-password-link">Forgot password?</a>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-full-width">Sign In</button>
-            </form>
-
+            <h2>Choose your portal</h2>
+            <div class="cta-buttons" style="justify-content: center; margin-bottom: 1.5rem;">
+                <a href="https://org.certsync.com.au/" class="btn btn-primary" rel="nofollow">Organisation Admin</a>
+                <a href="https://manager.certsync.com.au/#/login" class="btn btn-secondary" rel="nofollow">Manager Login</a>
+            </div>
             <div class="form-divider">
-                <p>Don't have an account?</p>
-                <a href="#signup" class="btn btn-secondary">Create Account</a>
+                <p>Need a new organisation account?</p>
+                <a href="https://org.certsync.com.au/#/register" class="btn btn-secondary" rel="nofollow">Create Account</a>
             </div>
         </div>
 
-        <!-- Features Reminder -->
         <div class="card" style="margin-top: 3rem;">
             <h2>What you can do with CertSync</h2>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">DOC</div>
-                    <h3>Manage Credentials</h3>
-                    <p>Store and organize all your professional licenses, permits, and certifications in one secure place.</p>
+                    <h3>Manage Credential Records</h3>
+                    <p>Store licences, permits, certificates and related evidence in one organised register.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">ALRT</div>
-                    <h3>Track Expirations</h3>
-                    <p>Never miss a renewal deadline with smart reminders and automated notifications.</p>
+                    <h3>Track Expiry Dates</h3>
+                    <p>Send reminders before important licences, tickets and insurance records expire.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">APP</div>
                     <h3>Mobile Access</h3>
-                    <p>Access your credentials anywhere with our mobile app for iOS and Android.</p>
+                    <p>Use CertSync through the web platform and mobile app where your account has access.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">SAFE</div>
-                    <h3>Secure Sharing</h3>
-                    <p>Share credentials with employers and colleagues while maintaining full control over your data.</p>
+                    <h3>Controlled Access</h3>
+                    <p>Give authorised people access to the credential evidence they need to review.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Security Notice -->
         <div class="card card-border-accent">
-            <h3>🔒 Security Notice</h3>
-            <p>Your account is protected by:</p>
+            <h3>Security Notice</h3>
+            <p>CertSync security practices include:</p>
             <ul class="policies-list">
-                <li>End-to-end encryption for all data</li>
+                <li>Encryption for stored and transmitted data</li>
                 <li>Multi-factor authentication support</li>
-                <li>Regular security audits and monitoring</li>
-                <li>SOC 2 Type II compliance</li>
+                <li>Australian data hosting</li>
+                <li>Role-based access for organisation records</li>
             </ul>
         </div>
     </section>
@@ -176,7 +172,7 @@
             <h2 id="loginModalTitle">Choose Your Portal</h2>
             <p class="login-modal-subtitle">Select the appropriate login for your account type</p>
             <div class="login-modal-options">
-                <a href="https://org.certsync.com.au/" class="login-option login-option-admin">
+                <a href="https://org.certsync.com.au/" class="login-option login-option-admin" rel="nofollow">
                     <div class="login-option-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -188,7 +184,7 @@
                         <p>Manage your organisation's credentials, permits, SWMS</p>
                     </div>
                 </a>
-                <a href="https://manager.certsync.com.au/#/login" class="login-option login-option-manager">
+                <a href="https://manager.certsync.com.au/#/login" class="login-option login-option-manager" rel="nofollow">
                     <div class="login-option-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>

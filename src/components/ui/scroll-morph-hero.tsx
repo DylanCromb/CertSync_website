@@ -63,15 +63,17 @@ export default function ScrollMorphHero() {
 
                     {/* Tagline fades in mid-animation */}
                     <motion.p style={{
-                        fontSize: '1.5rem',
+                        fontSize: '1.35rem',
                         color: '#FFFFFF',
                         fontWeight: '600',
                         textShadow: '0 2px 10px rgba(0,0,0,0.5)',
                         marginBottom: '2rem',
                         marginTop: 0,
+                        maxWidth: '760px',
+                        lineHeight: 1.35,
                         opacity: taglineOpacity,
                     }}>
-                        Compliance. Organised.
+                        Track worker and contractor compliance records before they become a problem.
                     </motion.p>
 
                     {/* Book a Demo — appears as cards lock into place */}

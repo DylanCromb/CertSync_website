@@ -20,7 +20,7 @@ function Pricing() {
               Simple, Transparent Pricing
             </h2>
             <p className="text-lg leading-relaxed tracking-normal text-muted-foreground max-w-2xl text-center">
-              Built for individuals, teams, and enterprise operations that need clear compliance visibility.
+              Built for individuals, teams, and enterprise operations that need clear visibility over credential records and expiry dates.
             </p>
           </div>
           <div className="grid pt-12 text-left grid-cols-1 lg:grid-cols-4 w-full gap-6">
@@ -50,7 +50,7 @@ function Pricing() {
                       <div className="flex flex-col">
                         <p>Unlimited credentials</p>
                         <p className="text-muted-foreground text-sm">
-                          Store all your permits and certifications
+                          Store licences, permits and certificates
                         </p>
                       </div>
                     </div>
@@ -59,16 +59,16 @@ function Pricing() {
                       <div className="flex flex-col">
                         <p>Expiry tracking</p>
                         <p className="text-muted-foreground text-sm">
-                          Automated reminders before expiry
+                          Reminders before key records expire
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
                       <Check className="w-4 h-4 mt-2 text-primary" />
                       <div className="flex flex-col">
-                        <p>Secure sharing</p>
+                        <p>Controlled access</p>
                         <p className="text-muted-foreground text-sm">
-                          Control who sees your credentials
+                          Share credential evidence where authorised
                         </p>
                       </div>
                     </div>
@@ -107,7 +107,7 @@ function Pricing() {
                       <div className="flex flex-col">
                         <p>Team management</p>
                         <p className="text-muted-foreground text-sm">
-                          Manage credentials across your organisation
+                          Manage worker and contractor records
                         </p>
                       </div>
                     </div>
@@ -116,7 +116,7 @@ function Pricing() {
                       <div className="flex flex-col">
                         <p>Compliance reporting</p>
                         <p className="text-muted-foreground text-sm">
-                          Export audit-ready reports
+                          Export record summaries for reviews
                         </p>
                       </div>
                     </div>
@@ -147,7 +147,7 @@ function Pricing() {
                       Basic
                     </span>
                   </CardTitle>
-                  <Badge>Most Selected</Badge>
+                  <Badge>Recommended</Badge>
                 </div>
                 <CardDescription>
                   For teams that need stronger reporting and oversight.
@@ -168,7 +168,7 @@ function Pricing() {
                       <div className="flex flex-col">
                         <p>Everything in Starter</p>
                         <p className="text-muted-foreground text-sm">
-                          Plus advanced features
+                          Plus stronger reporting workflows
                         </p>
                       </div>
                     </div>
@@ -177,7 +177,7 @@ function Pricing() {
                       <div className="flex flex-col">
                         <p>Advanced reporting</p>
                         <p className="text-muted-foreground text-sm">
-                          Custom filters and analytics
+                          More ways to review stored records
                         </p>
                       </div>
                     </div>
@@ -222,25 +222,25 @@ function Pricing() {
                       <div className="flex flex-col">
                         <p>Everything in Basic</p>
                         <p className="text-muted-foreground text-sm">
-                          Plus enterprise features
+                          Plus tailored onboarding support
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
                       <Check className="w-4 h-4 mt-2 text-primary" />
                       <div className="flex flex-col">
-                        <p>Custom integrations</p>
+                        <p>Implementation planning</p>
                         <p className="text-muted-foreground text-sm">
-                          API access and integrations
+                          Map records, teams and workflows before rollout
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
                       <Check className="w-4 h-4 mt-2 text-primary" />
                       <div className="flex flex-col">
-                        <p>Dedicated support</p>
+                        <p>Custom support arrangements</p>
                         <p className="text-muted-foreground text-sm">
-                          Account manager and 24/7 support
+                          Agree support needs before launch
                         </p>
                       </div>
                     </div>

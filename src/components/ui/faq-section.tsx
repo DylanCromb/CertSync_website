@@ -1,134 +1,139 @@
 import React, { useState } from "react";
 import "./faq-styles.css";
 
+type FAQ = {
+  q: string;
+  a: string;
+  category: string;
+};
+
+const faqs: FAQ[] = [
+  {
+    q: "What is CertSync?",
+    a: "CertSync is an Australian credential and compliance record management platform. It helps teams store worker and contractor records, track expiry dates, identify missing or expired evidence, and prepare stored records for client, audit, insurer or internal review requests.",
+    category: "General",
+  },
+  {
+    q: "Who should use CertSync?",
+    a: "CertSync is built for business owners, operations managers, compliance administrators, project coordinators and site managers who need a clearer register for licences, permits, SWMS, inductions, insurance documents, training records and contractor evidence.",
+    category: "General",
+  },
+  {
+    q: "Does CertSync guarantee compliance?",
+    a: "No. CertSync does not provide legal, WHS or regulatory advice and does not guarantee compliance. It helps businesses organise, track and produce the records that support their own compliance processes.",
+    category: "General",
+  },
+  {
+    q: "Is CertSync compliant with Australian privacy laws?",
+    a: "CertSync is built for Australian businesses with local data hosting and security controls for sensitive credential records. Our Privacy Policy explains how personal information is collected, used, stored and disclosed.",
+    category: "General",
+  },
+  {
+    q: "How do I sign up for CertSync?",
+    a: 'Use the "Create Account" button or book a demo if you want help choosing the right setup. You can create an organisation account, invite team members and start adding credential records.',
+    category: "Getting Started",
+  },
+  {
+    q: "How do I add credentials to my account?",
+    a: "After logging in, add the worker or contractor record, choose the document type, upload the evidence file and enter the relevant expiry or review details. Admins and managers can add records for team members where they have access.",
+    category: "Getting Started",
+  },
+  {
+    q: "Can I import existing employee data?",
+    a: "If you are moving from spreadsheets or shared folders, contact support before setup. We can discuss the best way to structure your workers, contractors, document types and expiry fields.",
+    category: "Getting Started",
+  },
+  {
+    q: "How do I invite team members?",
+    a: 'Go to "People" and add the team member by email. Assign the appropriate role so admins, managers and workers have access to the records they need.',
+    category: "Getting Started",
+  },
+  {
+    q: "How does CertSync track expiring credentials?",
+    a: "CertSync stores expiry dates against credential and document records, then sends reminders before renewal deadlines based on the reminder settings used by your team.",
+    category: "Compliance & Tracking",
+  },
+  {
+    q: "Can I generate compliance reports?",
+    a: "Yes. CertSync helps teams export stored credential records and evidence summaries for client requests, audits, insurer reviews and internal checks. Exact report views depend on how your register is configured.",
+    category: "Compliance & Tracking",
+  },
+  {
+    q: "What happens if a credential expires?",
+    a: "Expired records are surfaced in the register so managers can see which documents need attention. The uploaded evidence stays attached to the record for review and record-keeping.",
+    category: "Compliance & Tracking",
+  },
+  {
+    q: "Does CertSync integrate with WorkSafe systems?",
+    a: "No. CertSync does not integrate directly with WorkSafe or regulator databases. It helps organise WHS-related records your team manages, such as licences, SWMS, permits, inductions and training evidence.",
+    category: "Compliance & Tracking",
+  },
+  {
+    q: "Can CertSync replace spreadsheets?",
+    a: "For many teams, yes. CertSync replaces scattered spreadsheet tracking with a central register that keeps files, status, ownership and expiry dates connected.",
+    category: "Compliance & Tracking",
+  },
+  {
+    q: "What user roles are available?",
+    a: "CertSync supports organisation admin and manager workflows for managing team records. Worker access is designed around viewing and uploading their own credential evidence where enabled.",
+    category: "Account Management",
+  },
+  {
+    q: "How do I update my account details?",
+    a: 'Navigate to "Account Settings" to update your personal information and organisation details.',
+    category: "Account Management",
+  },
+  {
+    q: "How do I change my password?",
+    a: 'Go to "Account Settings" and click the "Change Password" button. You will receive a verification email to confirm the change.',
+    category: "Account Management",
+  },
+  {
+    q: "Can I delete my account?",
+    a: 'Yes. You can delete your account under "Account Settings." This action cannot be undone, so contact support before deleting if your organisation still needs the records.',
+    category: "Account Management",
+  },
+  {
+    q: "Is my data secure?",
+    a: "CertSync uses encryption and security controls to protect stored credential records. Security practices are described in our policies, and we can discuss specific data questions during onboarding or a demo.",
+    category: "Technical & Security",
+  },
+  {
+    q: "Where is my data stored?",
+    a: "CertSync is designed for Australian businesses with data hosted in Australia.",
+    category: "Technical & Security",
+  },
+  {
+    q: "What browsers are supported?",
+    a: "CertSync works on modern browsers including Chrome, Firefox, Safari and Edge. Mobile browsers are also supported for web access.",
+    category: "Technical & Security",
+  },
+  {
+    q: "I did not receive my verification email. What should I do?",
+    a: "Check your spam or junk folder first. If it is not there, use the resend option on the login page or contact support@certsync.com.au.",
+    category: "Troubleshooting",
+  },
+  {
+    q: "Why can't I upload a credential document?",
+    a: "Check the file type and size, then try again from a modern browser. If the problem continues, contact support and include the document type you were trying to upload.",
+    category: "Troubleshooting",
+  },
+  {
+    q: "I'm having trouble logging in. What should I do?",
+    a: 'First, reset your password using the "Forgot Password" link. If that does not work, verify you are using the correct email address. Contact support if you still cannot access your account.',
+    category: "Troubleshooting",
+  },
+];
+
 export default function FAQSection() {
   const [query, setQuery] = useState("");
-
-  // CertSync FAQ content
-  const faqs = [
-    // General (3)
-    {
-      q: "What is CertSync?",
-      a: "CertSync is a credential management platform designed for Australian businesses to track professional licences, permits, and certifications in one centralized location. We help you stay compliant with WorkSafe regulations and avoid penalties from expired credentials.",
-      category: "General",
-    },
-    {
-      q: "Who should use CertSync?",
-      a: "CertSync is built for compliance managers, safety officers, HR directors, and business owners in industries like construction, mining, healthcare, logistics, and facility management—anywhere professional credentials are required by law.",
-      category: "General",
-    },
-    {
-      q: "Is CertSync compliant with Australian privacy laws?",
-      a: "Yes. CertSync is fully compliant with the Australian Privacy Act 1988 and follows best practices for data security and storage. See our Privacy Policy for details.",
-      category: "General",
-    },
-    // Getting Started (4)
-    {
-      q: "How do I sign up for CertSync?",
-      a: 'Click the "Get Started" button on our homepage, enter your organisation details, and create your account. You\'ll receive a confirmation email with instructions to set up your first credentials.',
-      category: "Getting Started",
-    },
-    {
-      q: "How do I add credentials to my account?",
-      a: 'After logging in, navigate to "Add Credential," select the credential type (e.g., White Card, First Aid Certificate), upload the document, and enter expiry details. You can add credentials for yourself or your team members.',
-      category: "Getting Started",
-    },
-    {
-      q: "Can I import existing employee data?",
-      a: "Yes. CertSync supports bulk employee invites via CSV upload. Contact our support team at Dev@kaylos.com.au for a CSV template and assistance with team setup.",
-      category: "Getting Started",
-    },
-    {
-      q: "How do I invite team members?",
-      a: 'Go to "People" and select "Add People." From here you can create a new team or select an existing team to add someone to. Enter their email address and assign their role (Admin or Manager for web access). They\'ll receive an invitation email to create their account.',
-      category: "Getting Started",
-    },
-    // Account Management (4)
-    {
-      q: "How do I update my account details?",
-      a: 'Navigate to "Account Settings" to update your personal information and organisation details.',
-      category: "Account Management",
-    },
-    {
-      q: "How do I change my password?",
-      a: 'Go to "Account Settings" and click the "Change Password" button. You\'ll receive a verification email to confirm the change.',
-      category: "Account Management",
-    },
-    {
-      q: "What user roles are available?",
-      a: "CertSync has two web platform roles: Admin (full access) and Manager (manage team credentials). The mobile app provides Employee access (view-only for their own credentials).",
-      category: "Account Management",
-    },
-    {
-      q: "Can I delete my account?",
-      a: 'Yes. You can delete your account under "Account Settings." Warning: This action cannot be undone. Please reach out to Dev@kaylos.com.au before deleting if you have any questions.',
-      category: "Account Management",
-    },
-    // Compliance & Tracking (4)
-    {
-      q: "How does CertSync track expiring credentials?",
-      a: "CertSync automatically monitors credential expiry dates and sends email reminders 90, 60, 30, and 7 days before expiration to keep you informed of upcoming renewals.",
-      category: "Compliance & Tracking",
-    },
-    {
-      q: "Can I generate compliance reports?",
-      a: 'Yes. Navigate to "Reports" to export compliance summaries, expiry forecasts, and audit-ready credential lists in PDF or Excel format. Reports are customisable by team, credential type, or date range.',
-      category: "Compliance & Tracking",
-    },
-    {
-      q: "What happens if a credential expires?",
-      a: "Expired credentials are flagged in red on your dashboard. Employees and admins receive immediate notifications. The credential remains in your system for record-keeping but is clearly marked as expired.",
-      category: "Compliance & Tracking",
-    },
-    {
-      q: "Does CertSync integrate with WorkSafe systems?",
-      a: "Currently, CertSync does not integrate directly with WorkSafe databases. However, our platform is designed to align with WorkSafe compliance requirements, and you can export reports for audits.",
-      category: "Compliance & Tracking",
-    },
-    // Technical & Security (3)
-    {
-      q: "Is my data secure?",
-      a: "Absolutely. CertSync uses industry-standard encryption to protect your data. Our infrastructure is hosted on AWS (Sydney region) with daily backups and 99.9% uptime SLA.",
-      category: "Technical & Security",
-    },
-    {
-      q: "Where is my data stored?",
-      a: "All data is stored on secure servers in Australia (AWS Sydney region) to comply with Australian data sovereignty requirements.",
-      category: "Technical & Security",
-    },
-    {
-      q: "What browsers are supported?",
-      a: "CertSync works on all modern browsers: Chrome, Firefox, Safari, and Edge (latest versions). Mobile browsers are also supported for on-the-go access.",
-      category: "Technical & Security",
-    },
-    // Troubleshooting (3)
-    {
-      q: "I didn't receive my verification email. What should I do?",
-      a: 'Check your spam/junk folder. If it\'s not there, click "Resend verification email" on the login page. If the issue persists, contact Dev@kaylos.com.au.',
-      category: "Troubleshooting",
-    },
-    {
-      q: "Why can't I upload a credential document?",
-      a: "Ensure the file is in a supported format (PDF, JPG, PNG) and under 10MB. Clear your browser cache and try again. If the problem continues, email us the file at Dev@kaylos.com.au.",
-      category: "Troubleshooting",
-    },
-    {
-      q: "I'm having trouble logging in. What should I do?",
-      a: 'First, reset your password using the "Forgot Password" link. If that doesn\'t work, verify you\'re using the correct email address. Contact support if you\'re still unable to access your account.',
-      category: "Troubleshooting",
-    },
-  ];
 
   const filtered = query
     ? faqs.filter(({ q, a }) => (q + a).toLowerCase().includes(query.toLowerCase()))
     : faqs;
 
-  // Group by category
-  const categories = Array.from(new Set(faqs.map((f) => f.category)));
-
   return (
     <div className="faq-container">
-      {/* Header */}
       <div className="faq-header">
         <div className="faq-header-content">
           <h2>Frequently Asked Questions</h2>
@@ -144,12 +149,11 @@ export default function FAQSection() {
         </div>
       </div>
 
-      {/* FAQ Grid */}
       <div className="faq-content">
         {filtered.length > 0 ? (
           <div className="faq-grid">
             {filtered.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} index={i + 1} />
+              <FAQItem key={item.q} q={item.q} a={item.a} index={i + 1} />
             ))}
           </div>
         ) : (
@@ -179,7 +183,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
           <span className="faq-number">{String(index).padStart(2, "0")}</span>
           <h3>{q}</h3>
         </div>
-        <span className="faq-toggle">{open ? "−" : "+"}</span>
+        <span className="faq-toggle">{open ? "-" : "+"}</span>
       </button>
       <div className={`faq-answer ${open ? "faq-answer-open" : ""}`}>
         <div className="faq-answer-content">
