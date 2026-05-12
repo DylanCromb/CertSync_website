@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE_URL = 'https://www.certsync.com.au';
-const APK_DOWNLOAD_URL = 'https://github.com/DylanCromb/CertSync_website/releases/download/v1.0.24/certsync_1.0.24.apk';
+const APK_DOWNLOAD_URL = 'https://github.com/DylanCromb/CertSync_website/releases/download/v1.0.24/certsync_1.0.26.apk';
 const PUBLIC_PAGES = [
   'index.html',
   'features/index.html',
